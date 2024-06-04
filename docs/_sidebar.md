@@ -4,8 +4,8 @@
 - [ModLoaderDeprecated](api/ModLoaderDeprecated.md)
 - [ModLoaderLog](api/ModLoaderLog.md)
 - [ModLoaderMod](api/ModLoaderMod.md)
-- [ModLoaderModManager](api/ModLoaderModManager.md)
-- [ModLoaderUserProfile](api/ModLoaderUserProfile.md)
+- [ModLoaderModManager](_todo)
+- [ModLoaderUserProfile](_todo)
 - <span>Guides</span>
 - <span class="subsection">Modding</span>
 - [Config JSON](guides/modding/config_json.md)
