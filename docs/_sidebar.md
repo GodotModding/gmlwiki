@@ -1,0 +1,24 @@
+- [Getting Started](getting_started.md)
+- <span>ModLoader API</span>
+- [ModLoaderConfig](api/ModLoaderConfig.md)
+- [ModLoaderDeprecated](api/ModLoaderDeprecated.md)
+- [ModLoaderLog](api/ModLoaderLog.md)
+- [ModLoaderMod](api/ModLoaderMod.md)
+- [ModLoaderModManager](api/ModLoaderModManager.md)
+- [ModLoaderUserProfile](api/ModLoaderUserProfile.md)
+- <span>Guides</span>
+- <span class="subsection">Modding</span>
+- [Config JSON](guides/modding/config_json.md)
+- [Decompiling Games](guides/modding/decompile_games.md)
+- [Script Extensions](guides/modding/script_extensions.md)
+- [Overwriting Game Resources](guides/modding/overwriting_game_resources.md)
+- [Global Classes & Child Nodes](guides/modding/global_classes_and_child_nodes.md)
+- [Creating a Mod Config Schema](guides/modding/creating_mod_config_schema.md)
+- <span class="subsection">Integration</span>
+- [CLI Args](guides/integration/cli_args.md)
+- [GodotSteam](guides/integration/godot_steam.md)
+- [Mod Loader Options](guides/integration/mod_loader_options.md)
+- <span>Versions & Releases</span>
+- [Upcoming Features](_todo)
+- [Breaking Changes](_todo)
+- [Known-Issues](_todo)
