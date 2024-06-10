@@ -1,5 +1,5 @@
 - [Getting Started](getting_started.md)
-- <span>ModLoader API</span>
+- <span onclick="window.location='#/api/mod_loader_api.md'">ModLoader API</span>
 - [ModLoaderConfig](api/ModLoaderConfig.md)
 - [ModLoaderDeprecated](api/ModLoaderDeprecated.md)
 - [ModLoaderLog](api/ModLoaderLog.md)
@@ -14,6 +14,8 @@
 - [Overwriting Game Resources](guides/modding/overwriting_game_resources.md)
 - [Global Classes & Child Nodes](guides/modding/global_classes_and_child_nodes.md)
 - [Creating a Mod Config Schema](guides/modding/creating_mod_config_schema.md)
+- [Mod Structure](guides/modding/mod_structure.md)
+- [Mod Files](guides/modding/mod_files.md)
 - <span class="subsection">Integration</span>
 - [CLI Args](guides/integration/cli_args.md)
 - [GodotSteam](guides/integration/godot_steam.md)

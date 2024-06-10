@@ -7,22 +7,22 @@ Importantly, it provides methods to change existing scripts, scenes, and resourc
 !> Please note that GML does not condone the use of malicious mods. e.g. mods that allow for cheating in online games, among other things.
 
 ## Mod Developer
-1. [Decompile the Game]()
-2. Install [GodotSteam]() (mandatory if the game has Steam support)
-3. [Set up]() your Godot project for modding
-4. Create your [Mod Structure]()
-5. Create your [Mod Files]()
-6. Use the [API Methods]()
+1. [Decompile the Game](guides/modding/decompile_games.md)
+2. Install [GodotSteam](guides/integration/godot_steam.md) (mandatory if the game has Steam support)
+3. [Set up](guides/integration/godot_project_setup.md) your Godot project for modding
+4. Create your [Mod Structure](guides/modding/mod_structure.md)
+5. Create your [Mod Files](guides/modding/mod_files.md)
+6. Use the [API Methods](api/mod_loader_api.md)
 
 ## Mod user
-Check if the Godot ModLoader is already integrated into the game you want to mod. If this is not the case then [set up the Godot ModLoader]()
+Check if the Godot ModLoader is already integrated into the game you want to mod. If this is not the case then [set up the Godot ModLoader](guides/integration/godot_project_setup.md)
 
 ## Game Developer
-[Add the Godot ModLoader to your project](_todo), feel free to join our [Discord](https://discord.gg/J5AvdFK4mw) for any support!
+[Add the Godot ModLoader to your project](guides/integration/godot_project_setup.md), feel free to join our [Discord](https://discord.gg/J5AvdFK4mw) for any support!
 
 # Versions & Releases
-- [Breaking Changes](https://github.com/GodotModding/godot-mod-loader/wiki/breaking-changes)
-- [Upcoming Features](https://github.com/GodotModding/godot-mod-loader/wiki/upcoming-features)
+- [Breaking Changes](misc/breaking_changes.md)
+- [Upcoming Features](misc/upcoming_features.md)
 
 # Credits
 The Godot ModLoader is based on the brilliant work done for [Delta-V-Modding](https://gitlab.com/Delta-V-Modding/Mods).
