@@ -18,6 +18,7 @@
 - [CLI Args](guides/integration/cli_args.md)
 - [GodotSteam](guides/integration/godot_steam.md)
 - [Mod Loader Options](guides/integration/mod_loader_options.md)
+- [Godot Project Setup](guides/integration/godot_project_setup.md)
 - <span>Versions & Releases</span>
 - [Upcoming Features](misc/upcoming_features)
 - [Breaking Changes](misc/breaking_changes.md)
