@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Config JSON - GMLWiki</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../../css/brands.min.css" rel="stylesheet">
+        <link href="../../../css/solid.min.css" rel="stylesheet">
+        <link href="../../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">GMLWiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Mod Loader Api</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../api/ModLoaderMod/" class="dropdown-item">ModLoaderMod</a>
+</li>
+                                    
+<li>
+    <a href="../../../api/ModLoaderLog/" class="dropdown-item">ModLoaderLog</a>
+</li>
+                                    
+<li>
+    <a href="../../../api/ModLoaderConfig/" class="dropdown-item">ModLoaderConfig</a>
+</li>
+                                    
+<li>
+    <a href="../../../api/ModLoaderDeprecated/" class="dropdown-item">ModLoaderDeprecated</a>
+</li>
+                                    
+<li>
+    <a href="../../../api/ModLoaderModManager/" class="dropdown-item">ModLoaderModManager</a>
+</li>
+                                    
+<li>
+    <a href="../../../api/ModLoaderUserProfile/" class="dropdown-item">ModLoaderUserProfile</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Guides</a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Modding</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../script_extensions/" class="dropdown-item">Script Extensions</a>
+</li>
+            
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Config JSON</a>
+</li>
+            
+<li>
+    <a href="../decompile_games/" class="dropdown-item">Decompiling Games</a>
+</li>
+            
+<li>
+    <a href="../overwriting_game_resources/" class="dropdown-item">Overwriting Game Resources</a>
+</li>
+            
+<li>
+    <a href="../global_classes_and_child_nodes/" class="dropdown-item">Global Classes & Child Nodes</a>
+</li>
+            
+<li>
+    <a href="../creating_mod_config_schema/" class="dropdown-item">Creating a Mod Config Schema</a>
+</li>
+            
+<li>
+    <a href="../mod_structure/" class="dropdown-item">Mod Structure</a>
+</li>
+            
+<li>
+    <a href="../mod_files/" class="dropdown-item">Mod Files</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Integration</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../integration/cli_args/" class="dropdown-item">CLI Args</a>
+</li>
+            
+<li>
+    <a href="../../integration/godot_steam/" class="dropdown-item">GodotSteam</a>
+</li>
+            
+<li>
+    <a href="../../integration/mod_loader_options/" class="dropdown-item">Mod Loader Options</a>
+</li>
+            
+<li>
+    <a href="../../integration/godot_project_setup/" class="dropdown-item">Godot Project Setup</a>
+</li>
+            
+<li>
+    <a href="../../integration/mod_loader_self_setup/" class="dropdown-item">Mod Loader Self Setup</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Versions & Releases</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../misc/upcoming_features/" class="dropdown-item">Upcoming Features</a>
+</li>
+                                    
+<li>
+    <a href="../../../misc/breaking_changes/" class="dropdown-item">Breaking Changes</a>
+</li>
+                                    
+<li>
+    <a href="../../../misc/known_issues/" class="dropdown-item">Known Issues</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../script_extensions/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../decompile_games/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#config-json" class="nav-link">Config JSON</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#json-schema" class="nav-link">JSON Schema</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#creating-configs" class="nav-link">Creating Configs</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#applying-configs-to-your-mod" class="nav-link">Applying Configs to Your mod</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="config-json">Config JSON</h1>
+<p>The Godot ModLoader supports config files in the JSON format.</p>
+<h2 id="json-schema">JSON Schema</h2>
+<p>Mod developers can choose to add a <a href="https://json-schema.org/understanding-json-schema/">JSON Schema</a> to their mod's manifest file using the <code>extra.godot.config_schema</code> key.</p>
+<pre><code class="language-json">{
+    &quot;extra&quot;: {
+        &quot;godot&quot;: {
+            &quot;config_schema&quot;: {
+                &quot;title&quot;: &quot;Config&quot;,
+                &quot;description&quot;: &quot;Config for this Mod&quot;,
+                &quot;type&quot;: &quot;object&quot;,
+                &quot;properties&quot;: {
+                    &quot;example_text&quot;: {
+                        &quot;title&quot;: &quot;Example text:&quot;,
+                        &quot;type&quot;: &quot;string&quot;,
+                        &quot;default&quot;: &quot;Some example string&quot;
+                    }
+                }
+            }
+        }
+    }
+}
+</code></pre>
+<h3 id="defaults">Defaults</h3>
+<p>The <code>default</code> key in the schema is used to generate the default config.</p>
+<h3 id="unsupported-keys">Unsupported Keys</h3>
+<p>The following keys are part of the <a href="https://json-schema.org/draft/2020-12/release-notes.html">JSON Schema 2020-12 Draft</a> but are currently not supported by ModLoader:</p>
+<table>
+<thead>
+<tr>
+<th><p align=center>Type</p></th>
+<th><p align=center>Key</p></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Array</td>
+<td>contains</td>
+</tr>
+<tr>
+<td>Array</td>
+<td>minContains</td>
+</tr>
+<tr>
+<td>Array</td>
+<td>maxContains</td>
+</tr>
+<tr>
+<td>Array</td>
+<td>uniqueItems</td>
+</tr>
+<tr>
+<td>Object</td>
+<td>patternProperties</td>
+</tr>
+<tr>
+<td>String</td>
+<td>*format</td>
+</tr>
+</tbody>
+</table>
+<p>?&gt; The <code>format</code> key has one compatible property called <code>color</code> which is explained in more detail in the <a href="#additional-keys-and-properties">Additional Keys and Properties</a> section. If you require any of these validations, please let us know by opening an <a href="https://github.com/GodotModding/godot-mod-loader/issues">issue</a> or joining our <a href="https://discord.gg/J5AvdFK4mw">Discord</a>.</p>
+<h3 id="additional-keys-and-properties">Additional Keys and Properties</h3>
+<p>The following keys and properties are not part of the JSON Schema Draft but have been added for ease of use in ModLoader:</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Key</th>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>String</td>
+<td>format</td>
+<td>color</td>
+<td>A hexadecimal color string in ARGB format</td>
+</tr>
+</tbody>
+</table>
+<h3 id="color-example">Color Example</h3>
+<pre><code class="language-json">&quot;color&quot;: {
+    &quot;type&quot;: &quot;string&quot;,
+    &quot;title&quot;: &quot;Color Over&quot;,
+    &quot;format&quot;: &quot;color&quot;,
+    &quot;default&quot;: &quot;#f7000000&quot;
+}
+</code></pre>
+<h3 id="learn-json-schema">Learn JSON Schema</h3>
+<p>For more details on how to write JSON Schemas, we recommend checking out <a href="https://json-schema.org/understanding-json-schema/">Understanding JSON Schema</a>.</p>
+<h2 id="creating-configs">Creating Configs</h2>
+<p>Mod users can choose to create their own configs by preferably using a <a href="">Config Editor UI</a> provided by the game or a mod. If no UI is available, configs can be added by duplicating the default config file and modifying it. This is less ideal because the config is validated against the schema in the mod's manifest. Creating a valid config "by hand" requires checking the JSON Schema in the mod's manifest file.</p>
+<p>Mod config files are stored in <code>user://configs/{mod_id}/{config_name}.json</code>. If a mod has a config, there should always be the <code>default.json</code> config file.</p>
+<h2 id="applying-configs-to-your-mod">Applying Configs to Your mod</h2>
+<p>You can retrieve the current config for your mod by calling <code>ModLoaderConfig.get_current_config("your_mod_id")</code>, which returns a <code>ModConfig</code> Resource.</p>
+<p>A <code>ModConfig</code> resource contains:</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>The config name</td>
+</tr>
+<tr>
+<td>mod_id</td>
+<td>The mod_id this config belongs to</td>
+</tr>
+<tr>
+<td>schema</td>
+<td>The schema for your configs</td>
+</tr>
+<tr>
+<td>data</td>
+<td>The data this config holds</td>
+</tr>
+<tr>
+<td>save_path</td>
+<td>The path where the JSON file for this config is stored</td>
+</tr>
+<tr>
+<td>is_valid</td>
+<td>False if any data is invalid</td>
+</tr>
+</tbody>
+</table>
+<p>For mod developers, the <code>data</code> property is the most relevant. Depending on how the config selection is implemented, you might want to check if the config is valid using <code>is_valid</code>.</p>
+<p>With all this in mind, you can add something like the following code to your <code>mod_main.gd</code> <code>ready()</code> function:</p>
+<p><strong>mod_main.gd</strong></p>
+<pre><code class="language-gdscript">_ready(): 
+    # Get the current config
+    var config = ModLoaderConfig.get_current_config(&quot;your_mod_id&quot;)
+
+    # Connect to current_config_changed signal
+    ModLoader.connect(&quot;current_config_changed&quot;, self, &quot;_on_current_config_changed&quot;)
+
+    # Apply configs
+    apply_config(config)
+
+
+func apply_config(config: ModConfig) -&gt; void:
+    # Code to apply the config
+    # In this example, an 'apply_config' function is called in a different scene
+    different_scene.call_deferred(&quot;apply_config&quot;, config)
+
+
+func _on_current_config_changed(config: ModConfig) -&gt; void:
+    # Check if the config of your mod has changed!
+    if config.mod_id == &quot;your_mod_id&quot;:
+        apply_config(config)
+</code></pre>
+<p><strong>different_scene.gd</strong></p>
+<pre><code class="language-gdscript">func apply_config(config: ModConfig) -&gt; void:
+    label_select_profile.text = config.data.select_profile_text
+
+    var material_settings: Dictionary = config.data.material_settings
+
+    material.set_shader_param(&quot;animate&quot;, material_settings.animate)
+    material.set_shader_param(&quot;square_scale&quot;, material_settings.square_scale)
+    material.set_shader_param(&quot;blur_amount&quot;, material_settings.blur_amount)
+    material.set_shader_param(&quot;mix_amount&quot;, material_settings.mix_amount)
+    material.set_shader_param(&quot;color_over&quot;, Color(material_settings.color))
+</code></pre></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js"></script>
+        <script src="../../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

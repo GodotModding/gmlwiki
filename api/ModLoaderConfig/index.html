@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>ModLoaderConfig - GMLWiki</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">GMLWiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Mod Loader Api</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../ModLoaderMod/" class="dropdown-item">ModLoaderMod</a>
+</li>
+                                    
+<li>
+    <a href="../ModLoaderLog/" class="dropdown-item">ModLoaderLog</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">ModLoaderConfig</a>
+</li>
+                                    
+<li>
+    <a href="../ModLoaderDeprecated/" class="dropdown-item">ModLoaderDeprecated</a>
+</li>
+                                    
+<li>
+    <a href="../ModLoaderModManager/" class="dropdown-item">ModLoaderModManager</a>
+</li>
+                                    
+<li>
+    <a href="../ModLoaderUserProfile/" class="dropdown-item">ModLoaderUserProfile</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Guides</a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Modding</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../guides/modding/script_extensions/" class="dropdown-item">Script Extensions</a>
+</li>
+            
+<li>
+    <a href="../../guides/modding/config_json/" class="dropdown-item">Config JSON</a>
+</li>
+            
+<li>
+    <a href="../../guides/modding/decompile_games/" class="dropdown-item">Decompiling Games</a>
+</li>
+            
+<li>
+    <a href="../../guides/modding/overwriting_game_resources/" class="dropdown-item">Overwriting Game Resources</a>
+</li>
+            
+<li>
+    <a href="../../guides/modding/global_classes_and_child_nodes/" class="dropdown-item">Global Classes & Child Nodes</a>
+</li>
+            
+<li>
+    <a href="../../guides/modding/creating_mod_config_schema/" class="dropdown-item">Creating a Mod Config Schema</a>
+</li>
+            
+<li>
+    <a href="../../guides/modding/mod_structure/" class="dropdown-item">Mod Structure</a>
+</li>
+            
+<li>
+    <a href="../../guides/modding/mod_files/" class="dropdown-item">Mod Files</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Integration</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../guides/integration/cli_args/" class="dropdown-item">CLI Args</a>
+</li>
+            
+<li>
+    <a href="../../guides/integration/godot_steam/" class="dropdown-item">GodotSteam</a>
+</li>
+            
+<li>
+    <a href="../../guides/integration/mod_loader_options/" class="dropdown-item">Mod Loader Options</a>
+</li>
+            
+<li>
+    <a href="../../guides/integration/godot_project_setup/" class="dropdown-item">Godot Project Setup</a>
+</li>
+            
+<li>
+    <a href="../../guides/integration/mod_loader_self_setup/" class="dropdown-item">Mod Loader Self Setup</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Versions & Releases</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../misc/upcoming_features/" class="dropdown-item">Upcoming Features</a>
+</li>
+                                    
+<li>
+    <a href="../../misc/breaking_changes/" class="dropdown-item">Breaking Changes</a>
+</li>
+                                    
+<li>
+    <a href="../../misc/known_issues/" class="dropdown-item">Known Issues</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../ModLoaderLog/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../ModLoaderDeprecated/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#modloaderconfig" class="nav-link">ModLoaderConfig</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#methods-overview" class="nav-link">Methods Overview</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#methods" class="nav-link">Methods</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#constants-descriptions" class="nav-link">Constants Descriptions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<!-- top of file anchor -->
+<p><a name="top"></a></p>
+<h1 id="modloaderconfig">ModLoaderConfig</h1>
+<p>This class provides functionality for working with per-mod Configurations.</p>
+<h2 id="methods-overview">Methods Overview</h2>
+<!-- should this be turned into an HTML table to avoid creating huge md tables? -->
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#create_config"><code>create_config</code></a></td>
+<td>Creates a new configuration for a mod.</td>
+</tr>
+<tr>
+<td><a href="#update_config"><code>update_config</code></a></td>
+<td>Updates an existing ModConfig object with new data and save the config file.</td>
+</tr>
+<tr>
+<td><a href="#delete_config"><code>delete_config</code></a></td>
+<td>Deletes a ModConfig object and performs cleanup operations.</td>
+</tr>
+<tr>
+<td><a href="#set_current_config"><code>set_current_config</code></a></td>
+<td>Sets the current configuration of a mod to the specified configuration.</td>
+</tr>
+<tr>
+<td><a href="#get_config_schema"><code>get_config_schema</code></a></td>
+<td>Returns the schema for the specified mod id. If no configuration file exists for the mod, an empty dictionary is returned.</td>
+</tr>
+<tr>
+<td><a href="#get_schema_for_prop"><code>get_schema_for_prop</code></a></td>
+<td>Retrieves the schema for a specific property key.</td>
+</tr>
+<tr>
+<td><a href="#get_mods_with_config"><code>get_mods_with_config</code></a></td>
+<td>Retrieves an Array of mods that have configuration files.</td>
+</tr>
+<tr>
+<td><a href="#get_configs"><code>get_configs</code></a></td>
+<td>Retrieves the configurations dictionary for a given mod ID.</td>
+</tr>
+<tr>
+<td><a href="#get_config"><code>get_config</code></a></td>
+<td>Retrieves the configuration for a specific mod and configuration name. Returns the configuration as a ModConfig object or null if not found.</td>
+</tr>
+<tr>
+<td><a href="#get_default_config"><code>get_default_config</code></a></td>
+<td>Retrieves the default configuration for a specified mod ID.</td>
+</tr>
+<tr>
+<td><a href="#get_current_config"><code>get_current_config</code></a></td>
+<td>Retrieves the currently active configuration for a specific mod</td>
+</tr>
+<tr>
+<td><a href="#get_current_config_name"><code>get_current_config_name</code></a></td>
+<td>Retrieves the name of the current configuration for a specific mod Returns an empty string if no configuration exists for the mod or the user profile has not been loaded</td>
+</tr>
+</tbody>
+</table>
+<h2 id="methods">Methods</h2>
+<h3 id="create_config">create_config</h3>
+<pre><code class="language-gdscript">func create_config(mod_id: String, config_name: String, config_data: Dictionary) -&gt; ModConfig
+</code></pre>
+<p>Creates a new configuration for a mod.</p>
+<p>Parameters:
+- mod_id (String): The ID of the mod for which the configuration is being created.
+- config_name (String): The name of the configuration.
+- config_data (Dictionary): The configuration data to be stored in the new configuration.</p>
+<p>Returns:
+- ModConfig: The created ModConfig object if successful, or null otherwise.</p>
+<h3 id="update_config">update_config</h3>
+<pre><code class="language-gdscript">func update_config(config: ModConfig) -&gt; ModConfig
+</code></pre>
+<p>Updates an existing ModConfig object with new data and save the config file.</p>
+<p>Parameters:
+- config (ModConfig): The ModConfig object to be updated.</p>
+<p>Returns:
+- ModConfig: The updated ModConfig object if successful, or null otherwise.</p>
+<h3 id="delete_config">delete_config</h3>
+<pre><code class="language-gdscript">func delete_config(config: ModConfig) -&gt; bool
+</code></pre>
+<p>Deletes a ModConfig object and performs cleanup operations.</p>
+<p>Parameters:
+- config (ModConfig): The ModConfig object to be deleted.</p>
+<p>Returns:
+- bool: True if the deletion was successful, False otherwise.</p>
+<h3 id="set_current_config">set_current_config</h3>
+<pre><code class="language-gdscript">func set_current_config(config: ModConfig) -&gt; void
+</code></pre>
+<p>Sets the current configuration of a mod to the specified configuration.</p>
+<p>Parameters:
+- config (ModConfig): The ModConfig object to be set as current config.</p>
+<h3 id="get_config_schema">get_config_schema</h3>
+<pre><code class="language-gdscript">func get_config_schema(mod_id: String) -&gt; Dictionary
+</code></pre>
+<p>Returns the schema for the specified mod id. If no configuration file exists for the mod, an empty dictionary is returned.</p>
+<p>Parameters:
+- mod_id (String): the ID of the mod to get the configuration schema for</p>
+<p>Returns:
+- A dictionary representing the schema for the mod's configuration file</p>
+<h3 id="get_schema_for_prop">get_schema_for_prop</h3>
+<pre><code class="language-gdscript">func get_schema_for_prop(config: ModConfig, prop: String) -&gt; Dictionary
+</code></pre>
+<p>Retrieves the schema for a specific property key.</p>
+<p>Parameters:
+- config (ModConfig): The ModConfig object from which to retrieve the schema.
+- prop (String): The property key for which to retrieve the schema. e.g. <code>parentProp.childProp.nthChildProp</code> or <code>propKey</code></p>
+<p>Returns:
+- Dictionary: The schema dictionary for the specified property.</p>
+<h3 id="get_mods_with_config">get_mods_with_config</h3>
+<pre><code class="language-gdscript">func get_mods_with_config() -&gt; Array
+</code></pre>
+<p>Retrieves an Array of mods that have configuration files.</p>
+<p>Returns:
+- An Array containing the mod data of mods that have configuration files.</p>
+<h3 id="get_configs">get_configs</h3>
+<pre><code class="language-gdscript">func get_configs(mod_id: String) -&gt; Dictionary
+</code></pre>
+<p>Retrieves the configurations dictionary for a given mod ID.</p>
+<p>Parameters:
+- mod_id: The ID of the mod for which to retrieve the configurations.</p>
+<p>Returns:
+- A dictionary containing the configurations for the specified mod. If the mod ID is invalid or no configurations are found, an empty dictionary is returned.</p>
+<h3 id="get_config">get_config</h3>
+<pre><code class="language-gdscript">func get_config(mod_id: String, config_name: String) -&gt; ModConfig
+</code></pre>
+<p>Retrieves the configuration for a specific mod and configuration name. Returns the configuration as a ModConfig object or null if not found.</p>
+<p>Parameters:
+- mod_id (String): The ID of the mod to retrieve the configuration for.
+- config_name (String): The name of the configuration to retrieve.</p>
+<p>Returns:
+- The configuration as a ModConfig object or null if not found.</p>
+<h3 id="get_default_config">get_default_config</h3>
+<pre><code class="language-gdscript">func get_default_config(mod_id: String) -&gt; ModConfig
+</code></pre>
+<p>Retrieves the default configuration for a specified mod ID.</p>
+<p>Parameters:
+- mod_id: The ID of the mod for which to retrieve the default configuration.</p>
+<p>Returns:
+- The ModConfig object representing the default configuration for the specified mod. If the mod ID is invalid or no configuration is found, returns null.</p>
+<h3 id="get_current_config">get_current_config</h3>
+<pre><code class="language-gdscript">func get_current_config(mod_id: String) -&gt; ModConfig
+</code></pre>
+<p>Retrieves the currently active configuration for a specific mod</p>
+<p>Parameters:
+- mod_id (String): The ID of the mod to retrieve the configuration for.</p>
+<p>Returns:
+- The configuration as a ModConfig object or null if not found.</p>
+<h3 id="get_current_config_name">get_current_config_name</h3>
+<pre><code class="language-gdscript">func get_current_config_name(mod_id: String) -&gt; String
+</code></pre>
+<p>Retrieves the name of the current configuration for a specific mod Returns an empty string if no configuration exists for the mod or the user profile has not been loaded</p>
+<p>Parameters:
+- mod_id (String): The ID of the mod to retrieve the current configuration name for.</p>
+<p>Returns:
+- The currently active configuration name for the given mod id or an empty string if not found.</p>
+<h2 id="constants-descriptions">Constants Descriptions</h2>
+<h5 id="default_config_name">DEFAULT_CONFIG_NAME</h5>
+<pre><code class="language-gdscript">const DEFAULT_CONFIG_NAME: String = &quot;default&quot;
+</code></pre>
+<h5 id="log_name">LOG_NAME</h5>
+<pre><code class="language-gdscript">const LOG_NAME: String = &quot;ModLoader:Config&quot;
+</code></pre></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

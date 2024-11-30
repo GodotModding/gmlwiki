@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Mod Loader Options - GMLWiki</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../../css/brands.min.css" rel="stylesheet">
+        <link href="../../../css/solid.min.css" rel="stylesheet">
+        <link href="../../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">GMLWiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Mod Loader Api</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../api/ModLoaderMod/" class="dropdown-item">ModLoaderMod</a>
+</li>
+                                    
+<li>
+    <a href="../../../api/ModLoaderLog/" class="dropdown-item">ModLoaderLog</a>
+</li>
+                                    
+<li>
+    <a href="../../../api/ModLoaderConfig/" class="dropdown-item">ModLoaderConfig</a>
+</li>
+                                    
+<li>
+    <a href="../../../api/ModLoaderDeprecated/" class="dropdown-item">ModLoaderDeprecated</a>
+</li>
+                                    
+<li>
+    <a href="../../../api/ModLoaderModManager/" class="dropdown-item">ModLoaderModManager</a>
+</li>
+                                    
+<li>
+    <a href="../../../api/ModLoaderUserProfile/" class="dropdown-item">ModLoaderUserProfile</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Guides</a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Modding</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../modding/script_extensions/" class="dropdown-item">Script Extensions</a>
+</li>
+            
+<li>
+    <a href="../../modding/config_json/" class="dropdown-item">Config JSON</a>
+</li>
+            
+<li>
+    <a href="../../modding/decompile_games/" class="dropdown-item">Decompiling Games</a>
+</li>
+            
+<li>
+    <a href="../../modding/overwriting_game_resources/" class="dropdown-item">Overwriting Game Resources</a>
+</li>
+            
+<li>
+    <a href="../../modding/global_classes_and_child_nodes/" class="dropdown-item">Global Classes & Child Nodes</a>
+</li>
+            
+<li>
+    <a href="../../modding/creating_mod_config_schema/" class="dropdown-item">Creating a Mod Config Schema</a>
+</li>
+            
+<li>
+    <a href="../../modding/mod_structure/" class="dropdown-item">Mod Structure</a>
+</li>
+            
+<li>
+    <a href="../../modding/mod_files/" class="dropdown-item">Mod Files</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Integration</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../cli_args/" class="dropdown-item">CLI Args</a>
+</li>
+            
+<li>
+    <a href="../godot_steam/" class="dropdown-item">GodotSteam</a>
+</li>
+            
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Mod Loader Options</a>
+</li>
+            
+<li>
+    <a href="../godot_project_setup/" class="dropdown-item">Godot Project Setup</a>
+</li>
+            
+<li>
+    <a href="../mod_loader_self_setup/" class="dropdown-item">Mod Loader Self Setup</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Versions & Releases</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../misc/upcoming_features/" class="dropdown-item">Upcoming Features</a>
+</li>
+                                    
+<li>
+    <a href="../../../misc/breaking_changes/" class="dropdown-item">Breaking Changes</a>
+</li>
+                                    
+<li>
+    <a href="../../../misc/known_issues/" class="dropdown-item">Known Issues</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../godot_steam/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../godot_project_setup/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#mod-loader-options" class="nav-link">Mod Loader Options</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#mod-loader-options_1" class="nav-link">Mod Loader Options</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#available-options" class="nav-link">Available Options</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#profiles" class="nav-link">Profiles</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#feature-override-options-feature-tags" class="nav-link">Feature Override Options (Feature Tags)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="mod-loader-options">Mod Loader Options</h1>
+<h2 id="mod-loader-options_1">Mod Loader Options</h2>
+<p>For easy configuration of the Mod Loader, you can use the options resource. Navigate to <code>res://addons/mod_loader/options</code> and double-click <code>options.tres</code> to open the resource editor.</p>
+<p><img alt="" src="../_media/resource_editor.png" /></p>
+<h2 id="available-options">Available Options</h2>
+<table>
+<thead>
+<tr>
+<th>Option Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>enable_mods</td>
+<td>Enable or disable loading of mods.</td>
+</tr>
+<tr>
+<td>log_level</td>
+<td>Set verbosity level for logs.</td>
+</tr>
+<tr>
+<td>locked_mods</td>
+<td>List of mods that cannot be disabled or enabled in a user profile.</td>
+</tr>
+<tr>
+<td>disabled_mods</td>
+<td>List of mods not loaded on game restart.</td>
+</tr>
+<tr>
+<td>allow_modloader_autoloads_anywhere</td>
+<td>If true, ModLoaderStore and ModLoader Autoloads do not have to be the first Autoloads</td>
+</tr>
+<tr>
+<td>steam_workshop_enabled</td>
+<td>If true, ModLoader loads mod ZIPs from Steam workshop directory instead of default.</td>
+</tr>
+<tr>
+<td>override_path_to_mods</td>
+<td>Overrides path from which mods are loaded (default: "res://mods").</td>
+</tr>
+<tr>
+<td>override_path_to_configs</td>
+<td>Overrides path from which mod configurations are loaded (default: "res://configs").</td>
+</tr>
+<tr>
+<td>override_path_to_workshop</td>
+<td>Overrides path to Steam workshop directory, for loading mods from there (editor use).</td>
+</tr>
+<tr>
+<td>ignore_deprecated_errors</td>
+<td>If true, deprecated functions trigger warning instead of fatal error.</td>
+</tr>
+<tr>
+<td>ignored_mod_names_in_log</td>
+<td>List of mods whose messages should be ignored in the log.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="profiles">Profiles</h2>
+<p>You can find predefined option profiles in <code>res://addons/mod_loader/options/profiles</code>. These resource files can be dragged and dropped into the value field of a specific feature flag entry.</p>
+<p><img alt="" src="../_media/profile_tree.png" />
+<img alt="" src="../_media/profile_dragging.gif" /></p>
+<p>You can create your own option profiles by saving a <code>ModLoaderOptionsProfile</code> resource. One way to do this is to duplicate one of the existing profiles:</p>
+<p>Right-click -&gt; Duplicate...</p>
+<p><img alt="" src="../_media/profile_duplicate.png" /></p>
+<p>Give it a new name</p>
+<p><img alt="" src="../_media/profile_duplicate_name.png" /></p>
+<p>Now you can edit it to your liking by double-clicking it in the file dialog</p>
+<p><img alt="" src="../_media/profile_edit_dialog.png" /></p>
+<h2 id="feature-override-options-feature-tags">Feature Override Options (Feature Tags)</h2>
+<p><em>Introduced in v6.2.0</em></p>
+<p>If you have a specific feature tag that should use different settings, you can set them as a key-value pair here. The most common use case is to use different settings when in the editor - using the <code>editor</code> tag - that's why it is already set as an override by default.</p>
+<p>Another use case is managing multiple release platforms - Steam and others. In that case, you would define a custom feature tag for steam, add it as override and enable steam workshop in the corresponding options. Of course you can also use steam workshop as default and disable it otherwise though.</p>
+<p>To add another override, add a new entry to the dictionary.
+- Select <code>String</code> as type for the key and enter one of <a href="https://docs.godotengine.org/en/3.5/tutorials/export/feature_tags.html">Godot's feature tags</a> or one you have defined yourself.
+- Select <code>Resource</code> as type for the value and drag one of the available <code>ModLoaderOptionsProfile</code> resources into the field.</p>
+<p>?&gt; Be careful with "overlapping" feature tags. Since dictionaries are not ordered, we cannot guarantee the order of two overrides being applied. If, for example both Windows and release define an override, the result is not predictable.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js"></script>
+        <script src="../../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

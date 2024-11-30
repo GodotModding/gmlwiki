@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Mod Structure - GMLWiki</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../../css/brands.min.css" rel="stylesheet">
+        <link href="../../../css/solid.min.css" rel="stylesheet">
+        <link href="../../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">GMLWiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Mod Loader Api</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../api/ModLoaderMod/" class="dropdown-item">ModLoaderMod</a>
+</li>
+                                    
+<li>
+    <a href="../../../api/ModLoaderLog/" class="dropdown-item">ModLoaderLog</a>
+</li>
+                                    
+<li>
+    <a href="../../../api/ModLoaderConfig/" class="dropdown-item">ModLoaderConfig</a>
+</li>
+                                    
+<li>
+    <a href="../../../api/ModLoaderDeprecated/" class="dropdown-item">ModLoaderDeprecated</a>
+</li>
+                                    
+<li>
+    <a href="../../../api/ModLoaderModManager/" class="dropdown-item">ModLoaderModManager</a>
+</li>
+                                    
+<li>
+    <a href="../../../api/ModLoaderUserProfile/" class="dropdown-item">ModLoaderUserProfile</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Guides</a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Modding</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../script_extensions/" class="dropdown-item">Script Extensions</a>
+</li>
+            
+<li>
+    <a href="../config_json/" class="dropdown-item">Config JSON</a>
+</li>
+            
+<li>
+    <a href="../decompile_games/" class="dropdown-item">Decompiling Games</a>
+</li>
+            
+<li>
+    <a href="../overwriting_game_resources/" class="dropdown-item">Overwriting Game Resources</a>
+</li>
+            
+<li>
+    <a href="../global_classes_and_child_nodes/" class="dropdown-item">Global Classes & Child Nodes</a>
+</li>
+            
+<li>
+    <a href="../creating_mod_config_schema/" class="dropdown-item">Creating a Mod Config Schema</a>
+</li>
+            
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Mod Structure</a>
+</li>
+            
+<li>
+    <a href="../mod_files/" class="dropdown-item">Mod Files</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Integration</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../integration/cli_args/" class="dropdown-item">CLI Args</a>
+</li>
+            
+<li>
+    <a href="../../integration/godot_steam/" class="dropdown-item">GodotSteam</a>
+</li>
+            
+<li>
+    <a href="../../integration/mod_loader_options/" class="dropdown-item">Mod Loader Options</a>
+</li>
+            
+<li>
+    <a href="../../integration/godot_project_setup/" class="dropdown-item">Godot Project Setup</a>
+</li>
+            
+<li>
+    <a href="../../integration/mod_loader_self_setup/" class="dropdown-item">Mod Loader Self Setup</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Versions & Releases</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../misc/upcoming_features/" class="dropdown-item">Upcoming Features</a>
+</li>
+                                    
+<li>
+    <a href="../../../misc/breaking_changes/" class="dropdown-item">Breaking Changes</a>
+</li>
+                                    
+<li>
+    <a href="../../../misc/known_issues/" class="dropdown-item">Known Issues</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../creating_mod_config_schema/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../mod_files/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#mod-structure" class="nav-link">Mod Structure</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#editor" class="nav-link">Editor</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#zips" class="nav-link">ZIPs</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#import" class="nav-link">.import</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="mod-structure">Mod Structure</h1>
+<h2 id="editor">Editor</h2>
+<p>When developing mods in Godot, create a folder named mods-unpacked and add your mods there.</p>
+<p>Mod folder names must follow the convention of <code>{AuthorName}-{ModName}</code>:</p>
+<pre><code>res://
+└───mods-unpacked
+    └───Author-ModName
+        ├───mod_main.gd
+        └───manifest.json
+</code></pre>
+<p><em>See <a href="../mod_files/">Mod Files</a> for info on what those files do.</em></p>
+<p>If you have any dependencies, unzip them and add them to res://mods-unpacked.</p>
+<p>?&gt; A bug in the Godot editor prevents using zipped and unpacked mods at the same time (see <a href="#zips-in-the-editor">ZIPs in the Editor</a> below).</p>
+<h2 id="zips">ZIPs</h2>
+<p>Mod ZIPs should have the structure shown below. The structure matches the structure of the filesystem when developing mods in the Godot editor.</p>
+<p>Mod users will add their ZIPs to a folder named mods in the root.</p>
+<p>ZIP names must follow the convention of <code>namespace-modname-version.zip</code> e.g. <code>GodotModding-CoolMod-1.2.3.zip</code>.</p>
+<pre><code>yourmod.zip
+├───.import
+└───mods-unpacked
+    └───Author-ModName
+        ├───mod_main.gd
+        └───manifest.json
+</code></pre>
+<h3 id="zips-in-the-editor">ZIPs in the Editor</h3>
+<p>Godot has a bug that, in short, means you can't use both unpacked mods (in res://mods-unpacked) and zipped mods (in res://mods) in the Editor. If you need to use a mod as a dependency, please unzip it and add it to your project.</p>
+<p>You can still use mod ZIPs in the editor, eg. if you want to test your zipped mod. They will load as expected, but nothing from res://mods-unpacked will be loaded either.</p>
+<h2 id="import">.import</h2>
+<p>Godot projects save a version of custom assets, such as PNGs, to a top-level directory called .import (eg. PNGs are saved as <em>.import/filename.<a href="https://docs.godotengine.org/en/stable/classes/class_streamtexture.html">stex</a></em>). Assets are streamed from the files in this folder, rather than from the asset in the file system.</p>
+<h3 id="distribution">Distribution</h3>
+<p>Mod ZIPs need to include any custom assets from the .import folder.</p>
+<p>Like in the editor, these go in a top-level directory called .import in your ZIP.</p>
+<p>Your mod ZIP's .import folder <strong>should only include your custom assets</strong>. It should <strong><strong>not</strong></strong> include any vanilla assets.</p>
+<h3 id="tips">Tips</h3>
+<p>It's highly recommended that you prefix all custom assets with your <code>modname_*</code>, eg <code>modname_weapon1.png</code>. This makes it much easier to find your custom assets in <em>.import</em>, when building your mod ZIP or adding files to a mod's repo.</p>
+<p>If you move assets around in the filesystem, Godot won't remove the old files from <code>.import</code>, which can make it bloated with unused, unreferenced files. To clean up these unused files, delete everything in .import and run the game again. This will re-create only the files that are actually used.</p>
+<p>Custom assets can also be identified by sorting by date.</p>
+<h3 id="notes">Notes</h3>
+<p>If you want to rename existing assets to include a <code>modname_*</code> prefix (as per <a href="#tips">Tips</a> above), you'll need to do two things:
+1. Rename the files themselves.
+    - Windows has a "PowerToy" (<a href="https://learn.microsoft.com/en-us/windows/powertoys/">download</a>/<a href="https://learn.microsoft.com/en-us/windows/powertoys/">repo</a>) called <a href="https://learn.microsoft.com/en-us/windows/powertoys/powerrename">Power Rename</a> that will let you do this quickly, and it <a href="https://learn.microsoft.com/en-us/windows/powertoys/powerrename#regular-expressions">supports regex</a>.
+    - To rename with Power Rename:
+        - Enable the "Use regular expressions" option
+        - Search string: <code>([A-z0-9_!-]+).png</code>
+        - Replace string: <code>modname_$1.png</code>
+2. Update the resource paths.
+    - You can use VS Code to do this, as its search and replace also supports regex.</p>
+<p>For (2), here's some example regex to replace PNG filenames in .tres files. It supports these characters in file and folder names: <code>A-z</code>, <code>0-9</code>, and <code>_</code>. See what it's doing on <a href="https://regex101.com/r/lJscaf/1">regex101.com</a>.</p>
+<p>Search:</p>
+<pre><code class="language-regex">\[ext_resource path=&quot;res:\/\/mods-unpacked\/AuthorName-ModName\/([A-z0-9_!-\/]+)\/([A-z0-9_!-]+).png
+</code></pre>
+<p>Replace:</p>
+<pre><code class="language-gdscript">[ext_resource path=&quot;res://mods-unpacked/AuthorName-ModName/$1/modname_$2.png
+</code></pre>
+<hr />
+<div align="center">
+  <b>Next:</b> <a href="#/guides/modding/mod_files.md">Mod Files</a>
+</div></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js"></script>
+        <script src="../../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
