@@ -17,7 +17,7 @@ The ModLoader comes with a helper script to properly install itself without havi
     To do this, [GodotPckTool](https://github.com/hhyyrylainen/GodotPckTool) is used.
     This approach is currently only supported on Windows and with games that have a .pck file that is not embedded.
     Using this method allows us to add the ModLoader at the top of the autoload chain.
-    This is important, because it allows mods to add [Script Extensions](docs/api/ModLoaderMod.md#install_script_extension) to autoloads.
+    This is important, because it allows mods to add [Script Extensions](../../api/ModLoaderMod.md#install_script_extension) to autoloads.
 
 - **Use Godot's `override.cfg` functionality to override the game project settings**
     This is the ideal solution if mods for a game don't require extensions of autoloads.
@@ -37,5 +37,7 @@ Right-click the game in Steam > Click Manage > Browse Local Files. This will ope
 
 **User Data:**
 - **Windows:** `%appdata%\Godot\app_userdata\<game name>`
+
 - **Linux:** `~/.local/share/godot/app_userdata/<game name>`
+
 - **Mac:** `~/Library/Application Support/Godot/app_userdata/<game name>`

@@ -67,7 +67,7 @@ func warning(message: String, mod_name: String, only_once: bool = false) -> void
 ```
 Logs the message and pushes a warning. Prefixed WARNING.
 
-?> Logged with verbosity level at or above warning ([-v](/reference/cli_args)).
+?> Logged with verbosity level at or above warning ([-v](../guides/integration/cli_args.md)).
 
 Parameters:
 - message (String): The message to be logged as a warning.
@@ -81,7 +81,7 @@ func info(message: String, mod_name: String, only_once: bool = false) -> void
 ```
 Logs the message. Prefixed INFO.
 
-?> Logged with verbosity level at or above info ([-vv](/reference/cli_args)).
+?> Logged with verbosity level at or above info ([-vv](../guides/integration/cli_args.md)).
 
 Parameters:
 - message (String): The message to be logged as an information.
@@ -95,7 +95,7 @@ func success(message: String, mod_name: String, only_once: bool = false) -> void
 ```
 Logs the message. Prefixed SUCCESS.
 
-?> Logged with verbosity level at or above info ([-vv](/reference/cli_args)).
+?> Logged with verbosity level at or above info ([-vv](../guides/integration/cli_args.md)).
 
 Parameters:
 - message (String): The message to be logged as a success.
@@ -109,7 +109,7 @@ func debug(message: String, mod_name: String, only_once: bool = false) -> void
 ```
 Logs the message. Prefixed DEBUG.
 
-?> Logged with verbosity level at or above debug ([-vvv](/reference/cli_args)).
+?> Logged with verbosity level at or above debug ([-vvv](../guides/integration/cli_args.md)).
 
 Parameters:
 - message (String): The message to be logged as a debug.
@@ -123,7 +123,7 @@ func debug_json_print(message: String, json_printable, mod_name: String, only_on
 ```
 Logs the message formatted with [method JSON.print]. Prefixed DEBUG.
 
-?> Logged with verbosity level at or above debug ([-vvv](/reference/cli_args)).
+?> Logged with verbosity level at or above debug ([-vvv](../guides/integration/cli_args.md)).
 
 Parameters:
 - message (String): The message to be logged as a debug.

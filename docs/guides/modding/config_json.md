@@ -49,12 +49,11 @@ The following keys are part of the [JSON Schema 2020-12 Draft](https://json-sche
 ### Additional Keys and Properties
 The following keys and properties are not part of the JSON Schema Draft but have been added for ease of use in ModLoader:
 
-| Type   | Key    | Property | Description                               | Example                |
-|--------|--------|----------|-------------------------------------------|------------------------|
-| String | format | color    | A hexadecimal color string in ARGB format | [here](#color_example) |
+| Type   | Key    | Property | Description                               |
+|--------|--------|----------|-------------------------------------------|
+| String | format | color    | A hexadecimal color string in ARGB format |
 
 
-<!-- having this right under the table seems redundant... -->
 ### Color Example
 ```json
 "color": {

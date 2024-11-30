@@ -6,4 +6,4 @@
 A generalized Mod Loader for GDScript-based Godot games.
 
 [Discord](https://discord.gg/J5AvdFK4mw)
-[Get Started](README)
+[Get Started](index.md)

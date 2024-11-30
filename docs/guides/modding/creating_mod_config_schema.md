@@ -31,7 +31,7 @@ To define your mod's configuration schema, you need to provide a JSON-Schema wit
 ### Understanding JSON-Schema
 Before diving into creating your mod's configuration schema, it's essential to understand JSON-Schemas. JSON-Schema is a powerful tool for validating and describing the structure of JSON data. To get started, we recommend reading the [Understanding JSON Schema](https://json-schema.org/understanding-json-schema) documentation. Use the introductory content and type pages as references when crafting your schema.
 
-ModLoader supports most of the keys described in the [JSON Schema 2020-12 Draft](https://json-schema.org/draft/2020-12/release-notes.html). To view a complete list of unsupported and additional keys, check out the [Config JSON](/reference/config_json) section of our docs.
+ModLoader supports most of the keys described in the [JSON Schema 2020-12 Draft](https://json-schema.org/draft/2020-12/release-notes.html). To view a complete list of unsupported and additional keys, check out the [Config JSON](config_json.md) section of our docs.
 
 
 ### Writing Your Config Schema
@@ -110,14 +110,14 @@ For string values, you can use additional properties like `"minLength"` and `"ma
 ```
 The `"format: "color"` is a special case not covered in the [JSON Schema Draft](https://json-schema.org/draft/2020-12/release-notes.html). We've added it to Mod Loader for common color use cases. You can specify a default value in the ARGB format.
 
-For additional keys and properties, refer to the [Config JSON](/reference/config_json) section of our docs.
+For additional keys and properties, refer to the [Config JSON](config_json.md) section of our docs.
 
 
 ## Conclusion
 ModLoader will recognize the schema and automatically generate a default config based on it. Depending on the game, you should see the default config in the UI.
 
 For more information about Mod Configs visit the following sides:
-* [Config JSON](/reference/config_json)
-* [ModLoaderConfig]()
+* [Config JSON](config_json.md)
+* [ModLoaderConfig](../../api/ModLoaderConfig.md)
 
 For further assistance, you can join us on [Discord](ttps://discord.gg/J5AvdFK4mw) or open a new [issue](https://github.com/GodotModding/godot-mod-loader/issues).

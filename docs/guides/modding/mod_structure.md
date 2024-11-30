@@ -10,7 +10,7 @@ res://
         ├───mod_main.gd
         └───manifest.json
 ```
-*See [Mod Files](guides/modding/mod_files.md) for info on what those files do.*
+*See [Mod Files](mod_files.md) for info on what those files do.*
 
 If you have any dependencies, unzip them and add them to res://mods-unpacked.
 
