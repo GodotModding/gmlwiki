@@ -15,7 +15,8 @@ Importantly, it provides methods to change existing scripts, scenes, and resourc
 6. Use the [API Methods](api/mod_loader_api.md)
 
 ## Mod user
-Check if the Godot ModLoader is already integrated into the game you want to mod. If this is not the case then [set up the Godot ModLoader](guides/integration/godot_project_setup.md)
+Check if the Godot ModLoader is already integrated into the game you want to mod.
+If this is not the case then [set up the Godot ModLoader](guides/integration/mod_loader_self_setup.md)
 
 ## Game Developer
 [Add the Godot ModLoader to your project](guides/integration/godot_project_setup.md), feel free to join our [Discord](https://discord.gg/J5AvdFK4mw) for any support!
