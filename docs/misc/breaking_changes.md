@@ -22,11 +22,11 @@ See the [Deprecated](#deprecated) section below for the full list of changes.
 
 ### Public Classes (API)
 There are several new classes in the `api` directory, which is where all the publicly accessible methods are. These replace using `ModLoader.*` and `ModLoaderUtils.*` (see [Deprecated](#deprecated) below). The main classes you'll use are:
-* [ModLoaderMod](api/ModLoaderMod.md) - Everything related to mod setup, such as [`install_script_extension()`](api/ModLoaderMod.md?id=install_script_extension).
-* [ModLoaderLog](api/ModLoaderLog.md) - All logging methods.
+* [ModLoaderMod](../api/ModLoaderMod.md) - Everything related to mod setup, such as [`install_script_extension()`](../api/ModLoaderMod.md?id=install_script_extension).
+* [ModLoaderLog](../api/ModLoaderLog.md) - All logging methods.
 
 ### Internal Classes
-Some mods directly accessed variables and constants on `ModLoader`, for example `mod_data` or `UNPACKED_DIR`. Data such as this is now considered internal, and should not be accessed directly (this includes any method/variable from the `ModLoader` or `ModLoaderStore` classes). Instead, we have introduced new methods in [`ModLoaderMod`](api/ModLoaderMod.md) to access these variables, such as [`ModLoaderMod.get_unpacked_dir()`](api/ModLoaderMod.md?id=get_unpacked_dir) and [`ModLoaderMod.get_mod_data_all()`](api/ModLoaderMod.md?id=get_mod_data_all).
+Some mods directly accessed variables and constants on `ModLoader`, for example `mod_data` or `UNPACKED_DIR`. Data such as this is now considered internal, and should not be accessed directly (this includes any method/variable from the `ModLoader` or `ModLoaderStore` classes). Instead, we have introduced new methods in [`ModLoaderMod`](../api/ModLoaderMod.md) to access these variables, such as [`ModLoaderMod.get_unpacked_dir()`](../api/ModLoaderMod.md?id=get_unpacked_dir) and [`ModLoaderMod.get_mod_data_all()`](../api/ModLoaderMod.md?id=get_mod_data_all).
 
 ### Configs
 * The value for `compatible_mod_loader_version` no longer accepts a string. It needs to be passed an array instead.
@@ -76,7 +76,7 @@ New validation may make existing mods invalid:
 * ModLoader has been moved to the `res://addons/` directory.
   * The new location is autoloaded in the same way the old one was, with the same file (*mod_loader.gd*).
   * Nothing else needs to change in your autoloads. There are other new classes, but they'll be loaded automatically.
-* Logging in mods is now handled via the [ModLoaderUtils](api/ModLoaderUtils.md) class, which provides a host of new logging options.
+* Logging in mods is now handled via the ModLoaderUtils class, which provides a host of new logging options.
 
 ### Renamed Methods
 | Old (Search)        | New (Replace)              |

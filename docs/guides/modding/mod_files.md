@@ -4,7 +4,7 @@ Mods you create must have the following 2 files:
 - **manifest.json** - Meta data for your mod
 
 ## mod_main.gd
-*See [ModLoaderApi](api/ModLoaderApi.md) for more info*
+*See [ModLoaderApi](../../api/mod_loader_api.md) for more info*
 
 ```gdscript
 extends Node

@@ -1,0 +1,30 @@
+site_name: GMLWiki
+nav:
+  - Home: index.md
+  - Mod Loader Api:
+    - ModLoaderMod: api/ModLoaderMod.md
+    - ModLoaderLog: api/ModLoaderLog.md
+    - ModLoaderConfig: api/ModLoaderConfig.md
+    - ModLoaderDeprecated: api/ModLoaderDeprecated.md
+    - ModLoaderModManager: api/ModLoaderModManager.md
+    - ModLoaderUserProfile: api/ModLoaderUserProfile.md
+  - Guides:
+      - Modding:
+        - Script Extensions: guides/modding/script_extensions.md
+        - Config JSON: guides/modding/config_json.md
+        - Decompiling Games: guides/modding/decompile_games.md
+        - Overwriting Game Resources: guides/modding/overwriting_game_resources.md
+        - Global Classes & Child Nodes: guides/modding/global_classes_and_child_nodes.md
+        - Creating a Mod Config Schema: guides/modding/creating_mod_config_schema.md
+        - Mod Structure: guides/modding/mod_structure.md
+        - Mod Files: guides/modding/mod_files.md
+      - Integration:
+        - CLI Args: guides/integration/cli_args.md
+        - GodotSteam: guides/integration/godot_steam.md
+        - Mod Loader Options: guides/integration/mod_loader_options.md
+        - Godot Project Setup: guides/integration/godot_project_setup.md
+        - Mod Loader Self Setup: guides/integration/mod_loader_self_setup.md
+  - Versions & Releases:
+    - Upcoming Features: misc/upcoming_features.md
+    - Breaking Changes: misc/breaking_changes.md
+    - Known Issues: misc/known_issues.md
