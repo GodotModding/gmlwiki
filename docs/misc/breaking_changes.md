@@ -33,7 +33,8 @@ Some mods directly accessed variables and constants on `ModLoader`, for example 
 * The `config_defaults` field in manifest.json has been removed. It is no longer used for specifying default configuration values.
 * A new field called `config_schema` has been introduced in manifest.json. This field allows you to specify a JSONSchema for your Mod Configuration. JSONSchema provides a way to define the structure and validation rules for your configuration.
 
-!> There is currently no fallback mechanism for migrating old configurations to the new system. You will need to update your mod to adapt to the new configuration structure.
+???+ note 
+      There is currently no fallback mechanism for migrating old configurations to the new system. You will need to update your mod to adapt to the new configuration structure.
 
 ### Others
 * Fixed a bug in the `mod_id` validation where it was possible to create a `mod_id` with fewer than 7 characters.
@@ -55,7 +56,8 @@ Here's a list of every method and variable that is deprecated in v6. You can use
 | `ModLoader.UNPACKED_DIR`                       | `ModLoaderMod.get_unpacked_dir()`                 |
 
 #### Logging
-?> Running a search & replace from `ModLoaderUtils.log_` to `ModLoaderLog.` will fix all of these at once.
+???+ note 
+     Running a search & replace from `ModLoaderUtils.log_` to `ModLoaderLog.` will fix all of these at once.
 
 | Old (Search)                          | New (Replace)                   |
 |---------------------------------------|---------------------------------|

@@ -53,4 +53,5 @@ To add another override, add a new entry to the dictionary.
 - Select `String` as type for the key and enter one of [Godot's feature tags](https://docs.godotengine.org/en/3.5/tutorials/export/feature_tags.html) or one you have defined yourself.
 - Select `Resource` as type for the value and drag one of the available `ModLoaderOptionsProfile` resources into the field.
 
-?> Be careful with "overlapping" feature tags. Since dictionaries are not ordered, we cannot guarantee the order of two overrides being applied. If, for example both Windows and release define an override, the result is not predictable.
+???+ note 
+     Be careful with "overlapping" feature tags. Since dictionaries are not ordered, we cannot guarantee the order of two overrides being applied. If, for example both Windows and release define an override, the result is not predictable.

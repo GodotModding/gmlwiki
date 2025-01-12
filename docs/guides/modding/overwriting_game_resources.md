@@ -1,6 +1,8 @@
-# Overwriting Game Resources
+# Adding and Replacing Game Resources
 ## overwrites.gd
-The `overwrites.gd` file is used to define resource overwrites in a separate file. In general, any file in a project can be overwritten, but we highly recommend that you only use this feature for images and audio or any other type that inherits from Resource.
+The `overwrites.gd` file is used to define resource overwrites in a separate file. In general, any file in a project 
+can be overwritten, but we highly recommend that you only use this feature for images, audio and other types that 
+inherit from `Resource`.
 
 We recommend the following directory structure for your overwrites:
 ```
@@ -33,17 +35,21 @@ func _init():
 ```
 
 ##### Using `load`
-Load only works if the overwrite goes into global scope at some point, otherwise Godot won't be able to find the file. No idea why. There are two ways to do this: a global variable declaration or a global Array to which the overwrites are appended. The global variable only works for a single overwrite, so this example uses the Array.
+Load only works if the overwrite goes into script scope (as opposed to staying in funtion scope) at some point, 
+otherwise Godot won't be able to find the file. No idea why. There are two ways to do this: a global variable 
+declaration or a global Array to which the overwrites are appended. The global variable only works for a single 
+overwrite, so this example uses the Array.
 ```gdscript
 extends Node
 
-var icons: Array # this declaration NEEDS to have global scope
+var icons: Array # this declaration NEEDS to have script scope
 const ICONS := [
     "GodotModded.png",
     "UpgradeIcon.png"
 ]
 
 func _init():
+    # var icons: Array # this would not work
     for image in ICONS:
         var icon_overwrite := load("res://mods-unpacked/Author-ModName/overwrites/assets/icons".plus_file(image))
         icon_overwrite.take_over_path("res://assets/icons".plus_file(image))
@@ -53,5 +59,5 @@ Instead of using an array of Strings here, you could also use the [Directory](ht
 
 
 ## Mod Tool
-You can use [Godot Mod Tool](https://github.com/GodotModding/godot-mod-tool) to make overwriting assets easier. If you have the plugin activated:
+You can use [Mod Tool](/guides/modding/tools/mod_tool/) to make overwriting assets easier. If you have the plugin activated:
 *right-click -> ModTool: Create Asset Overwrite* on the asset you want to replace

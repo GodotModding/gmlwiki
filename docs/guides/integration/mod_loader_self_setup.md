@@ -4,7 +4,7 @@ If the game you want to mod does not natively use this ModLoader, you will have 
 1. Download the [latest release](https://github.com/GodotModding/godot-mod-loader/releases) of the ModLoader
 2. Place the `/addons` folder from the ModLoader next to the executable of the game you want to mod.
 3. Set this flag `--script addons/mod_loader/mod_loader_setup.gd`
-    - **Steam:** right-click the game in the game list > press properties > enter the flag in startup options
+    - **Steam:** right-click the game in the left sidebar > press `properties` > enter the flag in `startup options`
 - **Other:** search for "set launch (or command line) parameters [your platform]"
 
 If the game window shows `(Modded)` in the title, setup was successful.

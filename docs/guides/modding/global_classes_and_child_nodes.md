@@ -2,11 +2,14 @@
 This page covers advanced techniques for mod making.
 
 ## Global Classes
-ModLoader can't support global classes, because they're registered in a settings file stored inside the binary itself. This means that you can't expose a global class for other dependent mods to use. However, you can work around this limitation by exposing the class as a child node (see below).
+ModLoader can't support global classes, because they're registered in a settings file stored inside the binary itself. 
+This means that you can't expose a global class for other dependent mods to use. However, you can work around this 
+limitation by exposing the class as a child node (see below).
 
 
 ## Child Nodes
-When your mod is initialised it's added as a child to the ModLoader node (shown left). You can also add additional child nodes to your mod's node if you wish (shown right):
+When your mod is initialised it's added as a child to the ModLoader node (shown left). You can also add additional child 
+nodes to your mod's node if you wish (shown right):
 
 <div align=center>
   <img src="guides/modding/_media/child_node_left.png"></img>

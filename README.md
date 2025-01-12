@@ -9,5 +9,5 @@
 
   <br /><br />
 
-  <i>Want to contribute?</i> Read [this](CONTRIBUTING.md)!
+  <i>Want to contribute?</i> Read [CONTRIBUTING.md](CONTRIBUTING.md)!
 </div>

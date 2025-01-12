@@ -43,7 +43,8 @@ The following keys are part of the [JSON Schema 2020-12 Draft](https://json-sche
 | Object                     | patternProperties       |
 | String                     | *format                 |
 
-?> The `format` key has one compatible property called `color` which is explained in more detail in the [Additional Keys and Properties](#additional-keys-and-properties) section. If you require any of these validations, please let us know by opening an [issue](https://github.com/GodotModding/godot-mod-loader/issues) or joining our [Discord](https://discord.gg/J5AvdFK4mw).
+???+ note 
+     The `format` key has one compatible property called `color` which is explained in more detail in the [Additional Keys and Properties](#additional-keys-and-properties) section. If you require any of these validations, please let us know by opening an [issue](https://github.com/GodotModding/godot-mod-loader/issues) or joining our [Discord](https://discord.gg/J5AvdFK4mw).
 
 
 ### Additional Keys and Properties

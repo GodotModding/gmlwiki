@@ -4,11 +4,30 @@ The mod loader allows users to create mods for games and distribute them as zips
 
 Importantly, it provides methods to change existing scripts, scenes, and resources without modifying and distributing vanilla game files.
 
-!> Please note that GML does not condone the use of malicious mods. e.g. mods that allow for cheating in online games, among other things.
+???+ note
+    Please note that GML does not condone the use of malicious mods. e.g. mods that allow for cheating in online games, among other things.
+
+## Download
+
+=== "Godot 4"
+
+    Mod Loader: [GitHub](https://github.com/GodotModding/godot-mod-loader/tree/4.x)
+
+    Mod Dev Tool: [GitHub](https://github.com/GodotModding/godot-mod-tool/tree/4.x)
+
+=== "Godot 3"
+
+    Mod Loader: [Asset Lib](https://godotengine.org/asset-library/asset/1938), [GitHub](https://github.com/GodotModding/godot-mod-loader)
+
+    Mod Dev Tool: [Asset Lib](https://godotengine.org/asset-library/asset/1982), [GitHub](https://github.com/GodotModding/godot-mod-tool)
+
+All stable Mod Loader versions: [GitHub Releases](https://github.com/GodotModding/godot-mod-loader/releases)
+All stable Mod Dev Tool versions: [GitHub Releases](https://github.com/GodotModding/godot-mod-tool/releases)
+
 
 ## Mod Developer
-1. [Decompile the Game](guides/modding/decompile_games.md)
-2. Install [GodotSteam](guides/integration/godot_steam.md) (mandatory if the game has Steam support)
+1. [Decompile the Game](guides/modding/tools/decompile_games.md)
+2. Depending on the resulting log, install [Godot](https://godotengine.org/download/) or [GodotSteam](guides/modding/tools/godot_steam.md) (mandatory if the game has Steam support)
 3. [Set up](guides/integration/godot_project_setup.md) your Godot project for modding
 4. Create your [Mod Structure](guides/modding/mod_structure.md)
 5. Create your [Mod Files](guides/modding/mod_files.md)

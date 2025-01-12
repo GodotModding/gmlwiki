@@ -14,7 +14,8 @@ res://
 
 If you have any dependencies, unzip them and add them to res://mods-unpacked.
 
-?> A bug in the Godot editor prevents using zipped and unpacked mods at the same time (see [ZIPs in the Editor](#zips-in-the-editor) below).
+???+ note 
+     A bug in the Godot editor prevents using zipped and unpacked mods at the same time (see [ZIPs in the Editor](#zips-in-the-editor) below).
 
 ## ZIPs
 Mod ZIPs should have the structure shown below. The structure matches the structure of the filesystem when developing mods in the Godot editor.
@@ -22,14 +23,39 @@ Mod ZIPs should have the structure shown below. The structure matches the struct
 Mod users will add their ZIPs to a folder named mods in the root.
 
 ZIP names must follow the convention of `namespace-modname-version.zip` e.g. `GodotModding-CoolMod-1.2.3.zip`.
-```
-yourmod.zip
-├───.import
-└───mods-unpacked
-    └───Author-ModName
-        ├───mod_main.gd
-        └───manifest.json
-```
+
+=== "Godot 4"
+
+    ```
+    Author-ModName-1.2.3.zip/
+    ├── .godot/
+    │   └── imported
+    └── mods-unpacked/
+        └── Author-ModName/
+            ├── mod_main.gd
+            ├── manifest.json
+            ├── overwrites.gd
+            ├── extensions/
+            │   └── main.gd
+            └── overwrites/
+                └── icon.png
+    ```
+
+=== "Godot 3"
+
+    ```
+    Author-ModName-1.2.3.zip/
+    ├── .import/
+    └── mods-unpacked/
+        └── Author-ModName/
+            ├── mod_main.gd
+            ├── manifest.json
+            ├── overwrites.gd
+            ├── extensions/
+            │   └── main.gd
+            └── overwrites/
+                └── icon.png
+    ```
 
 ### ZIPs in the Editor
 Godot has a bug that, in short, means you can't use both unpacked mods (in res://mods-unpacked) and zipped mods (in res://mods) in the Editor. If you need to use a mod as a dependency, please unzip it and add it to your project.

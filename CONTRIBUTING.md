@@ -1,50 +1,98 @@
-<!-- currently this document only covers the Markdown styling, nothing to do with the content of the docs -->
-
 # Contributing to Our Documentation
-Hey there! 🎉 Thanks for thinking about contributing to the [Godot Mod Loader](https://github.com/GodotModding/godot-mod-loader) docs. Here's a quick guide to get you started.
+Hey there! 🎉 Thanks for thinking about contributing to the [Godot Mod Loader](https://github.com/GodotModding/godot-mod-loader) documentation. 
 
-## Getting Started
-1. **Fork the Repo:** Click the "Fork" button at the top right of the repo page.
-2. **Clone Your Fork:** On your machine, run:
-```bash
-git clone https://github.com/your-username/gmlwiki
-cd gmlwiki
-```
-3. **Use Docsify to Locally Host the Docs:** run: `docsify serve docs/`
+Most of this documentation is written using basic [Markdown](https://www.markdownguide.org/basic-syntax/). 
+Updating the documentation is as simple as modifying one of the files and opening a [Pull Request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) - 
+or even just sending us the file on our [Discord](https://discord.godotmodding.com/).
 
-> [!NOTE]
-> Nearly *all* documentation is done using Markdown files. It's as simple as modifing one of these files and opening a PR. To keep things organized please continue reading!
+If you want to go more in-depth and preview your changes better, here's a quick guide to get you started.
 
+## Setup
+
+1. Install [Python](https://docs.python.org/3/using/index.html) on your system.
+2. Fork and clone this repository: [GitHub Tutorial](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo)
+3. Install requirements: 
+   ```shell
+    pip install -r requirements.txt
+    ```
+4. Start MkDocs: 
+    ```shell
+    mkdocs serve
+    ```
+5. Open the local docs in your browser: http://127.0.0.1:8000/
+
+To keep things organized please continue reading!
 
 ## Doc Structure
-The docs are laid out in a pretty straight forward manner. Everything here assumes the "root" of the project means the `docs/` directory!
+All documentation needs to be in the `docs/` directory, files outside of it are ignored.
 
-### Directories
-- `_plugins/` - A folder at the root directory which stores all custom Docsify plugins
-- `_media/` - A folder included wherever media (png, mp3, mp4, etc...) is used. If your media is only used inside of one directory please use a directory specific `_media/` folder.
-- `api/` - A folder containing the Godot Mod Loader api documentation. As a rule of thumb do not mess with these directly, if you spot a problem make an [issue](https://github.com/GodotModding/gmlwiki/issues) or [contact us](https://discord.godotmodding.com/).
-- `guides/` - A folder containing guides of some sort. With sub folders for specific types of guides E.g. integration or modding.
-- `misc/` - A folder where all *other* things exist. If you find something that doesn't belong anywhere, create a folder where it does. Be sure to make this known in your PR.
+### Subdirectories
+- `api/` - Contains the Godot Mod Loader api documentation. Automatically generated - if you spot any problems please open an [issue](https://github.com/GodotModding/gmlwiki/issues) or [contact us](https://discord.godotmodding.com/).
+- `guides/` - Contains guides to use specific mod loader features. The sub folders logically separate guides for modders and for game developers aiming to integrate the mod loader.
+- `misc/` - Contains pages that don't fit the first categories. If you find something that doesn't belong anywhere, create a folder where it does. Be sure to make this known in your PR.
+- `_media/` - A folder included wherever media (png, mp3, mp4, etc...) is used. If your media is only used inside one directory please use a directory specific `_media/` folder.
 
-### Important Files
-- `index.html` - The heart and soul of the project. If you choose to tamper with this file please be sure to read [Docsify's Documentation](https://docsify.js.org/#/)!
-- `style.css` - The lipstick to the project, this file modifies (and creates it's own) styling for the docs.
-- `_sidebar.md` - Used by Docsify to generate the sidebar. More info on this at [_sidebar.md](#_sidebarmd).
+## New Pages
+Make sure the name of your file is in snake_case.
 
-*some worthy mentions are `_todo.md`, `_404.md`, and `_coverpage.md` but these shouldn't need to be modified*
+After adding a new page, make sure to include it in the sidebar navigation by adding it to [`mkdocs.yml`](./mkdocs.yml)
 
+## Editing Tips
 
-## How to Create a New Page
-Creating a new page is simple. Just create a markdown file where it seems aproprite, for an example lets say `guides/modding/epic_mod_guide.md` then add it to the sidebar (more info at [_sidebar.md](#_sidebarmd)).
+MkDocs [requires links to other doc pages](https://www.mkdocs.org/user-guide/writing-your-docs/#internal-links) 
+to always be relative and to link to a `.md` file. If you use the link from the browser's 
+url bar - `[Script Hooks](/guides/modding/script_hooks/)`, you will get an error:
+```
+Doc file 'guides/modding/script_extensions.md' contains an absolute link '/guides/modding/script_hooks/', it was left as is. Did you mean 'script_hooks.md'?
+```
+The correct way to link here is: `[Script Hooks](script_hooks.md)`.   
+Since those are relative file paths, linking to another folder looks like this `[API Reference](../../api/ModLoaderMod.md)`   
+Linking to headers is possible too by adding the part after `#` from the browser url at the end `ModLoaderMod.md#install_script_extension`
 
-> [!NOTE]
-> The name of your file should be snake_case. Only in certain cases (like with `api/`) should this change.
+The documentation uses [Material for Mkdocs](https://squidfunk.github.io/mkdocs-material/)
+which allows us to use extended Markdown. Installed extensions can be found at the end of [`mkdocs.yml`](./mkdocs.yml)
 
-If your page leads somewhere which isn't created yet (or is soon to be created) please link to `_todo` E.g. `[Epic and Cool Page](_todo)`
+Here are a few commonly used features from the extended markdown:
 
-## _sidebar.md
-The sidebar is a pretty core part of navigating the docs. As such it's important to know how to modify the sidebar. 
+To create special notes or warnings, use [Admonitions](https://squidfunk.github.io/mkdocs-material/reference/admonitions/).
 
-For adding sections use html syntax like so `- <span>section title</span>`
-For adding sub-sections use html syntax like so `- <span class="subsection">sub-section title</span>`
-For adding pages use a markdown syntax like so `- [display name](markdown_file_location.md)` E.g. `- [Hello World!](hello_world.md)`
+To add information on hover, use [Tooltips](https://squidfunk.github.io/mkdocs-material/reference/tooltips/#usage).
+
+[Code Blocks](https://squidfunk.github.io/mkdocs-material/reference/code-blocks/) and 
+[Content Tabs](https://squidfunk.github.io/mkdocs-material/reference/content-tabs/) 
+together allow us to have highlighted code examples for Godot 3 and 4 with an easy toggle. 
+The tab names need to be consistent across all pages to enable tab state synchronisation.
+
+You can simply copy this snippet for that purpose.
+```markdown
+=== "Godot 4"
+
+    ```gdscript
+    [...]
+    ```
+
+=== "Godot 3"
+
+    ```gdscript
+    [...]
+    ```
+```
+
+Code blocks can also highlight single or a range of lines by adding this   
+`gdscript hl_lines="1 2-5"`
+
+For codeblocks to use proper highlighting, always add the language at the top, usually `gdscript`, as seen above.
+
+Inline code [can also be highlighted](https://squidfunk.github.io/mkdocs-material/reference/code-blocks/#highlighting-inline-code-blocks)
+by adding `#!` followed by the language - `#!gd print("hello world")`
+
+While both `gdscript` and `gd` work, the former is preferred for code blocks to be explicit while the latter
+is preferred for inline highlights to remain brief.
+
+## API Docs generation
+
+```shell
+godot4.3 --doctool docs --gdscript-docs res://addons/mod_loader/api --quit
+```
+The path set with `--gdscript-docs` needs to start with `res://`, otherwise godot can't find the files.   
+[workaround credit](https://github.com/godotengine/godot/issues/84579#issuecomment-1873346477)
