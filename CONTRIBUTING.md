@@ -47,4 +47,4 @@ The sidebar is a pretty core part of navigating the docs. As such it's important
 
 For adding sections use html syntax like so `- <span>section title</span>`
 For adding sub-sections use html syntax like so `- <span class="subsection">sub-section title</span>`
-For adding pages use a markdown syntax like so `- [display name](markdown_file_location.md)` E.g. `- [Hello World!](hello_world.md)`
+For adding pages use a Markdown syntax like so `- [display name](markdown_file_location.md)` E.g. `- [Hello World!](hello_world.md)`
