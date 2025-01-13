@@ -104,6 +104,3 @@ Replace:
 
 ---
 
-<div align="center">
-  <b>Next:</b> <a href="#/guides/modding/mod_files.md">Mod Files</a>
-</div>

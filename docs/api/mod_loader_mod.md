@@ -50,7 +50,7 @@ If possible, prefer [`#!gd install_script_extension()`](#method-install_script_e
   
 #### Parameters:
   
-- `#!gd mod_callable` ([`#!gd Callable`](https://docs.godotengine.org/en/stable/classes/class_callable.html)): The function that will executed when the vanilla method is executed. When writing a mod callable, make sure that it *always* receives a [`#!gd ModLoaderHookChain`](../ModLoaderHookChain.md) object as first argument, which is used to continue down the hook chain (see: [`#!gd ModLoaderHookChain.execute_next()`](../ModLoaderHookChain.md#method-execute_next)) and allows manipulating parameters before and return values after the vanilla method is called.   
+- `#!gd mod_callable` ([`#!gd Callable`](https://docs.godotengine.org/en/stable/classes/class_callable.html)): The function that will executed when the vanilla method is executed. When writing a mod callable, make sure that it *always* receives a [`#!gd ModLoaderHookChain`](mod_loader_hook_chain.md) object as first argument, which is used to continue down the hook chain (see: [`#!gd ModLoaderHookChain.execute_next()`](mod_loader_hook_chain.md#method-execute_next)) and allows manipulating parameters before and return values after the vanilla method is called.   
 - `#!gd script_path` ([`#!gd String`](https://docs.godotengine.org/en/stable/classes/class_string.html)): Path to the vanilla script that holds the method.  
 - `#!gd method_name` ([`#!gd String`](https://docs.godotengine.org/en/stable/classes/class_string.html)): The method the hook will be applied to.  
   

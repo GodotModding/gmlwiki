@@ -219,7 +219,7 @@ Returns an array of log entries represented as strings.
   
 #### Parameters:
   
-`#!gd log_entries` ([`#!gd Array`](https://docs.godotengine.org/en/stable/classes/class_array.html)): An array of [`#!gd ModLoaderLogEntry`](../ModLoaderLogEntry.md) Objects.  
+`#!gd log_entries` ([`#!gd Array`](https://docs.godotengine.org/en/stable/classes/class_array.html)): An array of [`#!gd ModLoaderLogEntry`](mod_loader_log_entry.md) Objects.  
   
 **Returns:**
   

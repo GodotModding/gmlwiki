@@ -59,5 +59,5 @@ Instead of using an array of Strings here, you could also use the [Directory](ht
 
 
 ## Mod Tool
-You can use [Mod Tool](/guides/modding/tools/mod_tool/) to make overwriting assets easier. If you have the plugin activated:
+You can use [Mod Tool](tools/mod_tool.md) to make overwriting assets easier. If you have the plugin activated:
 *right-click -> ModTool: Create Asset Overwrite* on the asset you want to replace

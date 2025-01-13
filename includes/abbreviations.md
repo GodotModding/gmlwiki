@@ -4,6 +4,8 @@
 
 [//]: # (Words new modders might not know)
 *[vanilla]: Refers to the base game without modifications
+*[API]: "Application Programming Interface" <br>Basically pre-made functions someone else provides for you to use
+*[API]: "Application Programming Interface" <br>Basically pre-made functions someone else provides for you to use
 *[method]: Another name for function
 *[methods]: Another name for functions
 *[callable]: A function object, which can be passed around and called later

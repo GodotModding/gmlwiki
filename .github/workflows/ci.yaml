@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+#      TODO remove on merge to main
       - 4.x-update
 permissions:
   contents: write

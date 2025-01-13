@@ -1,4 +1,6 @@
-
+---
+status: new
+---
 
 manual
 

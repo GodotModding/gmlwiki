@@ -9,7 +9,7 @@ status: new
 
 It works by adding callables before and after vanilla functions are called. 
 
-[API reference: `#!gd ModLoaderMod.install_script_extension()`](/api/ModLoaderMod/#install_script_extension)
+[API reference: `#!gd ModLoaderMod.install_script_extension()`](../../api/mod_loader_mod.md#method-install_script_extension)
 
 how it works
 - dynamic
@@ -33,7 +33,7 @@ can't add new member vars or funcs
 ## Hooks in the editor
 
 original vanilla scripts need to be converted
-- [mod tool](/guides/modding/tools/mod_tool/)
+- [mod tool](tools/mod_tool.md)
 
 ## Usage
 

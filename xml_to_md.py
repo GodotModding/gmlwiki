@@ -79,7 +79,7 @@ def class_doc_link(class_name: str = None, method_name: str = None):
 	if class_name is None:  # local to script
 		return anchor
 	if "ModLoader" in class_name:
-		return f'../{class_name}.md{anchor}'
+		return f'{pascal_to_snake_case(class_name)}.md{anchor}'
 
 	docs_link = f'https://docs.godotengine.org/en/stable/classes/class_{class_name.lower()}.html'
 	if method_name:
@@ -213,9 +213,7 @@ if __name__ == '__main__':
 		# ignore inner classes
 		if "." in filename:
 			print(f"Skipping inner class {filename}")
-			continue
-
-		print(f"Processing {pascal_to_snake_case(filename)}")
+			filename = filename.split(".", 1)[-1]
 
 		convert_file_to_markdown(
 			f"{xml_path}/{file}",

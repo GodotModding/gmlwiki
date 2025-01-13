@@ -46,8 +46,8 @@ url bar - `[Script Hooks](/guides/modding/script_hooks/)`, you will get an error
 Doc file 'guides/modding/script_extensions.md' contains an absolute link '/guides/modding/script_hooks/', it was left as is. Did you mean 'script_hooks.md'?
 ```
 The correct way to link here is: `[Script Hooks](script_hooks.md)`.   
-Since those are relative file paths, linking to another folder looks like this `[API Reference](../../api/ModLoaderMod.md)`   
-Linking to headers is possible too by adding the part after `#` from the browser url at the end `ModLoaderMod.md#install_script_extension`
+Since those are relative file paths, linking to another folder looks like this `[API Reference](../../api/mod_loader_mod.md)`   
+Linking to headers is possible too by adding the part after `#` from the browser url at the end `mod_loader_mod.md#method-install_script_extension`
 
 The documentation uses [Material for Mkdocs](https://squidfunk.github.io/mkdocs-material/)
 which allows us to use extended Markdown. Installed extensions can be found at the end of [`mkdocs.yml`](./mkdocs.yml)

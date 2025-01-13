@@ -1,3 +1,7 @@
+---
+status: new
+---
+
 # Script Extensions
 
 Script extensions are the preferred way to change, extend and replace behaviour of an existing vanilla script.
@@ -5,9 +9,7 @@ Script extensions are the preferred way to change, extend and replace behaviour 
 It works by registering an entire file of new script functions as a child script of a vanilla script. Not all methods 
 from the original script need to be in the extension script.
 
-[API reference: `#!gd ModLoaderMod.install_script_extension()`](../../api/ModLoaderMod.md#install_script_extension)
-
-[//]: # ([API reference: `#!gd ModLoaderMod.install_script_extension&#40;&#41;`]&#40;../../api/ModLoaderMod/#install_script_extension&#41;)
+[API reference: `#!gd ModLoaderMod.install_script_extension()`](../../api/mod_loader_mod.md#method-install_script_extension)
 
 ## What Script Extensions __can__ do
 
@@ -140,7 +142,7 @@ which extend some standard game script and selectively override some methods.
 
 ### Inheritance chaining
 By using `install_script_extension`, the Mod Loader builds a chain of scripts which are applied one by one. 
-The order of the chain is determined by the [`manifest.json`](/guides/modding/mod_files/#manifestjson) fields 
+The order of the chain is determined by the [`manifest.json`](mod_files.md#manifestjson) fields 
 `dependencies`, `optional_dependencies` and `load_before`. 
 
 If these fields are set correctly, multiple mods should "just work" together without any additional work.
