@@ -12,18 +12,45 @@ def bbcode_to_markdown(text):
 	# Convert underlined [u] to ^^underlined^^
 	text = re.sub(r'\[u](.*?)\[/u]', r'^^\1^^', text)
 	# Convert strikethrough [s] to ~~strikethrough~~
-	text = re.sub(r'\[u](.*?)\[/u]', r'^^\1^^', text)
+	text = re.sub(r'\[s](.*?)\[/s]', r'~~\1~~', text)
 	# Convert code [code] to `code`, with inline highlight
 	text = re.sub(r'\[code](.*?)\[/code]', r'`#!gd \1`', text)
 	# Convert codeblock [codeblock] to triple backticks for code block
-	# TODO support for lang=
+	# TODO support for lang= if we ever use it
 	text = re.sub(r'\[codeblock](.*?)\[/codeblock]', r'```gdscript \1```', text, flags=re.DOTALL)
 	# left and right brackets
 	text = re.sub(r'\[lb]', r'[', text)
 	text = re.sub(r'\[rb]', r']', text)
 	# Convert line breaks [br] to actual newlines
+	text = re.sub(r'\[br]\[br]', r'\n\n', text)
 	# Two spaces in front to make md break the line
 	text = re.sub(r'\[br]', r'  \n', text)
+
+	# formatting specific to how we add descriptions
+	# convert these in descriptions to sub-headlines
+	text = re.sub(r'\*\*Parameters:\*\*', r'#### Parameters:\n', text)
+	text = re.sub(r'\*\*Returns:\*\*', r'**Returns:**\n', text)
+	text = re.sub(r'\*\*Examples:\*\*', r'#### Examples:\n', text)
+	# Admonitions (https://regex101.com/r/DIcJ9K/2)
+	# everything between opening === and closing === is an admonition
+	# the first line is always discarded in favor of the default titles
+	# optional: the type/color can be changed and a custom title can be set
+	# by using a (technically invalid but invisible) empty bbcode [color] tag
+	# example:
+	# ===[br]
+	# [b]Note:[color=note "A note on paths"][/color][/b][br]
+	# Your extender script doesn't have to follow the same directory path as the vanilla file,
+	# but it's good practice to do so.[br]
+	# ===[br]
+	text = re.sub(
+		r'===.*?\n(?:[^=]*?\[color=(?P<type>\w+)[^\"]*?(?P<title>\".*?\")?]|.*?$).*?\n(?P<body>.*?)===',
+		md_format_admonition,
+		text, flags=re.DOTALL | re.MULTILINE
+	)
+
+	# colors
+	text = re.sub(r'\[color=(.*?)](.*?)\[/color]', r'<span style="color: \1">\2</span>', text, flags=re.DOTALL)
+	# Linking to other documentation
 	# Godot built in classes
 	text = re.sub(
 		r'\[(\w+?)]',
@@ -44,32 +71,19 @@ def bbcode_to_markdown(text):
 	)
 	# Parameters are just like inline code
 	text = re.sub(r'\[param (\w+?)]', r'`#!gd \1`', text)
-
-	# formatting specific to how we add descriptions
-	# convert these in descriptions to sub-headlines
-	text = re.sub(r'\*\*Parameters:\*\*', r'#### Parameters:\n', text)
-	text = re.sub(r'\*\*Returns:\*\*', r'**Returns:**\n', text)
-	text = re.sub(r'\*\*Examples:\*\*', r'#### Examples:\n', text)
-	# Admonitions
-	# considers > as starter for the type until a closing \n is met, all formatting needs to be discarded
-	# everything after is considered the body until double [br] (which are replaced above with "  \n")
-	text = re.sub(
-		r'\s*>.*?(\w+).*?\n(.*?)  \n  \n',
-		indent_admonition,
-		text, flags=re.DOTALL
-	)
 	return text
 
 
-def indent_admonition(match):
-	before = match.group(1)  # '> note:' part
-	before = f'\n\n!!! {before}\n'  # admonition syntax
-	content = match.group(2)  # The content of the note, to indent
+def md_format_admonition(match):
+	admonition_type = match.group('type') or "note"
+	title = match.group('title') or ""
+	admonition_type = f'\n\n!!! {admonition_type} {title}\n'  # admonition syntax
+	content = match.group('body')
 
-	# Split the content into lines and add a tab to each line
+	# Split the content into lines and add a tab indent to each line
 	indented_content = '\n'.join('\t' + line.strip() for line in content.splitlines())
 
-	return before + indented_content + '\n'
+	return admonition_type + indented_content + '\n'
 
 
 def class_doc_link(class_name: str = None, method_name: str = None):
@@ -212,7 +226,6 @@ if __name__ == '__main__':
 		filename = file.removesuffix(".xml")
 		# ignore inner classes
 		if "." in filename:
-			print(f"Skipping inner class {filename}")
 			filename = filename.split(".", 1)[-1]
 
 		convert_file_to_markdown(

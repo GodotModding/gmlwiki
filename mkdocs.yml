@@ -85,6 +85,7 @@ extra:
 extra_css:
   # https://squidfunk.github.io/mkdocs-material/reference/code-blocks/#custom-syntax-theme-docsstylesheetsextracss
   - stylesheets/gdscript_highlight.css
+  - stylesheets/extra.css
 
 
 markdown_extensions:

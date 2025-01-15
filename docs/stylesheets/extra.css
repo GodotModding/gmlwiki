@@ -1,0 +1,5 @@
+
+/* highlighted inline code within links has visibility issues */
+a:hover > code {
+    text-decoration: underline;
+}

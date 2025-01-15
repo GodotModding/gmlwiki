@@ -28,7 +28,7 @@ less efficient
 
 not in godot 3
 
-can't add new member vars or funcs
+can't add new member vars or funcs to the original class
 
 ## Hooks in the editor
 
