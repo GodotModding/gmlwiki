@@ -11,7 +11,7 @@ from the original script need to be in the extension script.
 
 [API reference: `#!gd ModLoaderMod.install_script_extension()`](../../api/mod_loader_mod.md#method-install_script_extension)
 
-## What Script Extensions __can__ do
+## Features
 
 Script extensions can
 
@@ -26,7 +26,7 @@ replace (don't call super) (careful, this makes your mod less compatible since i
 
 add member vars and funcs
 
-## What Script Extensions can __not__ do
+## Limitations
 
 Script Extensions will not be applied to scripts that are 
 [`preload()`ed](https://docs.godotengine.org/en/stable/classes/class_%40gdscript.html#class-gdscript-method-preload "preload() is a GDScript feature") 

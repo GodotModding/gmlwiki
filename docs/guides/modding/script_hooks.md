@@ -7,22 +7,28 @@ status: new
 !!! inline end abstract "Available since" 
     7.0.0
 
-It works by adding callables before and after vanilla functions are called. 
+Script Hooks are a new way to mod scripts. Hooks allow you to add a custom [Callable](https://docs.godotengine.org/en/stable/classes/class_callable.html),
+which then calls further modded functions and the vanilla function at the end. The callable needs to fulfil specific 
+requirements to work.
 
-[API reference: `#!gd ModLoaderMod.install_script_extension()`](../../api/mod_loader_mod.md#method-install_script_extension)
+Hooks are slightly more complex to use and little less powerful than [Script Extensions](script_extensions.md), 
+so prefer using those if possible.
 
-how it works
+[API reference: `#!gd ModLoaderMod.install_script_hooks()`](../../api/mod_loader_mod.md#method-install_script_hooks)
+
+The Mod Loader makes Script Hooks work by dynamically generating GDScript files, which replace the  
+
 - dynamic
 - preprocessed/ built in
 
-## What Script Hooks __can__ do
+## Features
 
 mod class name scripts
 extend before and after 
 replace (don't call super) (careful, this makes your mod less compatible since it breaks the chain of modded methods)
 
 
-## What Script Hooks can __not__ do
+## Limitations
 
 less efficient
 

@@ -28,7 +28,7 @@ nav:
         - Exporting Mods: guides/modding/exporting_mods.md
         - Testing and Debugging Mods: guides/modding/testing_debugging.md
       - Integration:
-        - CLI Args: guides/integration/cli_args.md
+        - GML Command Line Arguments: guides/integration/cli_args.md
         - Mod Loader Options: guides/integration/mod_loader_options.md
         - Godot Project Setup: guides/integration/godot_project_setup.md
         - Mod Loader Self Setup: guides/integration/mod_loader_self_setup.md
