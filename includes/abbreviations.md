@@ -19,3 +19,7 @@
 *[gdsdecomp]: Old name for Godot RE Tools
 *[Brotato]: A game made in Godot 3.5
 *[Dome Keeper]: A game made in Godot 4.2
+*[Windowkill]: A game made in Godot 4.3.dev (custom build)
+*[Megaloot]: A game made in Godot 4.x
+*[Endoparasitic]: A game made in Godot 3.x
+*[Of Life and Land]: A game made in Godot 3.x

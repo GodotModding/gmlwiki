@@ -124,6 +124,7 @@ markdown_extensions:
 # Allows complex annotations
 # https://squidfunk.github.io/mkdocs-material/reference/annotations/#usage
   - md_in_html
+  - pymdownx.blocks.caption
 
 # also watch these files outside /docs for changes to rebuild
 watch:

@@ -43,15 +43,22 @@ Now you can edit it to your liking by double-clicking it in the file dialog
 
 
 ## Feature Override Options (Feature Tags)
-*Introduced in v6.2.0*
+!!! inline end abstract "Available since" 
+    6.2.0
 
-If you have a specific feature tag that should use different settings, you can set them as a key-value pair here. The most common use case is to use different settings when in the editor - using the `editor` tag - that's why it is already set as an override by default.
+If you have a specific feature tag that should use different settings, you can set them as a key-value pair here. 
+The most common use case is to use different settings when in the editor - using the `editor` tag - that's why it is 
+already added as an override by default.
 
-Another use case is managing multiple release platforms - Steam and others. In that case, you would define a custom feature tag for steam, add it as override and enable steam workshop in the corresponding options. Of course you can also use steam workshop as default and disable it otherwise though.
+Another use case is managing multiple release platforms - Steam and others. 
+In that case, you would define a custom feature tag for steam, add it as override and enable steam workshop in the 
+corresponding options. Of course, you can also use steam workshop as default and disable it otherwise.
 
 To add another override, add a new entry to the dictionary.
 - Select `String` as type for the key and enter one of [Godot's feature tags](https://docs.godotengine.org/en/3.5/tutorials/export/feature_tags.html) or one you have defined yourself.
 - Select `Resource` as type for the value and drag one of the available `ModLoaderOptionsProfile` resources into the field.
 
-???+ note 
-     Be careful with "overlapping" feature tags. Since dictionaries are not ordered, we cannot guarantee the order of two overrides being applied. If, for example both Windows and release define an override, the result is not predictable.
+!!! warning "Be careful with "overlapping" feature tags."
+
+     Since dictionaries are not ordered, we cannot guarantee the order of two overrides being applied. 
+     If, for example both "Windows" and "release" define an override, the result is not predictable on platforms where both tags apply.
