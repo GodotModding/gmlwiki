@@ -13,9 +13,15 @@ from the original script need to be in the extension script.
 
 ## Features
 
-Script extensions can
+Extensions can change vanilla methods before and after they are called, which allows them to 
+manipulate both the input parameters and the output value of a function. 
 
-[//]: # (TODO)
+=== "Godot 4"
+
+=== "Godot 3"
+
+
+
 extend before and after (call parent method with super() or `.`, except for virtuals in 3)
 replace (don't call super) (careful, this makes your mod less compatible since it breaks the chain of modded methods)
 
@@ -69,6 +75,10 @@ insert code in the middle of functions (ask dev if they can split it)
         [#33620](https://github.com/godotengine/godot/issues/33620#issuecomment-553912225)
 
 ## Usage
+
+!!! abstract "See also" 
+    [API Reference: `#!gd ModLoaderMod.install_script_extension()`](../../api/mod_loader_mod.md#method-install_script_extension)
+
 
 This script extension changes the path that save files are loaded from in the game Brotato.
 

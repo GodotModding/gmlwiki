@@ -60,7 +60,7 @@ def bbcode_to_markdown(text):
 	# References to methods in the same file into links
 	text = re.sub(
 		r'\[method (\w+?)]',
-		lambda match: f'[`#!gd {match.group(1)}()`]({class_doc_link(method_name=match.group(1))})',
+		lambda match: f'[`#!gd {match.group(1)}()`]({class_doc_link(item_name=match.group(1))})',
 		text
 	)
 	# Methods in other files
@@ -86,18 +86,21 @@ def md_format_admonition(match):
 	return admonition_type + indented_content + '\n'
 
 
-def class_doc_link(class_name: str = None, method_name: str = None):
+def class_doc_link(class_name: str = None, item_name: str = None, item_type: str = "method"):
+	if item_type == "member":
+		item_type = "property"  # godot docs named it differently between url and xml for some reason
+
 	anchor = ''
-	if method_name is not None:
-		anchor += f'#method-{method_name}'
+	if item_name is not None:
+		anchor += f'#{item_type}-{item_name}'
 	if class_name is None:  # local to script
 		return anchor
 	if "ModLoader" in class_name:
 		return f'{pascal_to_snake_case(class_name)}.md{anchor}'
 
 	docs_link = f'https://docs.godotengine.org/en/stable/classes/class_{class_name.lower()}.html'
-	if method_name:
-		docs_link += f'#class-{class_name.lower()}-method-{method_name.lower()}'
+	if item_name:
+		docs_link += f'#class-{class_name.lower()}-{item_type}-{item_name.lower()}'
 	return docs_link
 
 
@@ -122,7 +125,7 @@ def xml_to_markdown(xml_string):
 	description = root.find('description')
 	if description is not None and description.text.strip():
 		md += f"## Description\n{bbcode_to_markdown(description.text)}\n\n"
-	md += '<hr style="border-width: thick">\n'
+	md += '<hr style="border-width: thick">\n\n'
 
 	tutorials = root.find('tutorials')
 	if tutorials is not None and len(tutorials.findall('tutorial')) > 0:
@@ -133,18 +136,15 @@ def xml_to_markdown(xml_string):
 			md += f"- [{title}]({url})\n"
 		md += '<hr style="border-width: thick">\n'
 
-	constants = root.find('constants')
-	if constants is not None:
+	constants_md = get_variable_markdown(root, 'constants', 'constant')
+	if constants_md is not None:
 		md += "## Constants\n"
-		for constant in constants.findall('constant'):
-			constant_name = constant.get('name')
-			if constant_name.startswith('_'):
-				continue
-			constant_value = constant.get('value')
-			# Unescape HTML entities (like "&quot;" to quotes)
-			constant_value = re.sub(r'&quot;', '"', constant_value)
-			md += f"- `#!gd {constant_name}`: `#!gd {constant_value}`\n"
-		md += '<hr style="border-width: thick">\n'
+		md += constants_md
+
+	properties_md = get_variable_markdown(root, 'members', 'member')
+	if properties_md is not None:
+		md += "## Properties\n"
+		md += properties_md
 
 	md += "## Method Descriptions\n"
 	methods = root.findall('methods/method')
@@ -192,6 +192,25 @@ def xml_to_markdown(xml_string):
 		# Separate methods by a line break
 		md += "***\n"
 
+	return md
+
+
+def get_variable_markdown(xml_root, group_name, item_type):
+	group = xml_root.find(group_name)
+	if group is None:
+		return None
+
+	md = ""
+	for item in group.findall(item_type):
+		name = item.get('name')
+		if name.startswith('_'):
+			continue
+		value = item.get('value')
+		md += f"#### • `#!gd {name}`"
+		if value is not None:
+			md += f": `#!gd {value}`"
+		md += f" {{{class_doc_link(None, name, item_type)} data-toc-label='{name}'}} \n"
+	md += '\n<hr style="border-width: thick">\n\n'
 	return md
 
 

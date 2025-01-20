@@ -4,13 +4,23 @@
 
 This Class provides methods for logging, retrieving logged data, and internal methods for working with log files.
 <hr style="border-width: thick">
+
 ## Constants
-- `#!gd MOD_LOG_PATH`: `#!gd "user://logs/modloader.log"`
-- `#!gd ERROR`: `#!gd 0`
-- `#!gd WARNING`: `#!gd 1`
-- `#!gd INFO`: `#!gd 2`
-- `#!gd DEBUG`: `#!gd 3`
+#### • `#!gd MOD_LOG_PATH`: `#!gd "user://logs/modloader.log"` {#constant-MOD_LOG_PATH data-toc-label='MOD_LOG_PATH'} 
+#### • `#!gd ERROR`: `#!gd 0` {#constant-ERROR data-toc-label='ERROR'} 
+#### • `#!gd WARNING`: `#!gd 1` {#constant-WARNING data-toc-label='WARNING'} 
+#### • `#!gd INFO`: `#!gd 2` {#constant-INFO data-toc-label='INFO'} 
+#### • `#!gd DEBUG`: `#!gd 3` {#constant-DEBUG data-toc-label='DEBUG'} 
+
 <hr style="border-width: thick">
+
+## Properties
+#### • `#!gd logged_messages` {#property-logged_messages data-toc-label='logged_messages'} 
+#### • `#!gd verbosity` {#property-verbosity data-toc-label='verbosity'} 
+#### • `#!gd ignored_mods` {#property-ignored_mods data-toc-label='ignored_mods'} 
+
+<hr style="border-width: thick">
+
 ## Method Descriptions
 ### • void <code class="highlight">fatal(message: [String](https://docs.godotengine.org/en/stable/classes/class_string.html), mod_name: [String](https://docs.godotengine.org/en/stable/classes/class_string.html), only_once: [bool](https://docs.godotengine.org/en/stable/classes/class_bool.html))</code> static {#method-fatal data-toc-label='fatal'}
 #### Description:

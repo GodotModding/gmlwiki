@@ -5,9 +5,17 @@
 Small class to keep the state of hook execution chains and move between mod hook calls.  
 For examples, see [`#!gd ModLoaderMod.add_hook()`](mod_loader_mod.md#method-add_hook).
 <hr style="border-width: thick">
+
 ## Constants
-- `#!gd LOG_NAME`: `#!gd "ModLoaderHookChain"`
+#### • `#!gd LOG_NAME`: `#!gd "ModLoaderHookChain"` {#constant-LOG_NAME data-toc-label='LOG_NAME'} 
+
 <hr style="border-width: thick">
+
+## Properties
+#### • `#!gd reference_object` {#property-reference_object data-toc-label='reference_object'} 
+
+<hr style="border-width: thick">
+
 ## Method Descriptions
 ### • [`#!gd Variant`](https://docs.godotengine.org/en/stable/classes/class_variant.html) <code class="highlight">execute_next(args: [Array](https://docs.godotengine.org/en/stable/classes/class_array.html))</code> {#method-execute_next data-toc-label='execute_next'}
 #### Description:

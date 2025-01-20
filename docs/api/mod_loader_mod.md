@@ -4,9 +4,12 @@
 
 This Class provides helper functions to build mods.
 <hr style="border-width: thick">
+
 ## Constants
-- `#!gd LOG_NAME`: `#!gd "ModLoader:Mod"`
+#### • `#!gd LOG_NAME`: `#!gd "ModLoader:Mod"` {#constant-LOG_NAME data-toc-label='LOG_NAME'} 
+
 <hr style="border-width: thick">
+
 ## Method Descriptions
 ### • void <code class="highlight">install_script_extension(child_script_path: [String](https://docs.godotengine.org/en/stable/classes/class_string.html))</code> static {#method-install_script_extension data-toc-label='install_script_extension'}
 #### Description:

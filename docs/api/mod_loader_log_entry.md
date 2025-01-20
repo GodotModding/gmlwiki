@@ -4,6 +4,17 @@
 
 This Sub-Class represents a log entry in ModLoader.
 <hr style="border-width: thick">
+
+## Properties
+#### • `#!gd mod_name` {#property-mod_name data-toc-label='mod_name'} 
+#### • `#!gd message` {#property-message data-toc-label='message'} 
+#### • `#!gd type` {#property-type data-toc-label='type'} 
+#### • `#!gd time` {#property-time data-toc-label='time'} 
+#### • `#!gd time_stamp` {#property-time_stamp data-toc-label='time_stamp'} 
+#### • `#!gd stack` {#property-stack data-toc-label='stack'} 
+
+<hr style="border-width: thick">
+
 ## Method Descriptions
 ### • [`#!gd String`](https://docs.godotengine.org/en/stable/classes/class_string.html) <code class="highlight">get_entry()</code> {#method-get_entry data-toc-label='get_entry'}
 #### Description:

@@ -4,10 +4,13 @@
 
 Class for managing per-mod configurations.
 <hr style="border-width: thick">
+
 ## Constants
-- `#!gd LOG_NAME`: `#!gd "ModLoader:Config"`
-- `#!gd DEFAULT_CONFIG_NAME`: `#!gd "default"`
+#### • `#!gd LOG_NAME`: `#!gd "ModLoader:Config"` {#constant-LOG_NAME data-toc-label='LOG_NAME'} 
+#### • `#!gd DEFAULT_CONFIG_NAME`: `#!gd "default"` {#constant-DEFAULT_CONFIG_NAME data-toc-label='DEFAULT_CONFIG_NAME'} 
+
 <hr style="border-width: thick">
+
 ## Method Descriptions
 ### • [`#!gd ModConfig`](https://docs.godotengine.org/en/stable/classes/class_modconfig.html) <code class="highlight">create_config(mod_id: [String](https://docs.godotengine.org/en/stable/classes/class_string.html), config_name: [String](https://docs.godotengine.org/en/stable/classes/class_string.html), config_data: [Dictionary](https://docs.godotengine.org/en/stable/classes/class_dictionary.html))</code> static {#method-create_config data-toc-label='create_config'}
 #### Description:

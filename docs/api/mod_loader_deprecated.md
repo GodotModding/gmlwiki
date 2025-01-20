@@ -4,9 +4,12 @@
 
 API methods for deprecating funcs. Can be used by mods with public APIs.
 <hr style="border-width: thick">
+
 ## Constants
-- `#!gd LOG_NAME`: `#!gd "ModLoader:Deprecated"`
+#### • `#!gd LOG_NAME`: `#!gd "ModLoader:Deprecated"` {#constant-LOG_NAME data-toc-label='LOG_NAME'} 
+
 <hr style="border-width: thick">
+
 ## Method Descriptions
 ### • void <code class="highlight">deprecated_changed(old_method: [String](https://docs.godotengine.org/en/stable/classes/class_string.html), new_method: [String](https://docs.godotengine.org/en/stable/classes/class_string.html), since_version: [String](https://docs.godotengine.org/en/stable/classes/class_string.html), show_removal_note: [bool](https://docs.godotengine.org/en/stable/classes/class_bool.html))</code> static {#method-deprecated_changed data-toc-label='deprecated_changed'}
 #### Description:

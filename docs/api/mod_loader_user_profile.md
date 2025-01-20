@@ -4,10 +4,13 @@
 
 This Class provides methods for working with user profiles.
 <hr style="border-width: thick">
+
 ## Constants
-- `#!gd LOG_NAME`: `#!gd "ModLoader:UserProfile"`
-- `#!gd FILE_PATH_USER_PROFILES`: `#!gd "user://mod_user_profiles.json"`
+#### • `#!gd LOG_NAME`: `#!gd "ModLoader:UserProfile"` {#constant-LOG_NAME data-toc-label='LOG_NAME'} 
+#### • `#!gd FILE_PATH_USER_PROFILES`: `#!gd "user://mod_user_profiles.json"` {#constant-FILE_PATH_USER_PROFILES data-toc-label='FILE_PATH_USER_PROFILES'} 
+
 <hr style="border-width: thick">
+
 ## Method Descriptions
 ### • [`#!gd bool`](https://docs.godotengine.org/en/stable/classes/class_bool.html) <code class="highlight">enable_mod(mod_id: [String](https://docs.godotengine.org/en/stable/classes/class_string.html), user_profile: [ModUserProfile](https://docs.godotengine.org/en/stable/classes/class_moduserprofile.html))</code> static {#method-enable_mod data-toc-label='enable_mod'}
 #### Description:
