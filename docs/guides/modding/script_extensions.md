@@ -32,6 +32,8 @@ replace (don't call super) (careful, this makes your mod less compatible since i
 
 add member vars and funcs
 
+extend autoloads lower in the load order
+
 ## Limitations
 
 Script Extensions will not be applied to scripts that are 

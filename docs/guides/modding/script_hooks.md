@@ -99,6 +99,10 @@ calling `super()` in a script extension - it hands off the call to the next modd
 That means you can also completely replace the vanilla method by never calling `#!gd chain.execute_next()` - but be careful
 with this as it will likely break all compatibility with other mods that try to hook the same method.
 
+Hooks can be applied to Autoloads, but you should really prefer extensions since Autoloads can't have class_names either way.
+It may be possible to hook autoloads earlier in the load order, but this hasn't been tested. Do note that in case it works
+it is impossible the stop the Autoload's _init from running since hooks are applied during the ModLoader's _ready
+
 ## Limitations
 
 Script Hooks don't exist for Godot 3, they are a recent addition. They are also not required in 3 since even global classes can

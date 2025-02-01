@@ -8,6 +8,10 @@ might be preinstalled (Dome Keeper)
 
 activate in project settings -> plugins
 
+## Connecting your mod
+
+you can either create a new mod at the bottom from one of the templates or connect an existing one
+
 ## File System Context Menu
 
 right click files to do stuff

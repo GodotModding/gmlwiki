@@ -4,34 +4,35 @@ nav:
   - Mod Loader API:
     - api/mod_loader_api.md
     - ModLoaderMod: api/mod_loader_mod.md
-    - ModLoaderLog: api/mod_loader_log.md
+    - ModLoaderLog:
+        - api/mod_loader_log.md
+        - ModLoaderLogEntry: api/mod_loader_log_entry.md
     - ModLoaderHookChain: api/mod_loader_hook_chain.md
     - ModLoaderConfig: api/mod_loader_config.md
     - ModLoaderDeprecated: api/mod_loader_deprecated.md
     - ModLoaderUserProfile: api/mod_loader_user_profile.md
-  - Guides:
-      - Modding:
-        - Modding Tools:
-            - Decompiling with Godot RE Tools: guides/modding/tools/decompile_games.md
-            - Mod Tool: guides/modding/tools/mod_tool.md
-            - Workshop Uploader: guides/modding/tools/workshop_uploader.md
-            - GodotSteam: guides/modding/tools/godot_steam.md
-        - Common File Paths: guides/modding/file_paths.md
-        - Script Extensions: guides/modding/script_extensions.md
-        - Script Hooks: guides/modding/script_hooks.md
-        - Adding and Replacing Game Resources: guides/modding/overwriting_game_resources.md
-        - Config JSON: guides/modding/config_json.md
-        - Global Classes & Child Nodes: guides/modding/global_classes_and_child_nodes.md
-        - Creating a Mod Config Schema: guides/modding/creating_mod_config_schema.md
-        - Mod Structure: guides/modding/mod_structure.md
-        - Mod Files: guides/modding/mod_files.md
-        - Exporting Mods: guides/modding/exporting_mods.md
-        - Testing and Debugging Mods: guides/modding/testing_debugging.md
-      - Integration:
-        - GML Command Line Arguments: guides/integration/cli_args.md
-        - Mod Loader Options: guides/integration/mod_loader_options.md
-        - Godot Project Setup: guides/integration/godot_project_setup.md
-        - Mod Loader Self Setup: guides/integration/mod_loader_self_setup.md
+  - For Modders:
+    - Modding Tools:
+        - Decompiling with Godot RE Tools: guides/modding/tools/decompile_games.md
+        - Mod Tool: guides/modding/tools/mod_tool.md
+        - Workshop Uploader: guides/modding/tools/workshop_uploader.md
+        - GodotSteam: guides/modding/tools/godot_steam.md
+    - Common File Paths: guides/modding/file_paths.md
+    - Script Extensions: guides/modding/script_extensions.md
+    - Script Hooks: guides/modding/script_hooks.md
+    - Adding and Replacing Game Resources: guides/modding/overwriting_game_resources.md
+    - Config JSON: guides/modding/config_json.md
+    - Global Classes & Child Nodes: guides/modding/global_classes_and_child_nodes.md
+    - Creating a Mod Config Schema: guides/modding/creating_mod_config_schema.md
+    - Mod Structure: guides/modding/mod_structure.md
+    - Mod Files: guides/modding/mod_files.md
+    - Exporting Mods: guides/modding/exporting_mods.md
+    - Testing and Debugging Mods: guides/modding/testing_debugging.md
+  - For Integrators:
+    - GML Command Line Arguments: guides/integration/cli_args.md
+    - Mod Loader Options: guides/integration/mod_loader_options.md
+    - Godot Project Setup: guides/integration/godot_project_setup.md
+    - Mod Loader Self Setup: guides/integration/mod_loader_self_setup.md
   - Other:
     - Upcoming Features: misc/upcoming_features.md
     - Breaking Changes: misc/breaking_changes.md

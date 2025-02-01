@@ -1,4 +1,13 @@
 # Adding and Replacing Game Resources
+
+With the Godot alone it's possible to replace/overwrite existing game resources, and add resources in specific places in
+the project. With the Mod Loader, we use a specific convention to both make the process more organized and to apply
+overwrites at the correct point in the game startup.
+
+The system described below can also be used to place assets from your mod folder in specific locations in the game's 
+file system without messing with your [mod structure](mod_structure.md). Some games require this - Dome Keeper, for 
+example, loads all upgrade icons from one folder. The code assumes even modded assets to be there when creating new upgrades.
+
 ## overwrites.gd
 The `overwrites.gd` file is used to define resource overwrites in a separate file. In general, any file in a project 
 can be overwritten, but we highly recommend that you only use this feature for images, audio and other types that 
@@ -7,22 +16,26 @@ inherit from `Resource`.
 We recommend the following directory structure for your overwrites:
 ```
 res://
-└───mods-unpacked
-    └───Author-ModName
+└───mods-unpacked/
+    └───Author-ModName/
         ├───mod_main.gd
         ├───manifest.json
         ├───overwrites.gd
-        └───overwrites
-            └───original_dir_name
+        └───overwrites/
+            └───original_dir_name/
                 └───original_file_name.png
 ```
 
 The following steps are required to create an overwrite:
 
 1. Open the file you want to replace by right-clicking and selecting *Open in File Manager*.
-2. Create a replacement file that matches the metadata of the original file 1:1. For example, for images, make sure that the resolution is the same.
+2. Create a replacement file that matches the metadata of the original file 1:1. For example, for images, make sure 
+   that the resolution is the same.
 3. Add the replacement file to the overwrites directory. Ideally, structure your overwrites as shown above.
 4. Add the required code to `overwrites.gd`.
+
+???+ Tip
+    Creating overwrites be done quickly by using the [Mod Tool file context menu](tools/mod_tool.md#file-system-context-menu)
 
 ## Example
 ##### Using `preload`
@@ -55,9 +68,5 @@ func _init():
         icon_overwrite.take_over_path("res://assets/icons".plus_file(image))
         icons.append(icon_overwrite)  # this essentially pulls the overwrite into global scope
 ```
-Instead of using an array of Strings here, you could also use the [Directory](https://docs.godotengine.org/en/3.5/classes/class_directory.html) class to go over each file in a folder and create and overwrite with it.
-
-
-## Mod Tool
-You can use [Mod Tool](tools/mod_tool.md) to make overwriting assets easier. If you have the plugin activated:
-*right-click -> ModTool: Create Asset Overwrite* on the asset you want to replace
+Instead of using an array of Strings here, you could also use the [Directory](https://docs.godotengine.org/en/3.5/classes/class_directory.html) class to go over each file in a 
+folder and create and overwrite with it.

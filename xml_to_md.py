@@ -113,7 +113,11 @@ def xml_to_markdown(xml_string):
 	class_name = root.get('name')
 	inherits = root.get('inherits')
 
-	md = f"# {class_name}\n"
+	md = ""
+	if class_name == "ModLoaderMod":  # make it stand out a bit more in the list
+		md += "---\nstatus: new\n---\n\n"
+
+	md += f"# {class_name}\n"
 	md += f"**Inherits**: {inherits}\n\n"
 
 	# Process brief description

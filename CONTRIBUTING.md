@@ -56,7 +56,8 @@ Here are a few commonly used features from the extended markdown:
 
 To create special notes or warnings, use [Admonitions](https://squidfunk.github.io/mkdocs-material/reference/admonitions/).
 
-To add information on hover, use [Tooltips](https://squidfunk.github.io/mkdocs-material/reference/tooltips/#usage).
+To add information on hover, use [Tooltips](https://squidfunk.github.io/mkdocs-material/reference/tooltips/#usage) or 
+add the specific word to [abbreviations.md](includes/abbreviations.md) 
 
 [Code Blocks](https://squidfunk.github.io/mkdocs-material/reference/code-blocks/) and 
 [Content Tabs](https://squidfunk.github.io/mkdocs-material/reference/content-tabs/) 
