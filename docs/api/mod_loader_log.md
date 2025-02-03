@@ -18,18 +18,19 @@ This Class provides methods for logging, retrieving logged data, and internal me
 #### • `#!gd logged_messages` {#property-logged_messages data-toc-label='logged_messages'} 
 #### • `#!gd verbosity` {#property-verbosity data-toc-label='verbosity'} 
 #### • `#!gd ignored_mods` {#property-ignored_mods data-toc-label='ignored_mods'} 
+#### • `#!gd hint_color` {#property-hint_color data-toc-label='hint_color'} 
 
 <hr style="border-width: thick">
 
 ## Method Descriptions
 ### • void <code class="highlight">fatal(message: [String](https://docs.godotengine.org/en/stable/classes/class_string.html), mod_name: [String](https://docs.godotengine.org/en/stable/classes/class_string.html), only_once: [bool](https://docs.godotengine.org/en/stable/classes/class_bool.html))</code> static {#method-fatal data-toc-label='fatal'}
 #### Description:
-Logs the error in red and a stack trace. Prefixed FATAL-ERROR.
+Logs the error in red and a stack trace. Prefixed FATAL-ERROR.  
+Always logged.  
 
 
-
-!!! note 
-	*Stops execution in the editor*
+!!! bug "Breakpoint"
+	Stops execution in the editor, use this when something really needs to be fixed.
 
 
 #### Parameters:
@@ -43,13 +44,8 @@ Logs the error in red and a stack trace. Prefixed FATAL-ERROR.
 ***
 ### • void <code class="highlight">error(message: [String](https://docs.godotengine.org/en/stable/classes/class_string.html), mod_name: [String](https://docs.godotengine.org/en/stable/classes/class_string.html), only_once: [bool](https://docs.godotengine.org/en/stable/classes/class_bool.html))</code> static {#method-error data-toc-label='error'}
 #### Description:
-Logs the message and pushes an error. Prefixed ERROR.
-
-
-
-!!! note 
-	Always logged
-
+Logs the message and pushes an error. Prefixed ERROR.  
+Always logged.
 
 #### Parameters:
   
@@ -62,13 +58,8 @@ Logs the message and pushes an error. Prefixed ERROR.
 ***
 ### • void <code class="highlight">warning(message: [String](https://docs.godotengine.org/en/stable/classes/class_string.html), mod_name: [String](https://docs.godotengine.org/en/stable/classes/class_string.html), only_once: [bool](https://docs.godotengine.org/en/stable/classes/class_bool.html))</code> static {#method-warning data-toc-label='warning'}
 #### Description:
-Logs the message and pushes a warning. Prefixed WARNING.
-
-
-
-!!! note 
-	*Note: Logged with verbosity level at or above warning (-v or --log-warning).*
-
+Logs the message and pushes a warning. Prefixed WARNING.  
+Logged with verbosity level at or above warning (`#!gd -v` or `#!gd --log-warning`).
 
 #### Parameters:
   
@@ -82,11 +73,7 @@ Logs the message and pushes a warning. Prefixed WARNING.
 ### • void <code class="highlight">info(message: [String](https://docs.godotengine.org/en/stable/classes/class_string.html), mod_name: [String](https://docs.godotengine.org/en/stable/classes/class_string.html), only_once: [bool](https://docs.godotengine.org/en/stable/classes/class_bool.html))</code> static {#method-info data-toc-label='info'}
 #### Description:
 Logs the message. Prefixed INFO.  
-
-
-!!! note 
-	*Note: Logged with verbosity level at or above info (-vv or --log-info).*
-
+Logged with verbosity level at or above info (`#!gd -vv` or `#!gd --log-info`).
 
 #### Parameters:
   
@@ -100,11 +87,7 @@ Logs the message. Prefixed INFO.
 ### • void <code class="highlight">success(message: [String](https://docs.godotengine.org/en/stable/classes/class_string.html), mod_name: [String](https://docs.godotengine.org/en/stable/classes/class_string.html), only_once: [bool](https://docs.godotengine.org/en/stable/classes/class_bool.html))</code> static {#method-success data-toc-label='success'}
 #### Description:
 Logs the message. Prefixed SUCCESS.  
-
-
-!!! note 
-	*Note: Logged with verbosity level at or above info (-vv or --log-info).*
-
+Logged with verbosity level at or above info (`#!gd -vv` or `#!gd --log-info`).
 
 #### Parameters:
   
@@ -118,10 +101,25 @@ Logs the message. Prefixed SUCCESS.
 ### • void <code class="highlight">debug(message: [String](https://docs.godotengine.org/en/stable/classes/class_string.html), mod_name: [String](https://docs.godotengine.org/en/stable/classes/class_string.html), only_once: [bool](https://docs.godotengine.org/en/stable/classes/class_bool.html))</code> static {#method-debug data-toc-label='debug'}
 #### Description:
 Logs the message. Prefixed DEBUG.  
+Logged with verbosity level at or above debug (`#!gd -vvv` or `#!gd --log-debug`).
+
+#### Parameters:
+  
+`#!gd message` ([`#!gd String`](https://docs.godotengine.org/en/stable/classes/class_string.html)): The message to be logged as a debug.  
+`#!gd mod_name` ([`#!gd String`](https://docs.godotengine.org/en/stable/classes/class_string.html)): The name of the mod or ModLoader class associated with this log entry.  
+`#!gd only_once` ([`#!gd bool`](https://docs.godotengine.org/en/stable/classes/class_bool.html)): (Optional) If true, the log entry will only be logged once, even if called multiple times. Default is false.
+
+**Returns:**
+ `#!gd void`
+***
+### • void <code class="highlight">hint(message: [String](https://docs.godotengine.org/en/stable/classes/class_string.html), mod_name: [String](https://docs.godotengine.org/en/stable/classes/class_string.html), only_once: [bool](https://docs.godotengine.org/en/stable/classes/class_bool.html))</code> static {#method-hint data-toc-label='hint'}
+#### Description:
+Logs the message. Prefixed HINT and highligted.  
+Logged with verbosity level at or above debug (`#!gd -vvv` or `#!gd --log-debug`) and in the editor only. Not written to mod loader log.  
 
 
 !!! note 
-	*Note: Logged with verbosity level at or above debug (-vvv or --log-debug).*
+	Use this to help other developers debug issues by giving them error-specific hints.
 
 
 #### Parameters:
@@ -136,11 +134,7 @@ Logs the message. Prefixed DEBUG.
 ### • void <code class="highlight">debug_json_print(message: [String](https://docs.godotengine.org/en/stable/classes/class_string.html), json_printable: [Variant](https://docs.godotengine.org/en/stable/classes/class_variant.html), mod_name: [String](https://docs.godotengine.org/en/stable/classes/class_string.html), only_once: [bool](https://docs.godotengine.org/en/stable/classes/class_bool.html))</code> static {#method-debug_json_print data-toc-label='debug_json_print'}
 #### Description:
 Logs the message formatted with [`#!gd JSON.print()`](https://docs.godotengine.org/en/stable/classes/class_json.html#class-json-method-print). Prefixed DEBUG.  
-
-
-!!! note 
-	*Note: Logged with verbosity level at or above debug (-vvv or --log-debug).*
-
+Logged with verbosity level at or above debug (`#!gd -vvv` or `#!gd --log-debug`).
 
 #### Parameters:
   

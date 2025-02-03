@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class name="ModLoaderDeprecated" inherits="Object" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/godotengine/godot/master/doc/class.xsd">
+	<brief_description>
+		API methods for deprecating funcs. Can be used by mods with public APIs.
+	</brief_description>
+	<description>
+	</description>
+	<tutorials>
+	</tutorials>
+	<methods>
+		<method name="deprecated_changed" qualifiers="static">
+			<return type="void" />
+			<param index="0" name="old_method" type="String" />
+			<param index="1" name="new_method" type="String" />
+			<param index="2" name="since_version" type="String" />
+			<param index="3" name="show_removal_note" type="bool" default="true" />
+			<description>
+				Marks a method that has changed its name or class.[br][br][b]Parameters:[/b][br]- [code]old_method[/code] ([String]): The name of the deprecated method.[br]- [code]new_method[/code] ([String]): The name of the new method to use.[br]- [code]since_version[/code] ([String]): The version number from which the method has been deprecated.[br]- [code]show_removal_note[/code] ([bool]): (optional) If true, includes a note about future removal of the old method. Default is true.[br][br][b]Returns:[/b][br]- [code]void[/code]
+			</description>
+		</method>
+		<method name="deprecated_removed" qualifiers="static">
+			<return type="void" />
+			<param index="0" name="old_method" type="String" />
+			<param index="1" name="since_version" type="String" />
+			<param index="2" name="show_removal_note" type="bool" default="true" />
+			<description>
+				Marks a method that has been entirely removed, with no replacement.[br]===[br][b]Note:[/b][br]This should rarely be needed but is included for completeness.[br]===[br][br][b]Parameters:[/b][br]- [code]old_method[/code] ([String]): The name of the removed method.[br]- [code]since_version[/code] ([String]): The version number from which the method has been deprecated.[br]- [code]show_removal_note[/code] ([bool]): (optional) If true, includes a note about future removal of the old method. Default is true.[br][br][b]Returns:[/b][br]- [code]void[/code]
+			</description>
+		</method>
+		<method name="deprecated_message" qualifiers="static">
+			<return type="void" />
+			<param index="0" name="msg" type="String" />
+			<param index="1" name="since_version" type="String" default="&quot;&quot;" />
+			<description>
+				Marks a method with a freeform deprecation message.[br][br][b]Parameters:[/b][br]- [code]msg[/code] ([String]): The deprecation message.[br]- [code]since_version[/code] ([String]): (optional) The version number from which the deprecation applies.[br][br][b]Returns:[/b][br]- [code]void[/code]
+			</description>
+		</method>
+		<method name="_deprecated_log" qualifiers="static">
+			<return type="void" />
+			<param index="0" name="msg" type="String" />
+			<description>
+				Internal function for logging deprecation messages with support to trigger warnings instead of fatal errors.[br][br][b]Parameters:[/b][br]- [code]msg[/code] ([String]): The deprecation message.[br][br][b]Returns:[/b][br]- [code]void[/code]
+			</description>
+		</method>
+	</methods>
+	<constants>
+		<constant name="LOG_NAME" value="&quot;ModLoader:Deprecated&quot;">
+		</constant>
+	</constants>
+</class>

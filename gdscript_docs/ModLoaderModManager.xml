@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class name="ModLoaderModManager" inherits="RefCounted" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/godotengine/godot/master/doc/class.xsd">
+	<brief_description>
+	</brief_description>
+	<description>
+	</description>
+	<tutorials>
+	</tutorials>
+	<methods>
+		<method name="uninstall_script_extension" qualifiers="static">
+			<return type="void" />
+			<param index="0" name="extension_script_path" type="String" />
+			<description>
+			</description>
+		</method>
+		<method name="reload_mods" qualifiers="static">
+			<return type="void" />
+			<description>
+			</description>
+		</method>
+		<method name="disable_mods" qualifiers="static">
+			<return type="void" />
+			<description>
+			</description>
+		</method>
+		<method name="disable_mod" qualifiers="static">
+			<return type="void" />
+			<param index="0" name="mod_data" type="ModData" />
+			<description>
+			</description>
+		</method>
+	</methods>
+	<constants>
+		<constant name="LOG_NAME" value="&quot;ModLoader:Manager&quot;">
+		</constant>
+	</constants>
+</class>

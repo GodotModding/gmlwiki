@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class name="ModLoaderLog.ModLoaderLogEntry" inherits="Resource" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/godotengine/godot/master/doc/class.xsd">
+	<brief_description>
+		This Sub-Class represents a log entry in ModLoader.
+	</brief_description>
+	<description>
+	</description>
+	<tutorials>
+	</tutorials>
+	<methods>
+		<method name="_init">
+			<return type="ModLoaderLog.ModLoaderLogEntry" />
+			<param index="0" name="_mod_name" type="String" />
+			<param index="1" name="_message" type="String" />
+			<param index="2" name="_type" type="String" />
+			<param index="3" name="_time" type="String" />
+			<description>
+				Initialize a ModLoaderLogEntry object with provided values.[br][br][b]Parameters:[/b][br][param _mod_name] ([String]): Name of the mod or ModLoader class this entry refers to.[br][param _message] ([String]): The message of the log entry.[br][param _type] ([String]): The log type, which indicates the verbosity level of this entry.[br][param _time] ([String]): The readable format of the time when this log entry was created.[br][br][b]Returns:[/b] [code]void[/code]
+			</description>
+		</method>
+		<method name="get_entry">
+			<return type="String" />
+			<description>
+				Get the log entry as a formatted string.[br][br][b]Returns:[/b] [String]
+			</description>
+		</method>
+		<method name="get_prefix">
+			<return type="String" />
+			<description>
+				Get the prefix string for the log entry, including the log type and mod name.[br][br][b]Returns:[/b] [String]
+			</description>
+		</method>
+		<method name="get_md5">
+			<return type="String" />
+			<description>
+				Generate an MD5 hash of the log entry (prefix + message).[br][br][b]Returns:[/b] [String]
+			</description>
+		</method>
+		<method name="get_all_entries">
+			<return type="Array" />
+			<description>
+				Get all log entries, including the current entry and entries in the stack.[br][br][b]Returns:[/b] [Array]
+			</description>
+		</method>
+	</methods>
+	<members>
+		<member name="mod_name" type="String" setter="" getter="">
+			Name of the mod or ModLoader class this entry refers to.
+		</member>
+		<member name="message" type="String" setter="" getter="">
+			The message of the log entry.
+		</member>
+		<member name="type" type="String" setter="" getter="">
+			The log type, which indicates the verbosity level of this entry.
+		</member>
+		<member name="time" type="String" setter="" getter="">
+			The readable format of the time when this log entry was created. Used for printing in the log file and output.
+		</member>
+		<member name="time_stamp" type="int" setter="" getter="">
+			The timestamp when this log entry was created. Used for comparing and sorting log entries by time.
+		</member>
+		<member name="stack" type="Array" setter="" getter="" default="[]">
+			An array of ModLoaderLogEntry objects. If the message has been logged before, it is added to the stack.
+		</member>
+	</members>
+</class>

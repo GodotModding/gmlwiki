@@ -119,3 +119,5 @@ Returns an array containing all user profiles stored in ModLoaderStore.
 **Returns:**
  [`#!gd Array`](https://docs.godotengine.org/en/stable/classes/class_array.html) of [`#!gd ModUserProfile`](https://docs.godotengine.org/en/stable/classes/class_moduserprofile.html) Objects
 ***
+### • [`#!gd bool`](https://docs.godotengine.org/en/stable/classes/class_bool.html) <code class="highlight">is_initialized()</code> static {#method-is_initialized data-toc-label='is_initialized'}
+***

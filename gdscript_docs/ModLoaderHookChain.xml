@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class name="ModLoaderHookChain" inherits="RefCounted" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/godotengine/godot/master/doc/class.xsd">
+	<brief_description>
+		Small class to keep the state of hook execution chains and move between mod hook calls.[br]For examples, see [method ModLoaderMod.add_hook].
+	</brief_description>
+	<description>
+	</description>
+	<tutorials>
+	</tutorials>
+	<methods>
+		<method name="_init">
+			<return type="ModLoaderHookChain" />
+			<param index="0" name="reference_object" type="Object" />
+			<param index="1" name="callbacks" type="Array" />
+			<description>
+			</description>
+		</method>
+		<method name="execute_next">
+			<return type="Variant" />
+			<param index="0" name="args" type="Array" default="[]" />
+			<description>
+				Will execute the next mod hook callable or vanilla method and return the result.[br]Make sure to call this method [i][color=orange]once[/color][/i] somewhere in the [param mod_callable] you pass to [method ModLoaderMod.add_hook]. [br][br][b]Parameters:[/b][br]- [param args] ([Array]): An array of all arguments passed into the vanilla function. [br][br][b]Returns:[/b] [Variant][br][br]
+			</description>
+		</method>
+		<method name="execute_next_async">
+			<return type="Variant" />
+			<param index="0" name="args" type="Array" default="[]" />
+			<description>
+				Same as [method execute_next], but asynchronous - it can be used if a method uses [code]await[/code]. [br]This hook needs to be used if the vanilla method uses [code]await[/code] somewhere. [br]Make sure to call this method [i][color=orange]once[/color][/i] somewhere in the [param mod_callable] you pass to [method ModLoaderMod.add_hook]. [br][br][b]Parameters:[/b][br]- [param args] ([Array]): An array of all arguments passed into the vanilla function. [br][br][b]Returns:[/b] [Variant][br][br]
+			</description>
+		</method>
+		<method name="_get_next_callback">
+			<return type="Variant" />
+			<description>
+			</description>
+		</method>
+		<method name="_is_callback_vanilla">
+			<return type="bool" />
+			<description>
+			</description>
+		</method>
+	</methods>
+	<members>
+		<member name="reference_object" type="Object" setter="" getter="">
+			The reference object is usually the [Node] that the vanilla script is attached to. [br]If the hooked method is [code]static[/code], it will contain the [GDScript] itself.
+		</member>
+		<member name="_callbacks" type="Callable[]" setter="" getter="" default="[]">
+		</member>
+		<member name="_callback_index" type="int" setter="" getter="" default="-1">
+		</member>
+	</members>
+	<constants>
+		<constant name="LOG_NAME" value="&quot;ModLoaderHookChain&quot;">
+		</constant>
+	</constants>
+</class>
