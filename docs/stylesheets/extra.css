@@ -1,7 +1,9 @@
 
 /* highlighted inline code within links has visibility issues */
-a:hover > code {
+a > code, a:hover {
     text-decoration: underline;
+    /* stops interference with _ and similar chars */
+    text-underline-offset: 4px;
 }
 
 .half-width {
