@@ -9,52 +9,44 @@ Script extensions are the preferred way to change, extend and replace behaviour 
 It works by registering an entire file of new script functions as a child script of a vanilla script. Not all methods 
 from the original script need to be in the extension script.
 
+Extensions are based on [inheritance](https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/gdscript_basics.html#inheritance), 
+which is a concept from object-oriented programming. It is recommended that you know a bit about [classes](https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/gdscript_basics.html#classes) 
+and [inheritance](https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/gdscript_basics.html#inheritance) before delving deeper. 
+Note that we won't be making much use of custom named classes, we'll mostly be using inheritance to extend a functions
+logic and then let the mod loader replace the vanilla script with our custom one. 
+
 [API reference: `#!gd ModLoaderMod.install_script_extension()`](../../api/mod_loader_mod.md#method-install_script_extension)
 
 ## Features
 
-Extensions can change vanilla methods before and after they are called, which allows them to 
-manipulate both the input parameters and the output value of a function. 
+**Multiple mods can mod the same functions** and their changes will accumulate rather than replacing each other (depending on load order).
 
-=== "Godot 4"
+Extensions can **change vanilla methods before and after** they are called, which allows them to 
+**manipulate both the input parameters and the output value of a function**. They can also **completely replace** 
+vanilla functions, but be aware that that may reduce compatibility, especially with other mods that change 
+the same function. For an example, see [usage](#usage) below.
 
-=== "Godot 3"
+Since we are working with standard inheritance, we can also **add new member variables and functions** to the classes that 
+we extend. 
 
-
-
-extend before and after (call parent method with super() or `.`, except for virtuals in 3)
-replace (don't call super) (careful, this makes your mod less compatible since it breaks the chain of modded methods)
-
-!!! note
-    Since Godot 4 it is possible to completely replace virtual functions if the 
-    [`super`](https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/gdscript_basics.html#inheritance) 
-    keyword is not used within the function.
-
-add member vars and funcs
-
-extend autoloads lower in the load order
+Script extensions **can also be applied to [Autoloads](https://docs.godotengine.org/en/stable/tutorials/scripting/singletons_autoload.html)**, 
+if the ModLoader autoload is higher in the load order. You can check the autoload order by setting the mod loader 
+[log level](testing_debugging.md#logging-and-other-handy-options) to DEBUG and checking the log. 
 
 ## Limitations
 
-Script Extensions will not be applied to scripts that are 
-[`preload()`ed](https://docs.godotengine.org/en/stable/classes/class_%40gdscript.html#class-gdscript-method-preload "preload() is a GDScript feature") 
+Script Extensions **will not be applied to scripts that are 
+[`preload()`ed](https://docs.godotengine.org/en/stable/classes/class_%40gdscript.html#class-gdscript-method-preload "preload() is a GDScript feature")** 
 in any way. This affects both scripts which are preloaded directly - `#!gd preload("res://player.gd")` - and scripts which are
 indirectly preloaded by being used in preloaded scenes - `#!gd preload("res://player.tscn")`.   
-This is a Godot limitation we have yet to find a workaround for.
-
-some scenes can be worked around by modding the scene that instantiates them
-- like the pause menu in dome keeper which was preloaded and instantiated - changed the menu after it was created
-
-[//]: # (TODO)
-Redefine member variables
-- use a function like ready init or the one you are using it in to change their value
-
-change constants unless they are arrays/dictionaries (just values)
-
-insert code in the middle of functions (ask dev if they can split it)
+This is a Godot limitation we have yet to find a complete workaround for.  
+For scenes there can be a way to circumvent this limitation by extending the scene that instantiates it. For example,
+the pause menu in dome keeper was preloaded and instantiated from another scene. The other scene was extended, which 
+allowed accessing the nodes within the pause menu after it was created, as well as adding new nodes to it.
 
 === "Godot 4"
-    Extending global classes (scripts with `class_name` at the top) is not possible. 
+
+    **Extending global classes (scripts with `class_name` at the top) is not possible**. 
     To work around this issue, we've created [Script Hooks](script_hooks.md), use them instead of 
     extensions when necessary.
 
@@ -63,9 +55,9 @@ insert code in the middle of functions (ask dev if they can split it)
 
 === "Godot 3"
 
-    It is not possible to replace [virtual functions](https://docs.godotengine.org/en/3.5/tutorials/scripting/overridable_functions.html) 
-    with a script extension, since the function from the parent class will always be called by Godot.
-    Because of this, using `._ready()` - the `_ready()` function of the parent class - in a script extension will result 
+    It is **not possible to replace [virtual functions](https://docs.godotengine.org/en/3.5/tutorials/scripting/overridable_functions.html)** 
+    with a script extension, since the function from the base class will always be called by Godot.
+    Because of this, using `._ready()` - the `_ready()` function of the base class - in a script extension will result 
     in that function being called twice.
 
     ???+ info
@@ -76,6 +68,23 @@ insert code in the middle of functions (ask dev if they can split it)
     !!! bug "Related Godot Issue"
         [#33620](https://github.com/godotengine/godot/issues/33620#issuecomment-553912225)
 
+
+You **can't redefine or overwrite member variables** in inheriting scripts. That's simply due to how inheritance works in Godot.  
+This can usually be worked around by using a function like _ready or _init to change their value ahead of time, or by
+extending the function that uses the variable and changing the value before calling the base method.
+
+There is currently **no way to insert code into the middle of a function**. In the best case scenario, functions are kept 
+small, or you can ask the developer to split the function into smaller parts for the next update. If that fails, you can
+copy the vanilla method in its entirety and insert your code in the middle. This is the same as replacing a function 
+completely though, so your mod will be less compatible with other mods. Additionally, if the game developer changes that
+function in an update, you will have to update your function to that new code too, or you risk the game breaking or 
+reintroducing old bugs.
+
+**Constants** do what they should, so they **can't be changed or overwritten**. Unless the constant holds an Array, in which 
+case the variable can't be reassigned, but the values within can change without problem. 
+Dictionaries are in a similar situation, where the dict values can change freely, but the keys are fixed. 
+
+
 ## Usage
 
 !!! abstract "See also" 
@@ -84,8 +93,8 @@ insert code in the middle of functions (ask dev if they can split it)
 
 This script extension changes the path that save files are loaded from in the game Brotato.
 
-The location of this example script extension would be here: 
-`res://mods-unpacked/Author-ModName/extensions/singletons/progress_data.gd`
+The path of this example script extension would be, by convention, in the `/extensions` folder and then mirroring the 
+vanilla file structure: `res://mods-unpacked/Author-ModName/extensions/singletons/progress_data.gd`
 
 === "Godot 4"
 
@@ -121,25 +130,57 @@ The location of this example script extension would be here:
         #return .load_game_file(modded_path)
     ```
 
-To install it, call [ModLoaderMod.install_script_extension]() from your mod's `mod_main.gd`, in `_init`:
+The above example showed how to call the base method by using `#!gd super()` or the `.` prefix in Godot 3. 
+
+In this example, the input values for the base function are changed, but it is also possible to manipulate the output 
+value by calling the base method first, changing something and then returning that new value, as shown below:
 
 === "Godot 4"
 
     ```gdscript
-    extends Node
-
-    func _init():
-        ModLoaderMod.install_script_extension('res://mods-unpacked/Author-ModName/extensions/singletons/progress_data.gd')
+    func get_playtime_days() -> int:
+        var days = super()
+        return days + 2
     ```
 
 === "Godot 3"
 
     ```gdscript
-    extends Node
-
-    func _init():
-        ModLoaderMod.install_script_extension('res://mods-unpacked/Author-ModName/extensions/singletons/progress_data.gd')
+    func get_playtime_days() -> int:
+        var days = .get_playtime_days()
+        return days + 2
     ```
+
+Since we are extending the vanilla base class, not calling the base method would completely replace the method. 
+Since all modded methods extend each other in a chain, this would break the chain and usually cause conflicts between mods.
+
+=== "Godot 4"
+
+    Since Godot 4, it is possible to completely replace [virtual/overridable](https://docs.godotengine.org/en/3.6/tutorials/scripting/overridable_functions.html) 
+    functions, by not using the 
+    [`super`](https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/gdscript_basics.html#inheritance) 
+    keyword within the function, which wasn't the case before.
+
+=== "Godot 3"
+
+    Godot 3 has one particular quirk, which always calls the base method for all [virtual/overridable functions](https://docs.godotengine.org/en/3.6/tutorials/scripting/overridable_functions.html).
+    Because of this quirk, you shouldn't call `#!gd ._ready()` and other virtuals, because they would be called twice.
+    It is also impossible to completely replace a virtual function for that reason.
+
+
+To install it, call [`#!gd ModLoaderMod.install_script_extension()`](../../api/mod_loader_mod.md#method-install_script_extension) 
+from your mod's `mod_main.gd`, in `#!gd _init()` or in any function that gets called 
+by `#!gd _init()`, like the `#!gd install_script_extensions()` functions we usually use by convention.
+
+```gdscript
+extends Node
+
+func _init():
+	install_script_extensions()
+
+func install_script_extensions() -> void:
+    ModLoaderMod.install_script_extension('res://mods-unpacked/Author-ModName/extensions/singletons/progress_data.gd')
+```
 
 ## Technical Details
 
