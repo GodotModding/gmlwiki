@@ -6,7 +6,7 @@
 *[vanilla]: Refers to the base game without modifications
 *[directory]: Programmer word for "Folder"
 *[API]: "Application Programming Interface" <br>Basically pre-made functions someone else provides for you to use
-*[API]: "Application Programming Interface" <br>Basically pre-made functions someone else provides for you to use
+*[APIs]: "Application Programming Interface" <br>Basically pre-made functions someone else provides for you to use
 *[method]: Name for a function that belongs to an object
 *[methods]: Name for functions which belong to an object
 *[Properties]: Name for variables which belong to an object

@@ -80,6 +80,7 @@ and distributing them as ZIPs.
 4. Create your [Mod Structure](guides/modding/mod_structure.md)
 5. Create your [Mod Files](guides/modding/mod_files.md)
 6. Use the [API Methods](api/mod_loader_api.md)
+7. Easily [Test and debug](guides/modding/testing_debugging.md) your mod
 
 ### Mod user
 Check if the Godot ModLoader is already integrated into the game you want to mod.

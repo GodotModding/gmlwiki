@@ -92,6 +92,8 @@ is preferred for inline highlights to remain brief.
 
 ## API Docs generation
 
+Replace "godot4.3" with the path to your editor exe, or set it in PATH. 
+
 ```shell
 godot4.3 --doctool docs --gdscript-docs res://addons/mod_loader/api --quit
 ```

@@ -2,15 +2,21 @@ site_name: Godot Mod Loader Wiki
 nav:
   - Home: index.md
   - Mod Loader API:
-    - api/mod_loader_api.md
+    - API Overview: api/mod_loader_api.md
     - ModLoaderMod: api/mod_loader_mod.md
-    - ModLoaderLog:
-        - api/mod_loader_log.md
-        - ModLoaderLogEntry: api/mod_loader_log_entry.md
+    - ModLoaderLog: api/mod_loader_log.md
+    - ModLoaderLogEntry: api/mod_loader_log_entry.md
     - ModLoaderHookChain: api/mod_loader_hook_chain.md
     - ModLoaderConfig: api/mod_loader_config.md
     - ModLoaderDeprecated: api/mod_loader_deprecated.md
     - ModLoaderUserProfile: api/mod_loader_user_profile.md
+    - Godot 3:
+        - ModLoaderMod: api/godot_3/mod_loader_mod.md
+        - ModLoaderLog: api/godot_3/mod_loader_log.md
+        - ModLoaderConfig: api/godot_3/mod_loader_config.md
+        - ModLoaderDeprecated: api/godot_3/mod_loader_deprecated.md
+        - ModLoaderUserProfile: api/godot_3/mod_loader_user_profile.md
+        - ModLoaderModManager: api/godot_3/mod_loader_mod_manager.md
   - For Modders:
     - Modding Tools:
         - Decompiling with Godot RE Tools: guides/modding/tools/decompile_games.md
@@ -33,6 +39,7 @@ nav:
     - Mod Loader Options: guides/integration/mod_loader_options.md
     - Godot Project Setup: guides/integration/godot_project_setup.md
     - Mod Loader Self Setup: guides/integration/mod_loader_self_setup.md
+    - Mod Distribution Options: guides/integration/mod_distribution.md
   - Other:
     - Upcoming Features: misc/upcoming_features.md
     - Breaking Changes: misc/breaking_changes.md
@@ -100,6 +107,9 @@ markdown_extensions:
 # version tabbed highlighted code
   - pymdownx.tabbed:
       alternate_style: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
   - pymdownx.superfences
   - pymdownx.highlight:
       anchor_linenums: true
