@@ -16,12 +16,14 @@
 *[callables]: Function objects, which can be passed around and called later
 *[argument]: A variable passed into a function
 *[arguments]: Variables passed into a function
+*[OS]: Operating System
 
 
 [//]: # (Names)
 *[GML]: Godot Mod Loader
 *[gml]: Godot Mod Loader
 *[gdre]: Godot Reverse Engineering Tools
+*[GDRE]: Godot Reverse Engineering Tools
 *[gdsdecomp]: Old name for Godot RE Tools
 *[Brotato]: A game made in Godot 3.5
 *[Dome Keeper]: A game made in Godot 4.2
@@ -29,3 +31,4 @@
 *[Megaloot]: A game made in Godot 4.x
 *[Endoparasitic]: A game made in Godot 3.x
 *[Of Life and Land]: A game made in Godot 3.x
+*[Dawnfolk]: A game made in Godot 3.5

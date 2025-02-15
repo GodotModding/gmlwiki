@@ -25,6 +25,6 @@ don't forget to save
 
 ## Exporting
 choosing a file path
-- any mod export folder or perhaps [steam workshop folder](../file_paths.md#steam-workshop-folder)
+- any mod export folder or perhaps [steam workshop folder](../file_paths.md#workshop-folder)
 
 

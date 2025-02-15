@@ -23,13 +23,13 @@ nav:
         - Mod Tool: guides/modding/tools/mod_tool.md
         - Workshop Uploader: guides/modding/tools/workshop_uploader.md
         - GodotSteam: guides/modding/tools/godot_steam.md
-    - Common File Paths: guides/modding/file_paths.md
     - Script Extensions: guides/modding/script_extensions.md
     - Script Hooks: guides/modding/script_hooks.md
     - Adding and Replacing Game Resources: guides/modding/overwriting_game_resources.md
     - Config JSON: guides/modding/config_json.md
     - Global Classes & Child Nodes: guides/modding/global_classes_and_child_nodes.md
     - Creating a Mod Config Schema: guides/modding/creating_mod_config_schema.md
+    - Common File Paths: guides/modding/file_paths.md
     - Mod Structure: guides/modding/mod_structure.md
     - Mod Files: guides/modding/mod_files.md
     - Exporting Mods: guides/modding/exporting_mods.md

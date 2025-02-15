@@ -7,7 +7,7 @@ these two environments, you will likely want a way to quickly change something, 
 mod players would.
 
 For this purpose, you can set the output path in the [Mod Tool](tools/mod_tool.md) to a subfolder of the
-[steam workshop folder](file_paths.md#steam-workshop-folder). 
+[steam workshop folder](file_paths.md#workshop-folder). 
 
 ![bottom area of the mod tool panel, showing the export path](_media/mod_tool_workshop_export.png)
 
