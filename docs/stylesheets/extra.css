@@ -3,3 +3,12 @@
 a:hover > code {
     text-decoration: underline;
 }
+
+.half-width {
+    width: 50%;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
