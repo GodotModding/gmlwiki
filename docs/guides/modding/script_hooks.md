@@ -34,12 +34,25 @@ There are two ways in which mod hooks can take the place of vanilla scripts:
     - You can check if a file has a comment similar to this *"ModLoader Hooks - The following code has been automatically 
         added by the Godot Mod Loader."* to see if it is already hooked.
 
+!!! abstract "See also" 
+    [API Reference: `#!gd ModLoaderMod.add_hook()`](../../api/mod_loader_mod.md#method-add_hook) and  
+    [API Reference: `#!gd ModLoaderMod.install_script_hooks()`](../../api/mod_loader_mod.md#method-install_script_hooks)
+
+## Hooks in the editor
+
+The dynamically generated script that our mod hook preprocessor creates cannot be applied in the editor 
+([at least until 4.4](https://github.com/godotengine/godot/pull/90425)).  
+To work around this issue, you can use the [mod tool file system context menu](tools/mod_tool.md#file-system-context-menu)
+and convert the vanilla file once. Afterward you will be able to test mod hooks as if there were no differences.
+
 ## Features
 
-The main feature of mod hooks is that they can mod global classes - scripts which use `class_name` to be globally accessible.
+**Multiple mods can mod the same functions** and their changes will accumulate rather than replacing each other (depending on load order).
+
+The main feature of mod hooks is that they **can mod global classes** - scripts which use `class_name` to be globally accessible.
 Global classes have a bug which prevents us from using extensions.
 
-Hooks can modify member variables by accessing the [`#!gd ModLoaderHookChain.reference_object`](../../api/mod_loader_hook_chain.md#property-reference_object). 
+Hooks **can modify member variables** by accessing the [`#!gd ModLoaderHookChain.reference_object`](../../api/mod_loader_hook_chain.md#property-reference_object). 
 Example: this hook method that is attached to the main node which contains the game's version.
 
 === "Godot 4"
@@ -99,9 +112,50 @@ calling `super()` in a script extension - it hands off the call to the next modd
 That means you can also completely replace the vanilla method by never calling `#!gd chain.execute_next()` - but be careful
 with this as it will likely break all compatibility with other mods that try to hook the same method.
 
-Hooks can be applied to Autoloads, but you should really prefer extensions since Autoloads can't have class_names either way.
+Hooks can be applied to Autoloads, but you should really prefer extensions - since Autoloads can't have class_names in any case.
 It may be possible to hook autoloads earlier in the load order, but this hasn't been tested. Do note that in case it works
 it is impossible the stop the Autoload's _init from running since hooks are applied during the ModLoader's _ready
+
+To install a single hook, call [`#!gd ModLoaderMod.add_hook()`](../../api/mod_loader_mod.md#method-add_hook) 
+from your mod's `mod_main.gd`, in `#!gd _init()` or in any function that gets called 
+by `#!gd _init()`, like the `#!gd install_script_hook_files()` functions we usually use by convention.
+
+While a single script extension always extends a whole file, a single script hook only 
+affects a single method. For convenience, we added an "install-" method which applies all hooks from a file: 
+[`#!gd ModLoaderMod.install_script_hooks()`](../../api/mod_loader_mod.md#method-install_script_hooks).
+
+For single hooks, your function name does not matter, if you set it correctly in `#!gd add_hook()`, it will be found. 
+However, when using `#!gd ModLoaderMod.install_script_hooks()` with a whole file, all your custom callables need to 
+have the exact same name as the vanilla function, otherwise they will be ignored.
+
+=== "Godot 4"
+
+    ```gdscript
+    func _init() -> void:
+        ModLoaderMod.add_hook(change_version, "res://main.gd", "_ready")
+        ModLoaderMod.add_hook(time_travel, "res://tools/utilities.gd", "format_date")
+        # Multiple hooks can be added to a single method.
+        ModLoaderMod.add_hook(add_season, "res://tools/utilities.gd", "format_date")
+    
+        install_script_hook_files()
+    
+    func install_script_hook_files() -> void:
+        ModLoaderMod.install_script_hooks("res://tools/utilities.gd", "res://mods-unpacked/godotmodding-TEST/extensions/tools/utilities.hooks.gd")
+    
+    func change_version(): ...
+    func time_travel(): ...
+    func add_season(): ...
+    ```
+
+=== "Godot 3"
+    !!! warning
+        This feature does not exist in Godot 3
+
+
+!!! bug "Common issues"
+    1. Always make sure you are calling `#!gd chain.execute_next()`!
+    2. [In editor](#hooks-in-the-editor): Make sure the file is converted!
+
 
 ## Limitations
 
@@ -122,38 +176,3 @@ feature to the hook preprocessor yet since it's rarely used and was not needed y
 let us know on this [issue #516](https://github.com/GodotModding/godot-mod-loader/issues/516)
 
 There is technically a small hit to performance when using hooks compared to extensions, but it is negligible in most cases.
-
-## Hooks in the editor
-
-The dynamically generated script that our mod hook preprocessor creates cannot be applied in the editor 
-([at least until 4.4](https://github.com/godotengine/godot/pull/90425)).  
-To work around this issue, you can use the [mod tool file system context menu](tools/mod_tool.md#file-system-context-menu)
-and convert the vanilla file once. Afterward you will be able to test mod hooks as if there were no differences.
-
-## Usage
-
-!!! abstract "See also" 
-    [API Reference: `#!gd ModLoaderMod.add_hook()`](../../api/mod_loader_mod.md#method-add_hook) and  
-    [API Reference: `#!gd ModLoaderMod.install_script_hooks()`](../../api/mod_loader_mod.md#method-install_script_hooks)
-
-one by one
-ModLoaderMod.add_hook()
-
-???+ note
-    While a single script extension extends a whole file (even if it only changes one method), a single script hook only 
-    affects a single method. For convenience, we added an "install-" method which applies all hooks from a file. 
-
-ModLoaderMod.install_script_hooks()
-
-=== "Godot 4"
-
-=== "Godot 3"
-    !!! warning
-        This feature does not exist in Godot 3
-
-### Hook method
-
-!!! bug "Common issues"
-    1. Always make sure you are calling `#!gd chain.execute_next()`!
-    2. [In editor](#hooks-in-the-editor): Make sure the file is converted!
-
