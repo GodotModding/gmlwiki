@@ -15,7 +15,8 @@ and [inheritance](https://docs.godotengine.org/en/stable/tutorials/scripting/gds
 Note that we won't be making much use of custom named classes, we'll mostly be using inheritance to extend a functions
 logic and then let the mod loader replace the vanilla script with our custom one. 
 
-[API reference: `#!gd ModLoaderMod.install_script_extension()`](../../api/mod_loader_mod.md#method-install_script_extension)
+!!! abstract "See also" 
+    [API Reference: `#!gd ModLoaderMod.install_script_extension()`](../../api/mod_loader_mod.md#method-install_script_extension)
 
 ## Features
 
@@ -24,7 +25,7 @@ logic and then let the mod loader replace the vanilla script with our custom one
 Extensions can **change vanilla methods before and after** they are called, which allows them to 
 **manipulate both the input parameters and the output value of a function**. They can also **completely replace** 
 vanilla functions, but be aware that that may reduce compatibility, especially with other mods that change 
-the same function. For an example, see [usage](#usage) below.
+the same function.
 
 Since we are working with standard inheritance, we can also **add new member variables and functions** to the classes that 
 we extend. 
@@ -32,6 +33,85 @@ we extend.
 Script extensions **can also be applied to [Autoloads](https://docs.godotengine.org/en/stable/tutorials/scripting/singletons_autoload.html)**, 
 if the ModLoader autoload is higher in the load order. You can check the autoload order by setting the mod loader 
 [log level](testing_debugging.md#logging-and-other-handy-options) to DEBUG and checking the log. 
+
+
+This example script extension changes the path that save files are loaded from in the game Brotato.  
+The path of this script extension would be, by convention, in the `/extensions` folder and then mirroring the 
+vanilla file structure: `res://mods-unpacked/Author-ModName/extensions/singletons/progress_data.gd`
+
+=== "Godot 4"
+
+    ```gdscript
+    # Our base script is the original game script.
+    extends "res://singletons/progress_data.gd"
+    
+    # This overrides the method with the same name, changing the value of its argument:
+    func load_game_file(path: String = SAVE_PATH) -> void:
+        var modded_path = path + "--modded.json"
+    
+        # Calling the base method will call the original game method:
+        super(modded_path)
+    
+        # Note that if the vanilla script returned something, we would do this instead:
+        #return super(modded_path)
+    ```
+
+=== "Godot 3"
+
+    ```gdscript
+    # Our base script is the original game script.
+    extends "res://singletons/progress_data.gd"
+    
+    # This overrides the method with the same name, changing the value of its argument:
+    func load_game_file(path: String = SAVE_PATH) -> void:
+        var modded_path = path + "--modded.json"
+    
+        # Calling the base method will call the original game method:
+        .load_game_file(modded_path)
+    
+        # Note that if the vanilla script returned something, we would do this instead:
+        #return .load_game_file(modded_path)
+    ```
+
+The above example showed how to call the base method by using `#!gd super()` or the `.` prefix in Godot 3. 
+
+It changes the input values for the base function before calling it. Similarly, it is also possible to manipulate the 
+output value by calling the base method first, changing something and then returning that new value, as shown below:
+
+=== "Godot 4"
+
+    ```gdscript
+    func get_playtime_days() -> int:
+        var days = super()
+        return days + 2
+    ```
+
+=== "Godot 3"
+
+    ```gdscript
+    func get_playtime_days() -> int:
+        var days = .get_playtime_days()
+        return days + 2
+    ```
+
+Since we are extending the vanilla base class, not calling the base method would completely replace the method. 
+But, because all methods from each mod in the load order extend each other in a chain, 
+doing this would break the chain and usually cause conflicts between mods.
+
+To install it, call [`#!gd ModLoaderMod.install_script_extension()`](../../api/mod_loader_mod.md#method-install_script_extension) 
+from your mod's `mod_main.gd`, in `#!gd _init()` or in any function that gets called 
+by `#!gd _init()`, like the `#!gd install_script_extensions()` functions we usually use by convention.
+
+```gdscript
+extends Node
+
+func _init():
+	install_script_extensions()
+
+func install_script_extensions() -> void:
+    ModLoaderMod.install_script_extension('res://mods-unpacked/Author-ModName/extensions/singletons/progress_data.gd')
+```
+
 
 ## Limitations
 
@@ -84,103 +164,6 @@ reintroducing old bugs.
 case the variable can't be reassigned, but the values within can change without problem. 
 Dictionaries are in a similar situation, where the dict values can change freely, but the keys are fixed. 
 
-
-## Usage
-
-!!! abstract "See also" 
-    [API Reference: `#!gd ModLoaderMod.install_script_extension()`](../../api/mod_loader_mod.md#method-install_script_extension)
-
-
-This script extension changes the path that save files are loaded from in the game Brotato.
-
-The path of this example script extension would be, by convention, in the `/extensions` folder and then mirroring the 
-vanilla file structure: `res://mods-unpacked/Author-ModName/extensions/singletons/progress_data.gd`
-
-=== "Godot 4"
-
-    ```gdscript
-    # Our base script is the original game script.
-    extends "res://singletons/progress_data.gd"
-    
-    # This overrides the method with the same name, changing the value of its argument:
-    func load_game_file(path: String = SAVE_PATH) -> void:
-        var modded_path = path + "--modded.json"
-    
-        # Calling the base method will call the original game method:
-        super(modded_path)
-    
-        # Note that if the vanilla script returned something, we would do this instead:
-        #return super(modded_path)
-    ```
-
-=== "Godot 3"
-
-    ```gdscript
-    # Our base script is the original game script.
-    extends "res://singletons/progress_data.gd"
-    
-    # This overrides the method with the same name, changing the value of its argument:
-    func load_game_file(path: String = SAVE_PATH) -> void:
-        var modded_path = path + "--modded.json"
-    
-        # Calling the base method will call the original game method:
-        .load_game_file(modded_path)
-    
-        # Note that if the vanilla script returned something, we would do this instead:
-        #return .load_game_file(modded_path)
-    ```
-
-The above example showed how to call the base method by using `#!gd super()` or the `.` prefix in Godot 3. 
-
-In this example, the input values for the base function are changed, but it is also possible to manipulate the output 
-value by calling the base method first, changing something and then returning that new value, as shown below:
-
-=== "Godot 4"
-
-    ```gdscript
-    func get_playtime_days() -> int:
-        var days = super()
-        return days + 2
-    ```
-
-=== "Godot 3"
-
-    ```gdscript
-    func get_playtime_days() -> int:
-        var days = .get_playtime_days()
-        return days + 2
-    ```
-
-Since we are extending the vanilla base class, not calling the base method would completely replace the method. 
-Since all modded methods extend each other in a chain, this would break the chain and usually cause conflicts between mods.
-
-=== "Godot 4"
-
-    Since Godot 4, it is possible to completely replace [virtual/overridable](https://docs.godotengine.org/en/3.6/tutorials/scripting/overridable_functions.html) 
-    functions, by not using the 
-    [`super`](https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/gdscript_basics.html#inheritance) 
-    keyword within the function, which wasn't the case before.
-
-=== "Godot 3"
-
-    Godot 3 has one particular quirk, which always calls the base method for all [virtual/overridable functions](https://docs.godotengine.org/en/3.6/tutorials/scripting/overridable_functions.html).
-    Because of this quirk, you shouldn't call `#!gd ._ready()` and other virtuals, because they would be called twice.
-    It is also impossible to completely replace a virtual function for that reason.
-
-
-To install it, call [`#!gd ModLoaderMod.install_script_extension()`](../../api/mod_loader_mod.md#method-install_script_extension) 
-from your mod's `mod_main.gd`, in `#!gd _init()` or in any function that gets called 
-by `#!gd _init()`, like the `#!gd install_script_extensions()` functions we usually use by convention.
-
-```gdscript
-extends Node
-
-func _init():
-	install_script_extensions()
-
-func install_script_extensions() -> void:
-    ModLoaderMod.install_script_extension('res://mods-unpacked/Author-ModName/extensions/singletons/progress_data.gd')
-```
 
 ## Technical Details
 
