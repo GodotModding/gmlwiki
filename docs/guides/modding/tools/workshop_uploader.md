@@ -1,5 +1,8 @@
 # Steam Workshop uploader
 
+[//]: # (TODO)
+!!! example "Documentation in progress"
+
 ## Usage
 
 if you already have a workshop item make sure to set the id (can be found in the url)
@@ -15,9 +18,9 @@ the steam rules seem to be
 - perhaps only a specific color format works?
 
 ## Error codes
-reference: https://partner.steamgames.com/doc/api/steam_api#EResult and https://steamerrors.com/
+reference: [Steamworks Documentation](https://partner.steamgames.com/doc/api/steam_api#EResult) and [https://steamerrors.com/](https://steamerrors.com/)
 
-most common: error 25
+Most common: error 25
 this is usually caused by the icon being wrong in some way. the upload usually works if no icon is added.
 
 [//]: # (https://partner.steamgames.com/doc/api/ISteamUGC#SetItemPreview)

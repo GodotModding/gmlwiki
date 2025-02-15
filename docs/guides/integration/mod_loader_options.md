@@ -1,6 +1,7 @@
 # Mod Loader Options
-## Mod Loader Options
-For easy configuration of the Mod Loader, you can use the options resource. Navigate to `res://addons/mod_loader/options` and double-click `options.tres` to open the resource editor.
+
+For easy configuration of the Mod Loader, you can use the ModLoaderOptions resource. 
+Navigate to `res://addons/mod_loader/options` and double-click `options.tres` to open the resource editor.
 
 ![](_media/resource_editor.png)
 

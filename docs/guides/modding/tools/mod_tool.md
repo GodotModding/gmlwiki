@@ -2,6 +2,10 @@
 
 Short name: Mod Tool
 
+[//]: # (TODO)
+
+!!! example "Documentation in progress"
+
 ## Installation
 
 might be preinstalled (Dome Keeper)

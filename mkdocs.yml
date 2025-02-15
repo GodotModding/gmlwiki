@@ -39,7 +39,7 @@ nav:
     - Mod Loader Options: guides/integration/mod_loader_options.md
     - Godot Project Setup: guides/integration/godot_project_setup.md
     - Mod Loader Self Setup: guides/integration/mod_loader_self_setup.md
-    - Mod Distribution Options: guides/integration/mod_distribution.md
+    - Mod Distribution: guides/integration/mod_distribution.md
   - Other:
     - Upcoming Features: misc/upcoming_features.md
     - Breaking Changes: misc/breaking_changes.md
