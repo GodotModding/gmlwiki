@@ -24,16 +24,12 @@ Marks a method that has changed its name or class.
 
 **Returns:**
   
-- `#!gd void`
+- No return value  
+
 ***
 ### • void <code class="highlight">deprecated_removed(old_method: [String](https://docs.godotengine.org/en/stable/classes/class_string.html), since_version: [String](https://docs.godotengine.org/en/stable/classes/class_string.html), show_removal_note: [bool](https://docs.godotengine.org/en/stable/classes/class_bool.html))</code> static {#method-deprecated_removed data-toc-label='deprecated_removed'}
 #### Description:
-Marks a method that has been entirely removed, with no replacement.  
-
-
-!!! note 
-	This should rarely be needed but is included for completeness.
-
+Marks a method that has been entirely removed, with no replacement.
 
 #### Parameters:
   
@@ -43,7 +39,14 @@ Marks a method that has been entirely removed, with no replacement.
 
 **Returns:**
   
-- `#!gd void`
+- No return value
+
+
+
+!!! note 
+	This should rarely be needed but is included for completeness.
+  
+
 ***
 ### • void <code class="highlight">deprecated_message(msg: [String](https://docs.godotengine.org/en/stable/classes/class_string.html), since_version: [String](https://docs.godotengine.org/en/stable/classes/class_string.html))</code> static {#method-deprecated_message data-toc-label='deprecated_message'}
 #### Description:
@@ -56,5 +59,6 @@ Marks a method with a freeform deprecation message.
 
 **Returns:**
   
-- `#!gd void`
+- No return value  
+
 ***

@@ -15,35 +15,35 @@
 			<param index="1" name="config_name" type="String" />
 			<param index="2" name="config_data" type="Dictionary" />
 			<description>
-				Creates a new configuration for a mod.[br][br][b]Parameters:[/b][br]- [code]mod_id[/code] ([String]): The ID of the mod.[br]- [code]config_name[/code] ([String]): The name of the configuration.[br]- [code]config_data[/code] ([Dictionary]): The configuration data to be stored.[br][br][b]Returns:[/b][br]- [ModConfig]: The created ModConfig object if successful, or null otherwise.
+				Creates a new configuration for a mod.[br][br][b]Parameters:[/b][br]- [param mod_id] ([String]): The ID of the mod.[br]- [param config_name] ([String]): The name of the configuration.[br]- [param config_data] ([Dictionary]): The configuration data to be stored.[br][br][b]Returns:[/b][br]- [ModConfig]: The created [ModConfig] object if successful, or null otherwise.
 			</description>
 		</method>
 		<method name="update_config" qualifiers="static">
 			<return type="ModConfig" />
 			<param index="0" name="config" type="ModConfig" />
 			<description>
-				Updates an existing [ModConfig] object with new data and saves the config file.[br][br][b]Parameters:[/b][br]- [code]config[/code] ([ModConfig]): The [ModConfig] object to be updated.[br][br][b]Returns:[/b][br]- [ModConfig]: The updated [ModConfig] object if successful, or null otherwise.
+				Updates an existing [ModConfig] object with new data and saves the config file.[br][br][b]Parameters:[/b][br]- [param config] ([ModConfig]): The [ModConfig] object to be updated.[br][br][b]Returns:[/b][br]- [ModConfig]: The updated [ModConfig] object if successful, or null otherwise.
 			</description>
 		</method>
 		<method name="delete_config" qualifiers="static">
 			<return type="bool" />
 			<param index="0" name="config" type="ModConfig" />
 			<description>
-				Deletes a [ModConfig] object and performs cleanup operations.[br][br][b]Parameters:[/b][br]- [code]config[/code] ([ModConfig]): The [ModConfig] object to be deleted.[br][br][b]Returns:[/b][br]- [code]bool[/code]: True if the deletion was successful, False otherwise.
+				Deletes a [ModConfig] object and performs cleanup operations.[br][br][b]Parameters:[/b][br]- [param config] ([ModConfig]): The [ModConfig] object to be deleted.[br][br][b]Returns:[/b][br]- [bool]: True if the deletion was successful, False otherwise.
 			</description>
 		</method>
 		<method name="set_current_config" qualifiers="static">
 			<return type="void" />
 			<param index="0" name="config" type="ModConfig" />
 			<description>
-				Sets the current configuration of a mod to the specified configuration.[br][br][b]Parameters:[/b][br]- [code]config[/code] ([ModConfig]): The [ModConfig] object to be set as current config.
+				Sets the current configuration of a mod to the specified configuration.[br][br][b]Parameters:[/b][br]- [param config] ([ModConfig]): The [ModConfig] object to be set as current config.
 			</description>
 		</method>
 		<method name="get_config_schema" qualifiers="static">
 			<return type="Dictionary" />
 			<param index="0" name="mod_id" type="String" />
 			<description>
-				Returns the schema for the specified mod id.[br][br][b]Parameters:[/b][br]- [code]mod_id[/code] (String): the ID of the mod.[br][br][b]Returns:[/b][br]- A dictionary representing the schema for the mod's configuration file.
+				Returns the schema for the specified mod id.[br][br][b]Parameters:[/b][br]- [param mod_id] ([String]): The ID of the mod.[br][br][b]Returns:[/b][br]- A dictionary representing the schema for the mod's configuration file.
 			</description>
 		</method>
 		<method name="get_schema_for_prop" qualifiers="static">
@@ -51,7 +51,7 @@
 			<param index="0" name="config" type="ModConfig" />
 			<param index="1" name="prop" type="String" />
 			<description>
-				Retrieves the schema for a specific property key.[br][br][b]Parameters:[/b][br]- [code]config[/code] ([ModConfig]): The [ModConfig] object from which to retrieve the schema.[br]- [code]prop[/code] ([String]): The property key for which to retrieve the schema.[br][br][b]Returns:[/b][br]- [Dictionary]: The schema dictionary for the specified property.
+				Retrieves the schema for a specific property key.[br][br][b]Parameters:[/b][br]- [param config] ([ModConfig]): The [ModConfig] object from which to retrieve the schema.[br]- [param prop] ([String]): The property key for which to retrieve the schema.[br][br][b]Returns:[/b][br]- [Dictionary]: The schema dictionary for the specified property.
 			</description>
 		</method>
 		<method name="_traverse_schema" qualifiers="static">
@@ -59,20 +59,19 @@
 			<param index="0" name="schema_prop" type="Dictionary" />
 			<param index="1" name="prop_key_array" type="Array" />
 			<description>
-				Recursively traverses the schema dictionary based on the provided [code]prop_key_array[/code] and returns the corresponding schema for the target property.[br][br][b]Parameters:[/b][br]- [code]schema_prop[/code]: The current schema dictionary to traverse.[br]- [code]prop_key_array[/code]: An array containing the property keys representing the path to the target property.[br][br][b]Returns:[/b][br]The schema dictionary corresponding to the target property specified by the [code]prop_key_array[/code].[br]If the target property is not found, an empty dictionary is returned.
 			</description>
 		</method>
 		<method name="get_mods_with_config" qualifiers="static">
 			<return type="Array" />
 			<description>
-				Retrieves an Array of mods that have configuration files.[br][br][b]Returns:[/b][br]- An Array containing the mod data of mods that have configuration files.
+				Retrieves an Array of mods that have configuration files.[br][br][b]Returns:[/b][br]- [Array]: An Array containing the mod data of mods that have configuration files.
 			</description>
 		</method>
 		<method name="get_configs" qualifiers="static">
 			<return type="Dictionary" />
 			<param index="0" name="mod_id" type="String" />
 			<description>
-				Retrieves the configurations dictionary for a given mod ID.[br][br][b]Parameters:[/b][br]- [code]mod_id[/code]: The ID of the mod.[br][br][b]Returns:[/b][br]- A dictionary containing the configurations for the specified mod. If the mod ID is invalid or no configurations are found, an empty dictionary is returned.
+				Retrieves the configurations dictionary for a given mod ID.[br][br][b]Parameters:[/b][br]- [param mod_id]: The ID of the mod.[br][br][b]Returns:[/b][br]- [Dictionary]: A dictionary containing the configurations for the specified mod. If the mod ID is invalid or no configurations are found, an empty dictionary is returned.
 			</description>
 		</method>
 		<method name="get_config" qualifiers="static">
@@ -80,14 +79,14 @@
 			<param index="0" name="mod_id" type="String" />
 			<param index="1" name="config_name" type="String" />
 			<description>
-				Retrieves the configuration for a specific mod and configuration name.[br][br][b]Parameters:[/b][br]- [code]mod_id[/code] ([String]): The ID of the mod.[br]- [code]config_name[/code] ([String]): The name of the configuration.[br][br][b]Returns:[/b][br]- The configuration as a [ModConfig] object or null if not found.
+				Retrieves the configuration for a specific mod and configuration name.[br][br][b]Parameters:[/b][br]- [param mod_id] ([String]): The ID of the mod.[br]- [param config_name] ([String]): The name of the configuration.[br][br][b]Returns:[/b][br]- [ModConfig]: The configuration as a [ModConfig] object or null if not found.
 			</description>
 		</method>
 		<method name="has_current_config" qualifiers="static">
 			<return type="bool" />
 			<param index="0" name="mod_id" type="String" />
 			<description>
-				Checks whether a mod has a current configuration set.[br][br][b]Parameters:[/b][br]- [code]mod_id[/code] ([String]): The ID of the mod.[br][br][b]Returns:[/b][br]- [code]bool[/code]: True if the mod has a current configuration, False otherwise.
+				Checks whether a mod has a current configuration set.[br][br][b]Parameters:[/b][br]- [param mod_id] ([String]): The ID of the mod.[br][br][b]Returns:[/b][br]- [bool]: True if the mod has a current configuration, false otherwise.
 			</description>
 		</method>
 		<method name="has_config" qualifiers="static">
@@ -95,41 +94,41 @@
 			<param index="0" name="mod_id" type="String" />
 			<param index="1" name="config_name" type="String" />
 			<description>
-				Checks whether a mod has a configuration with the specified name.[br][br][b]Parameters:[/b][br]- [code]mod_id[/code] ([String]): The ID of the mod.[br]- [code]config_name[/code] ([String]): The name of the configuration.[br][br][b]Returns:[/b][br]- [code]bool[/code]: True if the mod has a configuration with the specified name, False otherwise.
+				Checks whether a mod has a configuration with the specified name.[br][br][b]Parameters:[/b][br]- [param mod_id] ([String]): The ID of the mod.[br]- [param config_name] ([String]): The name of the configuration.[br][br][b]Returns:[/b][br]- [bool]: True if the mod has a configuration with the specified name, False otherwise.
 			</description>
 		</method>
 		<method name="get_default_config" qualifiers="static">
 			<return type="ModConfig" />
 			<param index="0" name="mod_id" type="String" />
 			<description>
-				Retrieves the default configuration for a specified mod ID.[br][br][b]Parameters:[/b][br]- [code]mod_id[/code]: The ID of the mod.[br][br][b]Returns:[/b][br]- The [ModConfig] object representing the default configuration for the specified mod. If the mod ID is invalid or no configuration is found, returns null.
+				Retrieves the default configuration for a specified mod ID.[br][br][b]Parameters:[/b][br]- [param mod_id] ([String]): The ID of the mod.[br][br][b]Returns:[/b][br]- [ModConfig]: The [ModConfig] object representing the default configuration for the specified mod. If the mod ID is invalid or no configuration is found, returns null.
 			</description>
 		</method>
 		<method name="get_current_config" qualifiers="static">
 			<return type="ModConfig" />
 			<param index="0" name="mod_id" type="String" />
 			<description>
-				Retrieves the currently active configuration for a specific mod.[br][br][b]Parameters:[/b][br]- [code]mod_id[/code] ([String]): The ID of the mod.[br][br][b]Returns:[/b][br]- The configuration as a [ModConfig] object or [code]null[/code] if not found.
+				Retrieves the currently active configuration for a specific mod.[br][br][b]Parameters:[/b][br]- [param mod_id] ([String]): The ID of the mod.[br][br][b]Returns:[/b][br]- [ModConfig]: The configuration as a [ModConfig] object or [code]null[/code] if not found.
 			</description>
 		</method>
 		<method name="get_current_config_name" qualifiers="static">
 			<return type="String" />
 			<param index="0" name="mod_id" type="String" />
 			<description>
-				Retrieves the name of the current configuration for a specific mod.[br][br][b]Parameters:[/b][br]- [code]mod_id[/code] ([String]): The ID of the mod.[br][br][b]Returns:[/b][br]- The currently active configuration name for the given mod id or an empty string if not found.
+				Retrieves the name of the current configuration for a specific mod.[br][br][b]Parameters:[/b][br]- [param mod_id] ([String]): The ID of the mod.[br][br][b]Returns:[/b][br]- [String] The currently active configuration name for the given mod id or an empty string if not found.
 			</description>
 		</method>
 		<method name="refresh_config_data" qualifiers="static">
 			<return type="ModConfig" />
 			<param index="0" name="config" type="ModConfig" />
 			<description>
-				Refreshes the data of the provided configuration by reloading it from the config file.[br][br][b]Parameters:[/b][br]- [code]config[/code] ([ModConfig]): The [ModConfig] object whose data needs to be refreshed.[br][br][b]Returns:[/b][br]- [ModConfig]: The [ModConfig] object with refreshed data if successful, or the original object otherwise.
+				Refreshes the data of the provided configuration by reloading it from the config file.[br][br][b]Parameters:[/b][br]- [param config] ([ModConfig]): The [ModConfig] object whose data needs to be refreshed.[br][br][b]Returns:[/b][br]- [ModConfig]: The [ModConfig] object with refreshed data if successful, or the original object otherwise.
 			</description>
 		</method>
 		<method name="refresh_current_configs" qualifiers="static">
 			<return type="void" />
 			<description>
-				Iterates over all mods to refresh the data of their current configurations, if available.[br]Compares the previous configuration data with the refreshed data and emits the `current_config_changed` signal if changes are detected.[br][br]This function ensures that any changes made to the configuration files outside the application are reflected within the application's runtime, allowing for dynamic updates without the need for a restart.
+				Iterates over all mods to refresh the data of their current configurations, if available.[br][br][b]Returns:[/b][br]- No return value[br][br]Compares the previous configuration data with the refreshed data and emits the [signal ModLoader.current_config_changed] signal if changes are detected.[br]This function ensures that any changes made to the configuration files outside the application are reflected within the application's runtime, allowing for dynamic updates without the need for a restart.
 			</description>
 		</method>
 	</methods>

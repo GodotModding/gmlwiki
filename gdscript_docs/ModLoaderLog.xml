@@ -14,7 +14,7 @@
 			<param index="1" name="mod_name" type="String" />
 			<param index="2" name="only_once" type="bool" default="false" />
 			<description>
-				Logs the error in red and a stack trace. Prefixed FATAL-ERROR.[br]Always logged.[br]===[br][b]Note:[color=bug "Breakpoint"][/color][/b][br]Stops execution in the editor, use this when something really needs to be fixed.[br]===[br][br][b]Parameters:[/b][br][param message] ([String]): The message to be logged as an error.[br][param mod_name] ([String]): The name of the mod or ModLoader class associated with this log entry.[br][param only_once] ([bool]): (Optional) If true, the log entry will only be logged once, even if called multiple times. Default is false.[br][br][b]Returns:[/b] [code]void[/code]
+				Logs the error in red and a stack trace. Prefixed FATAL-ERROR.[br]Always logged.[br][br][b]Parameters:[/b][br][param message] ([String]): The message to be logged as an error.[br][param mod_name] ([String]): The name of the mod or ModLoader class associated with this log entry.[br][param only_once] ([bool]): (Optional) If true, the log entry will only be logged once, even if called multiple times. Default is false.[br][br][b]Returns:[/b][br]- No return value[br][br]===[br][b]Note:[color=bug "Breakpoint"][/color][/b][br]Stops execution in the editor, use this when something really needs to be fixed.[br]===[br]
 			</description>
 		</method>
 		<method name="error" qualifiers="static">
@@ -23,7 +23,7 @@
 			<param index="1" name="mod_name" type="String" />
 			<param index="2" name="only_once" type="bool" default="false" />
 			<description>
-				Logs the message and pushes an error. Prefixed ERROR.[br]Always logged.[br][br][b]Parameters:[/b][br][param message] ([String]): The message to be logged as an error.[br][param mod_name] ([String]): The name of the mod or ModLoader class associated with this log entry.[br][param only_once] ([bool]): (Optional) If true, the log entry will only be logged once, even if called multiple times. Default is false.[br][br][b]Returns:[/b] [code]void[/code]
+				Logs the message and pushes an error. Prefixed ERROR.[br]Always logged.[br][br][b]Parameters:[/b][br][param message] ([String]): The message to be logged as an error.[br][param mod_name] ([String]): The name of the mod or ModLoader class associated with this log entry.[br][param only_once] ([bool]): (Optional) If true, the log entry will only be logged once, even if called multiple times. Default is false.[br][br][b]Returns:[/b][br]- No return value[br]
 			</description>
 		</method>
 		<method name="warning" qualifiers="static">
@@ -32,7 +32,7 @@
 			<param index="1" name="mod_name" type="String" />
 			<param index="2" name="only_once" type="bool" default="false" />
 			<description>
-				Logs the message and pushes a warning. Prefixed WARNING.[br]Logged with verbosity level at or above warning ([code]-v[/code] or [code]--log-warning[/code]).[br][br][b]Parameters:[/b][br][param message] ([String]): The message to be logged as a warning.[br][param mod_name] ([String]): The name of the mod or ModLoader class associated with this log entry.[br][param only_once] ([bool]): (Optional) If true, the log entry will only be logged once, even if called multiple times. Default is false.[br][br][b]Returns:[/b] [code]void[/code]
+				Logs the message and pushes a warning. Prefixed WARNING.[br]Logged with verbosity level at or above warning ([code]-v[/code] or [code]--log-warning[/code]).[br][br][b]Parameters:[/b][br][param message] ([String]): The message to be logged as a warning.[br][param mod_name] ([String]): The name of the mod or ModLoader class associated with this log entry.[br][param only_once] ([bool]): (Optional) If true, the log entry will only be logged once, even if called multiple times. Default is false.[br][br][b]Returns:[/b][br]- No return value[br]
 			</description>
 		</method>
 		<method name="info" qualifiers="static">
@@ -41,7 +41,7 @@
 			<param index="1" name="mod_name" type="String" />
 			<param index="2" name="only_once" type="bool" default="false" />
 			<description>
-				Logs the message. Prefixed INFO.[br]Logged with verbosity level at or above info ([code]-vv[/code] or [code]--log-info[/code]).[br][br][b]Parameters:[/b][br][param message] ([String]): The message to be logged as an information.[br][param mod_name] ([String]): The name of the mod or ModLoader class associated with this log entry.[br][param only_once] ([bool]): (Optional) If true, the log entry will only be logged once, even if called multiple times. Default is false.[br][br][b]Returns:[/b] [code]void[/code]
+				Logs the message. Prefixed INFO.[br]Logged with verbosity level at or above info ([code]-vv[/code] or [code]--log-info[/code]).[br][br][b]Parameters:[/b][br][param message] ([String]): The message to be logged as an information.[br][param mod_name] ([String]): The name of the mod or ModLoader class associated with this log entry.[br][param only_once] ([bool]): (Optional) If true, the log entry will only be logged once, even if called multiple times. Default is false.[br][br][b]Returns:[/b][br]- No return value[br]
 			</description>
 		</method>
 		<method name="success" qualifiers="static">
@@ -50,7 +50,7 @@
 			<param index="1" name="mod_name" type="String" />
 			<param index="2" name="only_once" type="bool" default="false" />
 			<description>
-				Logs the message. Prefixed SUCCESS.[br]Logged with verbosity level at or above info ([code]-vv[/code] or [code]--log-info[/code]).[br][br][b]Parameters:[/b][br][param message] ([String]): The message to be logged as a success.[br][param mod_name] ([String]): The name of the mod or ModLoader class associated with this log entry.[br][param only_once] ([bool]): (Optional) If true, the log entry will only be logged once, even if called multiple times. Default is false.[br][br][b]Returns:[/b] [code]void[/code]
+				Logs the message. Prefixed SUCCESS.[br]Logged with verbosity level at or above info ([code]-vv[/code] or [code]--log-info[/code]).[br][br][b]Parameters:[/b][br][param message] ([String]): The message to be logged as a success.[br][param mod_name] ([String]): The name of the mod or ModLoader class associated with this log entry.[br][param only_once] ([bool]): (Optional) If true, the log entry will only be logged once, even if called multiple times. Default is false.[br][br][b]Returns:[/b][br]- No return value[br]
 			</description>
 		</method>
 		<method name="debug" qualifiers="static">
@@ -59,7 +59,7 @@
 			<param index="1" name="mod_name" type="String" />
 			<param index="2" name="only_once" type="bool" default="false" />
 			<description>
-				Logs the message. Prefixed DEBUG.[br]Logged with verbosity level at or above debug ([code]-vvv[/code] or [code]--log-debug[/code]).[br][br][b]Parameters:[/b][br][param message] ([String]): The message to be logged as a debug.[br][param mod_name] ([String]): The name of the mod or ModLoader class associated with this log entry.[br][param only_once] ([bool]): (Optional) If true, the log entry will only be logged once, even if called multiple times. Default is false.[br][br][b]Returns:[/b] [code]void[/code]
+				Logs the message. Prefixed DEBUG.[br]Logged with verbosity level at or above debug ([code]-vvv[/code] or [code]--log-debug[/code]).[br][br][b]Parameters:[/b][br][param message] ([String]): The message to be logged as a debug.[br][param mod_name] ([String]): The name of the mod or ModLoader class associated with this log entry.[br][param only_once] ([bool]): (Optional) If true, the log entry will only be logged once, even if called multiple times. Default is false.[br][br][b]Returns:[/b][br]- No return value[br]
 			</description>
 		</method>
 		<method name="hint" qualifiers="static">
@@ -68,7 +68,7 @@
 			<param index="1" name="mod_name" type="String" />
 			<param index="2" name="only_once" type="bool" default="false" />
 			<description>
-				Logs the message. Prefixed HINT and highligted.[br]Logged with verbosity level at or above debug ([code]-vvv[/code] or [code]--log-debug[/code]) and in the editor only. Not written to mod loader log.[br]===[br][b]Note:[/b][br]Use this to help other developers debug issues by giving them error-specific hints.[br]===[br][br][b]Parameters:[/b][br][param message] ([String]): The message to be logged as a debug.[br][param mod_name] ([String]): The name of the mod or ModLoader class associated with this log entry.[br][param only_once] ([bool]): (Optional) If true, the log entry will only be logged once, even if called multiple times. Default is false.[br][br][b]Returns:[/b] [code]void[/code]
+				Logs the message. Prefixed HINT and highligted.[br]Logged with verbosity level at or above debug ([code]-vvv[/code] or [code]--log-debug[/code]) and in the editor only. Not written to mod loader log.[br]===[br][b]Note:[/b][br]Use this to help other developers debug issues by giving them error-specific hints.[br]===[br][br][b]Parameters:[/b][br][param message] ([String]): The message to be logged as a debug.[br][param mod_name] ([String]): The name of the mod or ModLoader class associated with this log entry.[br][param only_once] ([bool]): (Optional) If true, the log entry will only be logged once, even if called multiple times. Default is false.[br][br][b]Returns:[/b][br]- No return value[br]
 			</description>
 		</method>
 		<method name="debug_json_print" qualifiers="static">
@@ -78,7 +78,7 @@
 			<param index="2" name="mod_name" type="String" />
 			<param index="3" name="only_once" type="bool" default="false" />
 			<description>
-				Logs the message formatted with [method JSON.print]. Prefixed DEBUG.[br]Logged with verbosity level at or above debug ([code]-vvv[/code] or [code]--log-debug[/code]).[br][br][b]Parameters:[/b][br][param message] ([String]): The message to be logged as a debug.[br][param json_printable] (Variant): The variable to be formatted and printed using [method JSON.print].[br][param mod_name] ([String]): The name of the mod or ModLoader class associated with this log entry.[br][param only_once] ([bool]): (Optional) If true, the log entry will only be logged once, even if called multiple times. Default is false.[br][b]Returns:[/b] [code]void[/code]
+				Logs the message formatted with [method JSON.print]. Prefixed DEBUG.[br]Logged with verbosity level at or above debug ([code]-vvv[/code] or [code]--log-debug[/code]).[br][br][b]Parameters:[/b][br][param message] ([String]): The message to be logged as a debug.[br][param json_printable] (Variant): The variable to be formatted and printed using [method JSON.print].[br][param mod_name] ([String]): The name of the mod or ModLoader class associated with this log entry.[br][param only_once] ([bool]): (Optional) If true, the log entry will only be logged once, even if called multiple times. Default is false.[br][br][b]Returns:[/b][br]- No return value[br]
 			</description>
 		</method>
 		<method name="get_all_as_resource" qualifiers="static">

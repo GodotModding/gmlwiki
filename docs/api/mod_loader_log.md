@@ -26,12 +26,7 @@ This Class provides methods for logging, retrieving logged data, and internal me
 ### • void <code class="highlight">fatal(message: [String](https://docs.godotengine.org/en/stable/classes/class_string.html), mod_name: [String](https://docs.godotengine.org/en/stable/classes/class_string.html), only_once: [bool](https://docs.godotengine.org/en/stable/classes/class_bool.html))</code> static {#method-fatal data-toc-label='fatal'}
 #### Description:
 Logs the error in red and a stack trace. Prefixed FATAL-ERROR.  
-Always logged.  
-
-
-!!! bug "Breakpoint"
-	Stops execution in the editor, use this when something really needs to be fixed.
-
+Always logged.
 
 #### Parameters:
   
@@ -40,7 +35,15 @@ Always logged.
 `#!gd only_once` ([`#!gd bool`](https://docs.godotengine.org/en/stable/classes/class_bool.html)): (Optional) If true, the log entry will only be logged once, even if called multiple times. Default is false.
 
 **Returns:**
- `#!gd void`
+  
+- No return value
+
+
+
+!!! bug "Breakpoint"
+	Stops execution in the editor, use this when something really needs to be fixed.
+  
+
 ***
 ### • void <code class="highlight">error(message: [String](https://docs.godotengine.org/en/stable/classes/class_string.html), mod_name: [String](https://docs.godotengine.org/en/stable/classes/class_string.html), only_once: [bool](https://docs.godotengine.org/en/stable/classes/class_bool.html))</code> static {#method-error data-toc-label='error'}
 #### Description:
@@ -54,7 +57,9 @@ Always logged.
 `#!gd only_once` ([`#!gd bool`](https://docs.godotengine.org/en/stable/classes/class_bool.html)): (Optional) If true, the log entry will only be logged once, even if called multiple times. Default is false.
 
 **Returns:**
- `#!gd void`
+  
+- No return value  
+
 ***
 ### • void <code class="highlight">warning(message: [String](https://docs.godotengine.org/en/stable/classes/class_string.html), mod_name: [String](https://docs.godotengine.org/en/stable/classes/class_string.html), only_once: [bool](https://docs.godotengine.org/en/stable/classes/class_bool.html))</code> static {#method-warning data-toc-label='warning'}
 #### Description:
@@ -68,7 +73,9 @@ Logged with verbosity level at or above warning (`#!gd -v` or `#!gd --log-warnin
 `#!gd only_once` ([`#!gd bool`](https://docs.godotengine.org/en/stable/classes/class_bool.html)): (Optional) If true, the log entry will only be logged once, even if called multiple times. Default is false.
 
 **Returns:**
- `#!gd void`
+  
+- No return value  
+
 ***
 ### • void <code class="highlight">info(message: [String](https://docs.godotengine.org/en/stable/classes/class_string.html), mod_name: [String](https://docs.godotengine.org/en/stable/classes/class_string.html), only_once: [bool](https://docs.godotengine.org/en/stable/classes/class_bool.html))</code> static {#method-info data-toc-label='info'}
 #### Description:
@@ -82,7 +89,9 @@ Logged with verbosity level at or above info (`#!gd -vv` or `#!gd --log-info`).
 `#!gd only_once` ([`#!gd bool`](https://docs.godotengine.org/en/stable/classes/class_bool.html)): (Optional) If true, the log entry will only be logged once, even if called multiple times. Default is false.
 
 **Returns:**
- `#!gd void`
+  
+- No return value  
+
 ***
 ### • void <code class="highlight">success(message: [String](https://docs.godotengine.org/en/stable/classes/class_string.html), mod_name: [String](https://docs.godotengine.org/en/stable/classes/class_string.html), only_once: [bool](https://docs.godotengine.org/en/stable/classes/class_bool.html))</code> static {#method-success data-toc-label='success'}
 #### Description:
@@ -96,7 +105,9 @@ Logged with verbosity level at or above info (`#!gd -vv` or `#!gd --log-info`).
 `#!gd only_once` ([`#!gd bool`](https://docs.godotengine.org/en/stable/classes/class_bool.html)): (Optional) If true, the log entry will only be logged once, even if called multiple times. Default is false.
 
 **Returns:**
- `#!gd void`
+  
+- No return value  
+
 ***
 ### • void <code class="highlight">debug(message: [String](https://docs.godotengine.org/en/stable/classes/class_string.html), mod_name: [String](https://docs.godotengine.org/en/stable/classes/class_string.html), only_once: [bool](https://docs.godotengine.org/en/stable/classes/class_bool.html))</code> static {#method-debug data-toc-label='debug'}
 #### Description:
@@ -110,7 +121,9 @@ Logged with verbosity level at or above debug (`#!gd -vvv` or `#!gd --log-debug`
 `#!gd only_once` ([`#!gd bool`](https://docs.godotengine.org/en/stable/classes/class_bool.html)): (Optional) If true, the log entry will only be logged once, even if called multiple times. Default is false.
 
 **Returns:**
- `#!gd void`
+  
+- No return value  
+
 ***
 ### • void <code class="highlight">hint(message: [String](https://docs.godotengine.org/en/stable/classes/class_string.html), mod_name: [String](https://docs.godotengine.org/en/stable/classes/class_string.html), only_once: [bool](https://docs.godotengine.org/en/stable/classes/class_bool.html))</code> static {#method-hint data-toc-label='hint'}
 #### Description:
@@ -129,7 +142,9 @@ Logged with verbosity level at or above debug (`#!gd -vvv` or `#!gd --log-debug`
 `#!gd only_once` ([`#!gd bool`](https://docs.godotengine.org/en/stable/classes/class_bool.html)): (Optional) If true, the log entry will only be logged once, even if called multiple times. Default is false.
 
 **Returns:**
- `#!gd void`
+  
+- No return value  
+
 ***
 ### • void <code class="highlight">debug_json_print(message: [String](https://docs.godotengine.org/en/stable/classes/class_string.html), json_printable: [Variant](https://docs.godotengine.org/en/stable/classes/class_variant.html), mod_name: [String](https://docs.godotengine.org/en/stable/classes/class_string.html), only_once: [bool](https://docs.godotengine.org/en/stable/classes/class_bool.html))</code> static {#method-debug_json_print data-toc-label='debug_json_print'}
 #### Description:
@@ -141,9 +156,12 @@ Logged with verbosity level at or above debug (`#!gd -vvv` or `#!gd --log-debug`
 `#!gd message` ([`#!gd String`](https://docs.godotengine.org/en/stable/classes/class_string.html)): The message to be logged as a debug.  
 `#!gd json_printable` (Variant): The variable to be formatted and printed using [`#!gd JSON.print()`](https://docs.godotengine.org/en/stable/classes/class_json.html#class-json-method-print).  
 `#!gd mod_name` ([`#!gd String`](https://docs.godotengine.org/en/stable/classes/class_string.html)): The name of the mod or ModLoader class associated with this log entry.  
-`#!gd only_once` ([`#!gd bool`](https://docs.godotengine.org/en/stable/classes/class_bool.html)): (Optional) If true, the log entry will only be logged once, even if called multiple times. Default is false.  
+`#!gd only_once` ([`#!gd bool`](https://docs.godotengine.org/en/stable/classes/class_bool.html)): (Optional) If true, the log entry will only be logged once, even if called multiple times. Default is false.
+
 **Returns:**
- `#!gd void`
+  
+- No return value  
+
 ***
 ### • [`#!gd Array`](https://docs.godotengine.org/en/stable/classes/class_array.html) <code class="highlight">get_all_as_resource()</code> static {#method-get_all_as_resource data-toc-label='get_all_as_resource'}
 #### Description:

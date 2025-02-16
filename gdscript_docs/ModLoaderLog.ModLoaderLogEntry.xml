@@ -15,7 +15,7 @@
 			<param index="2" name="_type" type="String" />
 			<param index="3" name="_time" type="String" />
 			<description>
-				Initialize a ModLoaderLogEntry object with provided values.[br][br][b]Parameters:[/b][br][param _mod_name] ([String]): Name of the mod or ModLoader class this entry refers to.[br][param _message] ([String]): The message of the log entry.[br][param _type] ([String]): The log type, which indicates the verbosity level of this entry.[br][param _time] ([String]): The readable format of the time when this log entry was created.[br][br][b]Returns:[/b] [code]void[/code]
+				Initialize a ModLoaderLogEntry object with provided values.[br][br][b]Parameters:[/b][br][param _mod_name] ([String]): Name of the mod or ModLoader class this entry refers to.[br][param _message] ([String]): The message of the log entry.[br][param _type] ([String]): The log type, which indicates the verbosity level of this entry.[br][param _time] ([String]): The readable format of the time when this log entry was created.[br][br][b]Returns:[/b][br]- No return value[br]
 			</description>
 		</method>
 		<method name="get_entry">
