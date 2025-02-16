@@ -92,10 +92,22 @@ is preferred for inline highlights to remain brief.
 
 ## API Docs generation
 
-Replace "godot4.3" with the path to your editor exe, or set it in PATH. 
+Replace "godot4.3" with the path to your editor exe, or alias it. 
+
+From the project directory, run
 
 ```shell
-godot4.3 --doctool docs --gdscript-docs res://addons/mod_loader/api --quit
+git submodule init
+git submodule sync
+git submodule update --remote
+cd godot-mod-loader
+godot4.3 --doctool ../gdscript_docs --gdscript-docs res://addons/mod_loader/api/ --quit
+cd ..
+python3 xml_to_md.py
 ```
+
 The path set with `--gdscript-docs` needs to start with `res://`, otherwise godot can't find the files.   
 [workaround credit](https://github.com/godotengine/godot/issues/84579#issuecomment-1873346477)
+
+And for some reason the docs gen only works correctly from the godot project root, so we change directory into
+the submodule and out after we're done, otherwise we get a bunch of parse errors.
