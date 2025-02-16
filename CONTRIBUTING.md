@@ -111,3 +111,73 @@ The path set with `--gdscript-docs` needs to start with `res://`, otherwise godo
 
 And for some reason the docs gen only works correctly from the godot project root, so we change directory into
 the submodule and out after we're done, otherwise we get a bunch of parse errors.
+
+## Syntax highlights
+
+Code syntax highlights are taken from the Godot editor for both the light and dark themes.
+Since the pygments lexer is severely outdated for gdscript, some colors sadly
+don't properly apply.
+
+We used this small script to get the colors from the current editor theme and match
+them to the css variables or classes used by mkdocs material.
+
+```gdscript
+@tool
+extends Node
+
+@export var run_now := false:
+	set(val):
+		run()
+
+
+func run():
+	var prefix := "text_editor/theme/highlighting/"
+	var colors := {
+		"symbol_color": ["--md-code-hl-operator-color", "--md-code-hl-punctuation-color"],
+		"keyword_color": ["--md-code-hl-keyword-color", "--md-code-hl-special-color"],
+		"control_flow_keyword_color": [],
+		"base_type_color": [".kt"],
+		"engine_type_color": [],
+		"user_type_color": [],
+		"comment_color": ["--md-code-hl-comment-color"],
+		"doc_comment_color": [],
+		"string_color": ["--md-code-hl-string-color"],
+		"background_color": ["--md-code-bg-color"],
+		"completion_background_color": [],
+		"completion_selected_color": [],
+		"completion_existing_color": [],
+		"completion_font_color": [],
+		"text_color": ["--md-code-hl-generic-color", "--md-code-hl-name-color", "--md-code-fg-color"],
+		"line_number_color": [],
+		"safe_line_number_color": [],
+		"caret_color": [],
+		"selection_color": [],
+		"brace_mismatch_color": [],
+		"current_line_color": [],
+		"line_length_guideline_color": [],
+		"word_highlighted_color": ["--md-code-hl-color"],
+		"number_color": ["--md-code-hl-number-color"],
+		"function_color": ["--md-code-hl-function-color"],
+		"member_variable_color": ["--md-code-hl-variable-color", "--md-code-hl-constant-color"],
+		"mark_color": [],
+		"breakpoint_color": [],
+		"code_folding_color": [],
+		"search_result_color": [],
+	}
+
+	var settings := EditorInterface.get_editor_settings()
+
+	var color_classes := ""
+	print("{")
+	for color_name in colors:
+		var color: Color = settings.get(prefix + color_name)
+		for css_thing: String in colors[color_name]:
+			if css_thing.begins_with("--"):
+				print("\t%s: #%s;" % [css_thing, color.to_html(true)])
+			elif css_thing.begins_with("."):
+				var css_var := "--md-code-hl-custom-class-%s" % css_thing.trim_prefix(".")
+				print("\t%s: #%s;" % [css_var, color.to_html(true)])
+				color_classes += "\n.highlight %s {\n\tcolor: var(%s);\n}\n" % [css_thing, css_var]
+	print("}")
+	print(color_classes)
+```
