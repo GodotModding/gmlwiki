@@ -22,18 +22,19 @@ See the [Deprecated](#deprecated) section below for the full list of changes.
 
 ### Public Classes (API)
 There are several new classes in the `api` directory, which is where all the publicly accessible methods are. These replace using `ModLoader.*` and `ModLoaderUtils.*` (see [Deprecated](#deprecated) below). The main classes you'll use are:
-* [ModLoaderMod](../api/ModLoaderMod.md) - Everything related to mod setup, such as [`install_script_extension()`](../api/ModLoaderMod.md?id=install_script_extension).
-* [ModLoaderLog](../api/ModLoaderLog.md) - All logging methods.
+* [ModLoaderMod](../api/mod_loader_mod.md) - Everything related to mod setup, such as [`install_script_extension()`](../api/mod_loader_mod.md#method-install_script_extension).
+* [ModLoaderLog](../api/mod_loader_log.md) - All logging methods.
 
 ### Internal Classes
-Some mods directly accessed variables and constants on `ModLoader`, for example `mod_data` or `UNPACKED_DIR`. Data such as this is now considered internal, and should not be accessed directly (this includes any method/variable from the `ModLoader` or `ModLoaderStore` classes). Instead, we have introduced new methods in [`ModLoaderMod`](../api/ModLoaderMod.md) to access these variables, such as [`ModLoaderMod.get_unpacked_dir()`](../api/ModLoaderMod.md?id=get_unpacked_dir) and [`ModLoaderMod.get_mod_data_all()`](../api/ModLoaderMod.md?id=get_mod_data_all).
+Some mods directly accessed variables and constants on `ModLoader`, for example `mod_data` or `UNPACKED_DIR`. Data such as this is now considered internal, and should not be accessed directly (this includes any method/variable from the `ModLoader` or `ModLoaderStore` classes). Instead, we have introduced new methods in [`ModLoaderMod`](../api/mod_loader_mod.md) to access these variables, such as [`ModLoaderMod.get_unpacked_dir()`](../api/mod_loader_mod.md#method-get_unpacked_dir) and [`ModLoaderMod.get_mod_data_all()`](../api/mod_loader_mod.md#method-get_mod_data_all).
 
 ### Configs
 * The value for `compatible_mod_loader_version` no longer accepts a string. It needs to be passed an array instead.
 * The `config_defaults` field in manifest.json has been removed. It is no longer used for specifying default configuration values.
 * A new field called `config_schema` has been introduced in manifest.json. This field allows you to specify a JSONSchema for your Mod Configuration. JSONSchema provides a way to define the structure and validation rules for your configuration.
 
-!> There is currently no fallback mechanism for migrating old configurations to the new system. You will need to update your mod to adapt to the new configuration structure.
+???+ note 
+      There is currently no fallback mechanism for migrating old configurations to the new system. You will need to update your mod to adapt to the new configuration structure.
 
 ### Others
 * Fixed a bug in the `mod_id` validation where it was possible to create a `mod_id` with fewer than 7 characters.
@@ -55,7 +56,8 @@ Here's a list of every method and variable that is deprecated in v6. You can use
 | `ModLoader.UNPACKED_DIR`                       | `ModLoaderMod.get_unpacked_dir()`                 |
 
 #### Logging
-?> Running a search & replace from `ModLoaderUtils.log_` to `ModLoaderLog.` will fix all of these at once.
+???+ note 
+     Running a search & replace from `ModLoaderUtils.log_` to `ModLoaderLog.` will fix all of these at once.
 
 | Old (Search)                          | New (Replace)                   |
 |---------------------------------------|---------------------------------|

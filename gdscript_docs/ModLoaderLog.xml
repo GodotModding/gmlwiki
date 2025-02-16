@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class name="ModLoaderLog" inherits="Object" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/godotengine/godot/master/doc/class.xsd">
+	<brief_description>
+		This Class provides methods for logging, retrieving logged data, and internal methods for working with log files.
+	</brief_description>
+	<description>
+	</description>
+	<tutorials>
+	</tutorials>
+	<methods>
+		<method name="fatal" qualifiers="static">
+			<return type="void" />
+			<param index="0" name="message" type="String" />
+			<param index="1" name="mod_name" type="String" />
+			<param index="2" name="only_once" type="bool" default="false" />
+			<description>
+				Logs the error in red and a stack trace. Prefixed FATAL-ERROR.[br]Always logged.[br][br][b]Parameters:[/b][br][param message] ([String]): The message to be logged as an error.[br][param mod_name] ([String]): The name of the mod or ModLoader class associated with this log entry.[br][param only_once] ([bool]): (Optional) If true, the log entry will only be logged once, even if called multiple times. Default is false.[br][br][b]Returns:[/b][br]- No return value[br][br]===[br][b]Note:[color=bug "Breakpoint"][/color][/b][br]Stops execution in the editor, use this when something really needs to be fixed.[br]===[br]
+			</description>
+		</method>
+		<method name="error" qualifiers="static">
+			<return type="void" />
+			<param index="0" name="message" type="String" />
+			<param index="1" name="mod_name" type="String" />
+			<param index="2" name="only_once" type="bool" default="false" />
+			<description>
+				Logs the message and pushes an error. Prefixed ERROR.[br]Always logged.[br][br][b]Parameters:[/b][br][param message] ([String]): The message to be logged as an error.[br][param mod_name] ([String]): The name of the mod or ModLoader class associated with this log entry.[br][param only_once] ([bool]): (Optional) If true, the log entry will only be logged once, even if called multiple times. Default is false.[br][br][b]Returns:[/b][br]- No return value[br]
+			</description>
+		</method>
+		<method name="warning" qualifiers="static">
+			<return type="void" />
+			<param index="0" name="message" type="String" />
+			<param index="1" name="mod_name" type="String" />
+			<param index="2" name="only_once" type="bool" default="false" />
+			<description>
+				Logs the message and pushes a warning. Prefixed WARNING.[br]Logged with verbosity level at or above warning ([code]-v[/code] or [code]--log-warning[/code]).[br][br][b]Parameters:[/b][br][param message] ([String]): The message to be logged as a warning.[br][param mod_name] ([String]): The name of the mod or ModLoader class associated with this log entry.[br][param only_once] ([bool]): (Optional) If true, the log entry will only be logged once, even if called multiple times. Default is false.[br][br][b]Returns:[/b][br]- No return value[br]
+			</description>
+		</method>
+		<method name="info" qualifiers="static">
+			<return type="void" />
+			<param index="0" name="message" type="String" />
+			<param index="1" name="mod_name" type="String" />
+			<param index="2" name="only_once" type="bool" default="false" />
+			<description>
+				Logs the message. Prefixed INFO.[br]Logged with verbosity level at or above info ([code]-vv[/code] or [code]--log-info[/code]).[br][br][b]Parameters:[/b][br][param message] ([String]): The message to be logged as an information.[br][param mod_name] ([String]): The name of the mod or ModLoader class associated with this log entry.[br][param only_once] ([bool]): (Optional) If true, the log entry will only be logged once, even if called multiple times. Default is false.[br][br][b]Returns:[/b][br]- No return value[br]
+			</description>
+		</method>
+		<method name="success" qualifiers="static">
+			<return type="void" />
+			<param index="0" name="message" type="String" />
+			<param index="1" name="mod_name" type="String" />
+			<param index="2" name="only_once" type="bool" default="false" />
+			<description>
+				Logs the message. Prefixed SUCCESS.[br]Logged with verbosity level at or above info ([code]-vv[/code] or [code]--log-info[/code]).[br][br][b]Parameters:[/b][br][param message] ([String]): The message to be logged as a success.[br][param mod_name] ([String]): The name of the mod or ModLoader class associated with this log entry.[br][param only_once] ([bool]): (Optional) If true, the log entry will only be logged once, even if called multiple times. Default is false.[br][br][b]Returns:[/b][br]- No return value[br]
+			</description>
+		</method>
+		<method name="debug" qualifiers="static">
+			<return type="void" />
+			<param index="0" name="message" type="String" />
+			<param index="1" name="mod_name" type="String" />
+			<param index="2" name="only_once" type="bool" default="false" />
+			<description>
+				Logs the message. Prefixed DEBUG.[br]Logged with verbosity level at or above debug ([code]-vvv[/code] or [code]--log-debug[/code]).[br][br][b]Parameters:[/b][br][param message] ([String]): The message to be logged as a debug.[br][param mod_name] ([String]): The name of the mod or ModLoader class associated with this log entry.[br][param only_once] ([bool]): (Optional) If true, the log entry will only be logged once, even if called multiple times. Default is false.[br][br][b]Returns:[/b][br]- No return value[br]
+			</description>
+		</method>
+		<method name="hint" qualifiers="static">
+			<return type="void" />
+			<param index="0" name="message" type="String" />
+			<param index="1" name="mod_name" type="String" />
+			<param index="2" name="only_once" type="bool" default="false" />
+			<description>
+				Logs the message. Prefixed HINT and highligted.[br]Logged with verbosity level at or above debug ([code]-vvv[/code] or [code]--log-debug[/code]) and in the editor only. Not written to mod loader log.[br]===[br][b]Note:[/b][br]Use this to help other developers debug issues by giving them error-specific hints.[br]===[br][br][b]Parameters:[/b][br][param message] ([String]): The message to be logged as a debug.[br][param mod_name] ([String]): The name of the mod or ModLoader class associated with this log entry.[br][param only_once] ([bool]): (Optional) If true, the log entry will only be logged once, even if called multiple times. Default is false.[br][br][b]Returns:[/b][br]- No return value[br]
+			</description>
+		</method>
+		<method name="debug_json_print" qualifiers="static">
+			<return type="void" />
+			<param index="0" name="message" type="String" />
+			<param index="1" name="json_printable" type="Variant" />
+			<param index="2" name="mod_name" type="String" />
+			<param index="3" name="only_once" type="bool" default="false" />
+			<description>
+				Logs the message formatted with [method JSON.print]. Prefixed DEBUG.[br]Logged with verbosity level at or above debug ([code]-vvv[/code] or [code]--log-debug[/code]).[br][br][b]Parameters:[/b][br][param message] ([String]): The message to be logged as a debug.[br][param json_printable] (Variant): The variable to be formatted and printed using [method JSON.print].[br][param mod_name] ([String]): The name of the mod or ModLoader class associated with this log entry.[br][param only_once] ([bool]): (Optional) If true, the log entry will only be logged once, even if called multiple times. Default is false.[br][br][b]Returns:[/b][br]- No return value[br]
+			</description>
+		</method>
+		<method name="get_all_as_resource" qualifiers="static">
+			<return type="Array" />
+			<description>
+				Returns an array of log entries as a resource.[br][br][b]Returns:[/b][br]- [Array]: An array of log entries represented as resource.
+			</description>
+		</method>
+		<method name="get_all_as_string" qualifiers="static">
+			<return type="Array" />
+			<description>
+				Returns an array of log entries as a string.[br][br][b]Returns:[/b][br]- [Array]: An array of log entries represented as strings.
+			</description>
+		</method>
+		<method name="get_by_mod_as_resource" qualifiers="static">
+			<return type="Array" />
+			<param index="0" name="mod_name" type="String" />
+			<description>
+				Returns an array of log entries as a resource for a specific mod_name.[br][br][b]Parameters:[/b][br][param mod_name] ([String]): The name of the mod or ModLoader class associated with the log entries.[br][br][b]Returns:[/b][br]- [Array]: An array of log entries represented as resource for the specified [code]mod_name[/code].
+			</description>
+		</method>
+		<method name="get_by_mod_as_string" qualifiers="static">
+			<return type="Array" />
+			<param index="0" name="mod_name" type="String" />
+			<description>
+				Returns an array of log entries as a string for a specific mod_name.[br][br][b]Parameters:[/b][br][param mod_name] ([String]): The name of the mod or ModLoader class associated with the log entries.[br][br][b]Returns:[/b][br]- [Array]: An array of log entries represented as strings for the specified [code]mod_name[/code].
+			</description>
+		</method>
+		<method name="get_by_type_as_resource" qualifiers="static">
+			<return type="Array" />
+			<param index="0" name="type" type="String" />
+			<description>
+				Returns an array of log entries as a resource for a specific type.[br][br][b]Parameters:[/b][br][param type] ([String]): The log type associated with the log entries.[br][br][b]Returns:[/b][br]- [Array]: An array of log entries represented as resource for the specified [code]type[/code].
+			</description>
+		</method>
+		<method name="get_by_type_as_string" qualifiers="static">
+			<return type="Array" />
+			<param index="0" name="type" type="String" />
+			<description>
+				Returns an array of log entries as a string for a specific type.[br][br][b]Parameters:[/b][br][param type] ([String]): The log type associated with the log entries.[br][br][b]Returns:[/b][br]- [Array]: An array of log entries represented as strings for the specified [code]type[/code].
+			</description>
+		</method>
+		<method name="get_all" qualifiers="static">
+			<return type="Array" />
+			<description>
+				Returns an array of all log entries.[br][br][b]Returns:[/b][br]- [Array]: An array of all log entries.
+			</description>
+		</method>
+		<method name="get_by_mod" qualifiers="static">
+			<return type="Array" />
+			<param index="0" name="mod_name" type="String" />
+			<description>
+				Returns an array of log entries for a specific mod_name.[br][br][b]Parameters:[/b][br][param mod_name] ([String]): The name of the mod or ModLoader class associated with the log entries.[br][br][b]Returns:[/b][br]- [Array]: An array of log entries for the specified [code]mod_name[/code].
+			</description>
+		</method>
+		<method name="get_by_type" qualifiers="static">
+			<return type="Array" />
+			<param index="0" name="type" type="String" />
+			<description>
+				Returns an array of log entries for a specific type.[br][br][b]Parameters:[/b][br][param type] ([String]): The log type associated with the log entries.[br][br][b]Returns:[/b][br]- [Array]: An array of log entries for the specified [code]type[/code].
+			</description>
+		</method>
+		<method name="get_all_entries_as_string" qualifiers="static">
+			<return type="Array" />
+			<param index="0" name="log_entries" type="Array" />
+			<description>
+				Returns an array of log entries represented as strings.[br][br][b]Parameters:[/b][br][param log_entries] ([Array]): An array of ModLoaderLogEntry Objects.[br][br][b]Returns:[/b][br]- [Array]: An array of log entries represented as strings.
+			</description>
+		</method>
+		<method name="_log" qualifiers="static">
+			<return type="void" />
+			<param index="0" name="message" type="String" />
+			<param index="1" name="mod_name" type="String" />
+			<param index="2" name="log_type" type="String" default="&quot;info&quot;" />
+			<param index="3" name="only_once" type="bool" default="false" />
+			<description>
+			</description>
+		</method>
+		<method name="_is_mod_name_ignored" qualifiers="static">
+			<return type="bool" />
+			<param index="0" name="mod_name" type="String" />
+			<description>
+			</description>
+		</method>
+		<method name="_store_log" qualifiers="static">
+			<return type="void" />
+			<param index="0" name="log_entry" type="ModLoaderLog.ModLoaderLogEntry" />
+			<description>
+			</description>
+		</method>
+		<method name="_is_logged_before" qualifiers="static">
+			<return type="bool" />
+			<param index="0" name="entry" type="ModLoaderLog.ModLoaderLogEntry" />
+			<description>
+			</description>
+		</method>
+		<method name="_get_time_string" qualifiers="static">
+			<return type="String" />
+			<description>
+			</description>
+		</method>
+		<method name="_get_date_string" qualifiers="static">
+			<return type="String" />
+			<description>
+			</description>
+		</method>
+		<method name="_get_date_time_string" qualifiers="static">
+			<return type="String" />
+			<description>
+			</description>
+		</method>
+		<method name="_write_to_log_file" qualifiers="static">
+			<return type="void" />
+			<param index="0" name="string_to_write" type="String" />
+			<description>
+			</description>
+		</method>
+		<method name="_rotate_log_file" qualifiers="static">
+			<return type="void" />
+			<description>
+			</description>
+		</method>
+		<method name="_clear_old_log_backups" qualifiers="static">
+			<return type="void" />
+			<description>
+			</description>
+		</method>
+		<method name="_code_note" qualifiers="static">
+			<return type="void" />
+			<param index="0" name="_msg" type="String" />
+			<description>
+			</description>
+		</method>
+	</methods>
+	<members>
+		<member name="logged_messages" type="Dictionary" setter="" getter="" default="{...}">
+			Keeps track of logged messages, to avoid flooding the log with duplicate notices Can also be used by mods, eg. to create an in-game developer console that shows messages
+		</member>
+		<member name="verbosity" type="int" setter="" getter="" enum="ModLoaderLog.VERBOSITY_LEVEL" default="3">
+			Verbosity/Logging level. Used to filter out messages below the set level (if the [enum VERBOSITY_LEVEL] int of a new entry is larger than the [member verbosity] it is ignored)
+		</member>
+		<member name="ignored_mods" type="String[]" setter="" getter="" default="[]">
+			Array of mods that should be ignored when logging messages (contains mod IDs as strings)
+		</member>
+		<member name="hint_color" type="Color" setter="" getter="" default="Color(0.439216, 0.729412, 0.980392, 1)">
+			Highlighting color for hint type log messages
+		</member>
+	</members>
+	<constants>
+		<constant name="MOD_LOG_PATH" value="&quot;user://logs/modloader.log&quot;">
+		</constant>
+		<constant name="_LOG_NAME" value="&quot;ModLoader:Log&quot;">
+		</constant>
+		<constant name="ERROR" value="0" enum="VERBOSITY_LEVEL">
+			For errors and fatal errors
+		</constant>
+		<constant name="WARNING" value="1" enum="VERBOSITY_LEVEL">
+			For warnings
+		</constant>
+		<constant name="INFO" value="2" enum="VERBOSITY_LEVEL">
+			For everything informational and successes
+		</constant>
+		<constant name="DEBUG" value="3" enum="VERBOSITY_LEVEL">
+			For debugging, can get quite verbose
+		</constant>
+	</constants>
+</class>

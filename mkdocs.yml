@@ -1,30 +1,142 @@
-site_name: GMLWiki
+site_name: Godot Mod Loader Wiki
 nav:
   - Home: index.md
-  - Mod Loader Api:
-    - ModLoaderMod: api/ModLoaderMod.md
-    - ModLoaderLog: api/ModLoaderLog.md
-    - ModLoaderConfig: api/ModLoaderConfig.md
-    - ModLoaderDeprecated: api/ModLoaderDeprecated.md
-    - ModLoaderModManager: api/ModLoaderModManager.md
-    - ModLoaderUserProfile: api/ModLoaderUserProfile.md
-  - Guides:
-      - Modding:
-        - Script Extensions: guides/modding/script_extensions.md
-        - Config JSON: guides/modding/config_json.md
-        - Decompiling Games: guides/modding/decompile_games.md
-        - Overwriting Game Resources: guides/modding/overwriting_game_resources.md
-        - Global Classes & Child Nodes: guides/modding/global_classes_and_child_nodes.md
-        - Creating a Mod Config Schema: guides/modding/creating_mod_config_schema.md
-        - Mod Structure: guides/modding/mod_structure.md
-        - Mod Files: guides/modding/mod_files.md
-      - Integration:
-        - CLI Args: guides/integration/cli_args.md
-        - GodotSteam: guides/integration/godot_steam.md
-        - Mod Loader Options: guides/integration/mod_loader_options.md
-        - Godot Project Setup: guides/integration/godot_project_setup.md
-        - Mod Loader Self Setup: guides/integration/mod_loader_self_setup.md
-  - Versions & Releases:
+  - Mod Loader API:
+    - API Overview: api/mod_loader_api.md
+    - ModLoaderMod: api/mod_loader_mod.md
+    - ModLoaderLog: api/mod_loader_log.md
+    - ModLoaderLogEntry: api/mod_loader_log_entry.md
+    - ModLoaderHookChain: api/mod_loader_hook_chain.md
+    - ModLoaderConfig: api/mod_loader_config.md
+    - ModLoaderDeprecated: api/mod_loader_deprecated.md
+    - ModLoaderUserProfile: api/mod_loader_user_profile.md
+    - Godot 3:
+        - ModLoaderMod: api/godot_3/mod_loader_mod.md
+        - ModLoaderLog: api/godot_3/mod_loader_log.md
+        - ModLoaderConfig: api/godot_3/mod_loader_config.md
+        - ModLoaderDeprecated: api/godot_3/mod_loader_deprecated.md
+        - ModLoaderUserProfile: api/godot_3/mod_loader_user_profile.md
+        - ModLoaderModManager: api/godot_3/mod_loader_mod_manager.md
+  - For Modders:
+    - Modding Tools:
+        - Decompiling with Godot RE Tools: guides/modding/tools/decompile_games.md
+        - Mod Tool: guides/modding/tools/mod_tool.md
+        - Workshop Uploader: guides/modding/tools/workshop_uploader.md
+        - GodotSteam: guides/modding/tools/godot_steam.md
+    - Script Extensions: guides/modding/script_extensions.md
+    - Script Hooks: guides/modding/script_hooks.md
+    - Adding and Replacing Game Resources: guides/modding/overwriting_game_resources.md
+    - Config JSON: guides/modding/config_json.md
+    - Global Classes & Child Nodes: guides/modding/global_classes_and_child_nodes.md
+    - Creating a Mod Config Schema: guides/modding/creating_mod_config_schema.md
+    - Common File Paths: guides/modding/file_paths.md
+    - Mod Structure: guides/modding/mod_structure.md
+    - Mod Files: guides/modding/mod_files.md
+    - Exporting Mods: guides/modding/exporting_mods.md
+    - Testing and Debugging Mods: guides/modding/testing_debugging.md
+  - For Integrators:
+    - GML Command Line Arguments: guides/integration/cli_args.md
+    - Mod Loader Options: guides/integration/mod_loader_options.md
+    - Godot Project Setup: guides/integration/godot_project_setup.md
+    - Mod Loader Self Setup: guides/integration/mod_loader_self_setup.md
+    - Mod Distribution: guides/integration/mod_distribution.md
+  - Other:
     - Upcoming Features: misc/upcoming_features.md
     - Breaking Changes: misc/breaking_changes.md
     - Known Issues: misc/known_issues.md
+
+# GitHub widget in the header
+repo_url: https://github.com/GodotModding/godot-mod-loader/
+repo_name: Godot Mod Loader
+
+theme:
+  name: material
+  font:
+    code: JetBrains Mono
+  logo: _media/logo_outline.png
+  favicon: _media/favicon-96x96.png
+  icon:
+    repo: fontawesome/brands/github
+    annotation: material/information
+  palette:
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: blue
+      toggle:
+        icon: material/brightness-2
+        name: Switch to light mode
+    # Palette toggle for light mode
+    - scheme: default
+      primary: blue
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+  features:
+    - navigation.footer
+    - navigation.indexes
+    - content.tabs.link
+    - content.code.copy
+    - content.tooltips
+
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/GodotModding/godot-mod-loader/
+    - icon: fontawesome/brands/github-alt
+      link: https://github.com/GodotModding/godot-mod-tool/
+    - icon: fontawesome/brands/discord
+      link: https://discord.godotmodding.com/
+  extra:
+    tags:
+      Version: version
+extra_css:
+  # https://squidfunk.github.io/mkdocs-material/reference/code-blocks/#custom-syntax-theme-docsstylesheetsextracss
+  - stylesheets/gdscript_highlight.css
+  - stylesheets/extra.css
+
+
+markdown_extensions:
+# give section headlines a link button
+  - toc:
+      permalink: 🔗
+      toc_depth: 3
+# for highlighted info/warning/etc sections which can be collapsed
+  - admonition
+  - pymdownx.details
+# version tabbed highlighted code
+  - pymdownx.tabbed:
+      alternate_style: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+      auto_title: true
+      linenums: true
+  - pymdownx.inlinehilite
+# for a project wide glossary and tooltips
+  - abbr
+  - attr_list
+  - pymdownx.snippets:
+      auto_append:
+        - includes/abbreviations.md
+  - pymdownx.caret # ^^underline^^
+  - pymdownx.mark  # ==highlight==
+  - pymdownx.tilde # ~~strikethrough~~
+# Inline icons
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+# Nicer looking hotkeys
+# https://facelessuser.github.io/pymdown-extensions/extensions/keys/
+  - pymdownx.keys
+# Allows complex annotations
+# https://squidfunk.github.io/mkdocs-material/reference/annotations/#usage
+  - md_in_html
+  - pymdownx.blocks.caption
+
+# also watch these files outside /docs for changes to rebuild
+watch:
+  - includes

@@ -1,11 +1,9 @@
-<!-- top of file anchor -->
-<a name="top"></a>
 
-# ModLoaderConfig
 This class provides functionality for working with per-mod Configurations.
 
 ## Methods Overview
-<!-- should this be turned into an HTML table to avoid creating huge md tables? -->
+
+
 | Method                                               | Description                                                                                                                                                               |
 |------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [`create_config`](#create_config)                    | Creates a new configuration for a mod.                                                                                                                                    |

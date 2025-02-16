@@ -1,4 +1,4 @@
-# ModLoaderMod
+
 This class provides helper functions to build mods. **These are the main methods your mods will use.**
 
 
@@ -31,7 +31,7 @@ Example: `extends "res://singletons/utils.gd"`.
 
 ?> Your extender script doesn't have to follow the same directory path as the vanilla file, but it's good practice to do so.
 
-*To learn more about script extensions, read: [Script Extensions](../guides/modding/script_extensions.md)*
+*To learn more about script extensions, read: [Script Extensions](../../guides/modding/script_extensions.md)*
 
 Parameters:
 - child_script_path (String): The path to the mod's extender script.

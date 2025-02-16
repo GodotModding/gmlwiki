@@ -4,7 +4,7 @@ If the game you want to mod does not natively use this ModLoader, you will have 
 1. Download the [latest release](https://github.com/GodotModding/godot-mod-loader/releases) of the ModLoader
 2. Place the `/addons` folder from the ModLoader next to the executable of the game you want to mod.
 3. Set this flag `--script addons/mod_loader/mod_loader_setup.gd`
-    - **Steam:** right-click the game in the game list > press properties > enter the flag in startup options
+    - **Steam:** right-click the game in the left sidebar > press `properties` > enter the flag in `startup options`
 - **Other:** search for "set launch (or command line) parameters [your platform]"
 
 If the game window shows `(Modded)` in the title, setup was successful.
@@ -17,7 +17,7 @@ The ModLoader comes with a helper script to properly install itself without havi
     To do this, [GodotPckTool](https://github.com/hhyyrylainen/GodotPckTool) is used.
     This approach is currently only supported on Windows and with games that have a .pck file that is not embedded.
     Using this method allows us to add the ModLoader at the top of the autoload chain.
-    This is important, because it allows mods to add [Script Extensions](../../api/ModLoaderMod.md#install_script_extension) to autoloads.
+    This is important, because it allows mods to add [Script Extensions](../../api/mod_loader_mod.md#method-install_script_extension) to autoloads.
 
 - **Use Godot's `override.cfg` functionality to override the game project settings**
     This is the ideal solution if mods for a game don't require extensions of autoloads.

@@ -1,0 +1,43 @@
+
+/* https://squidfunk.github.io/mkdocs-material/reference/code-blocks/#custom-syntax-theme-docsstylesheetsextracss */
+:root > * {
+    --md-code-hl-number-color: #a1ffe0;
+    --md-code-hl-special-color: #ff7085;
+    --md-code-hl-constant-color: #bce0ff;
+    --md-code-hl-keyword-color: #ff7085;
+    --md-code-hl-string-color: #ffeda1;
+    --md-code-hl-name-color: #cdcfd2;
+    --md-code-hl-operator-color: #abc9ff;
+    --md-code-hl-punctuation-color: #abc9ff;
+    --md-code-hl-comment-color: #cdcfd280;
+    --md-code-hl-generic-color: #cdcfd2;
+    --md-code-hl-variable-color: #bce0ff;
+
+    /* not recognized by pygment's gdscript lexer */
+    --md-code-hl-function-color: #57b3ff;
+
+    /*--md-code-fg-color: #cdcfd2;*/
+    /*--md-code-bg-color: #1d2229;*/
+    --md-code-hl-color: #70bafa66;
+}
+
+/* these are the new gds colors? */
+/* at least what appears when the custom color in editorsettings is reset */
+/*:root > * {*/
+/*    --md-code-hl-number-color: #eb9433;*/
+/*    --md-code-hl-special-color: #ffffb3;*/
+/*    --md-code-hl-function-color: #66a3cf;*/
+/*    --md-code-hl-constant-color: #e64f59;*/
+/*    --md-code-hl-keyword-color: #ffffb3;*/
+/*    --md-code-hl-string-color: #f06ebf;*/
+/*    --md-code-hl-name-color: #42ffc2;*/
+/*    --md-code-hl-operator-color: #abc9ff;*/
+/*    --md-code-hl-punctuation-color: #abc9ff;*/
+/*    --md-code-hl-comment-color: #666666;*/
+/*    --md-code-hl-generic-color: #ababab;*/
+/*    --md-code-hl-variable-color: #e64f59;*/
+
+/*    --md-code-fg-color: #ababab;*/
+/*    --md-code-bg-color: #211f26;*/
+/*    --md-code-hl-color: #699ce859;*/
+/*}*/

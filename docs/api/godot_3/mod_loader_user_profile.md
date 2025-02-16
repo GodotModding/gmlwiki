@@ -1,4 +1,4 @@
-# ModLoaderUserProfile
+
 This class provides methods for working with user profiles.
 
 ## Methods Overview

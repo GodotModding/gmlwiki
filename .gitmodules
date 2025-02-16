@@ -1,0 +1,4 @@
+[submodule "godot-mod-loader"]
+	path = godot-mod-loader
+	url = https://github.com/GodotModding/godot-mod-loader/
+	branch = 4.x

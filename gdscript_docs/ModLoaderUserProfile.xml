@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class name="ModLoaderUserProfile" inherits="Object" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/godotengine/godot/master/doc/class.xsd">
+	<brief_description>
+		This Class provides methods for working with user profiles.
+	</brief_description>
+	<description>
+	</description>
+	<tutorials>
+	</tutorials>
+	<methods>
+		<method name="enable_mod" qualifiers="static">
+			<return type="bool" />
+			<param index="0" name="mod_id" type="String" />
+			<param index="1" name="user_profile" type="ModUserProfile" default="&lt;unknown&gt;" />
+			<description>
+				Enables a mod - it will be loaded on the next game start[br][br][b]Parameters:[/b][br]- [param mod_id] ([String]): The ID of the mod to enable.[br]- [param user_profile] ([ModUserProfile]): (Optional) The user profile to enable the mod for. Default is the current user profile.[br][br][b]Returns:[/b][br]- [bool]: True on success.
+			</description>
+		</method>
+		<method name="force_enable_mod" qualifiers="static">
+			<return type="bool" />
+			<param index="0" name="mod_id" type="String" />
+			<param index="1" name="user_profile" type="ModUserProfile" default="&lt;unknown&gt;" />
+			<description>
+				Forces a mod to enable, ensuring it loads at the next game start, regardless of load warnings.[br][br][b]Parameters:[/b][br]- [param mod_id] ([String]): The ID of the mod to enable.[br]- [param user_profile] ([ModUserProfile]): (Optional) The user profile for which the mod will be enabled. Defaults to the current user profile.[br][br][b]Returns:[/b][br]- [bool]: True on success.
+			</description>
+		</method>
+		<method name="disable_mod" qualifiers="static">
+			<return type="bool" />
+			<param index="0" name="mod_id" type="String" />
+			<param index="1" name="user_profile" type="ModUserProfile" default="&lt;unknown&gt;" />
+			<description>
+				Disables a mod - it will not be loaded on the next game start[br][br][b]Parameters:[/b][br]- [param mod_id] ([String]): The ID of the mod to disable.[br]- [param user_profile] ([ModUserProfile]): (Optional) The user profile to disable the mod for. Default is the current user profile.[br][br][b]Returns:[/b][br]- [bool]: True on success.
+			</description>
+		</method>
+		<method name="set_mod_current_config" qualifiers="static">
+			<return type="bool" />
+			<param index="0" name="mod_id" type="String" />
+			<param index="1" name="mod_config" type="ModConfig" />
+			<param index="2" name="user_profile" type="ModUserProfile" default="&lt;unknown&gt;" />
+			<description>
+				Sets the current config for a mod in a user profile's mod_list.[br][br][b]Parameters:[/b][br]- [param mod_id] ([String]): The ID of the mod.[br]- [param mod_config] ([ModConfig]): The mod config to set as the current config.[br]- [param user_profile] ([ModUserProfile]): (Optional) The user profile to update. Default is the current user profile.[br][br][b]Returns:[/b][br]- [bool]: True on success.
+			</description>
+		</method>
+		<method name="create_profile" qualifiers="static">
+			<return type="bool" />
+			<param index="0" name="profile_name" type="String" />
+			<description>
+				Creates a new user profile with the given name, using the currently loaded mods as the mod list.[br][br][b]Parameters:[/b][br]- [param profile_name] ([String]): The name of the new user profile (must be unique).[br][br][b]Returns:[/b][br]- [bool]: True on success.
+			</description>
+		</method>
+		<method name="set_profile" qualifiers="static">
+			<return type="bool" />
+			<param index="0" name="user_profile" type="ModUserProfile" />
+			<description>
+				Sets the current user profile to the given user profile.[br][br][b]Parameters:[/b][br]- [param user_profile] ([ModUserProfile]): The user profile to set as the current profile.[br][br][b]Returns:[/b][br]- [bool]: True on success.
+			</description>
+		</method>
+		<method name="delete_profile" qualifiers="static">
+			<return type="bool" />
+			<param index="0" name="user_profile" type="ModUserProfile" />
+			<description>
+				Deletes the given user profile.[br][br][b]Parameters:[/b][br]- [param user_profile] ([ModUserProfile]): The user profile to delete.[br][br][b]Returns:[/b][br]- [bool]: True on success.
+			</description>
+		</method>
+		<method name="get_current" qualifiers="static">
+			<return type="ModUserProfile" />
+			<description>
+				Returns the current user profile.[br][br][b]Returns:[/b][br]- [ModUserProfile]: The current profile or [code]null[/code] if not set.
+			</description>
+		</method>
+		<method name="get_profile" qualifiers="static">
+			<return type="ModUserProfile" />
+			<param index="0" name="profile_name" type="String" />
+			<description>
+				Returns the user profile with the given name.[br][br][b]Parameters:[/b][br]- [param profile_name] ([String]): The name of the user profile to retrieve.[br][br][b]Returns:[/b][br]- [ModUserProfile]: The profile or [code]null[/code] if not found
+			</description>
+		</method>
+		<method name="get_all_as_array" qualifiers="static">
+			<return type="Array" />
+			<description>
+				Returns an array containing all user profiles stored in ModLoaderStore.[br][br][b]Returns:[/b][br]- [Array]: A list of [ModUserProfile] Objects
+			</description>
+		</method>
+		<method name="is_initialized" qualifiers="static">
+			<return type="bool" />
+			<description>
+				Returns true if the Mod User Profiles are initialized. [br][b]Returns:[/b][br]- [bool]: True if profiles are ready. [br]On the first execution of the game, user profiles might not yet be created. Use this method to check if everything is ready to interact with the ModLoaderUserProfile API.
+			</description>
+		</method>
+		<method name="_update_disabled_mods" qualifiers="static">
+			<return type="void" />
+			<description>
+			</description>
+		</method>
+		<method name="_update_mod_lists" qualifiers="static">
+			<return type="bool" />
+			<description>
+			</description>
+		</method>
+		<method name="_update_mod_list" qualifiers="static">
+			<return type="Dictionary" />
+			<param index="0" name="mod_list" type="Dictionary" />
+			<param index="1" name="mod_data" type="Dictionary" default="&lt;unknown&gt;" />
+			<description>
+			</description>
+		</method>
+		<method name="_generate_mod_list" qualifiers="static">
+			<return type="Dictionary" />
+			<description>
+			</description>
+		</method>
+		<method name="_generate_mod_list_entry" qualifiers="static">
+			<return type="Dictionary" />
+			<param index="0" name="mod_id" type="String" />
+			<param index="1" name="is_active" type="bool" />
+			<description>
+			</description>
+		</method>
+		<method name="_set_mod_state" qualifiers="static">
+			<return type="bool" />
+			<param index="0" name="mod_id" type="String" />
+			<param index="1" name="profile_name" type="String" />
+			<param index="2" name="should_activate" type="bool" />
+			<param index="3" name="force" type="bool" default="false" />
+			<description>
+			</description>
+		</method>
+		<method name="_is_mod_id_in_mod_list" qualifiers="static">
+			<return type="bool" />
+			<param index="0" name="mod_id" type="String" />
+			<param index="1" name="profile_name" type="String" />
+			<description>
+			</description>
+		</method>
+		<method name="_create_new_profile" qualifiers="static">
+			<return type="ModUserProfile" />
+			<param index="0" name="profile_name" type="String" />
+			<param index="1" name="mod_list" type="Dictionary" />
+			<description>
+			</description>
+		</method>
+		<method name="_load" qualifiers="static">
+			<return type="bool" />
+			<description>
+			</description>
+		</method>
+		<method name="_save" qualifiers="static">
+			<return type="bool" />
+			<description>
+			</description>
+		</method>
+	</methods>
+	<constants>
+		<constant name="LOG_NAME" value="&quot;ModLoader:UserProfile&quot;">
+		</constant>
+		<constant name="FILE_PATH_USER_PROFILES" value="&quot;user://mod_user_profiles.json&quot;">
+		</constant>
+	</constants>
+</class>

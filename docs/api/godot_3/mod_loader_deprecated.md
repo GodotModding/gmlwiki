@@ -1,4 +1,4 @@
-# ModLoaderDeprecated
+
 This class provides methods for deprecating functions. Can be used by mods with public APIs.
 
 ## Methods Overview

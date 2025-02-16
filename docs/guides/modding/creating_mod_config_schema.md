@@ -118,6 +118,6 @@ ModLoader will recognize the schema and automatically generate a default config 
 
 For more information about Mod Configs visit the following sides:
 * [Config JSON](config_json.md)
-* [ModLoaderConfig](../../api/ModLoaderConfig.md)
+* [ModLoaderConfig](../../api/mod_loader_config.md)
 
 For further assistance, you can join us on [Discord](ttps://discord.gg/J5AvdFK4mw) or open a new [issue](https://github.com/GodotModding/godot-mod-loader/issues).

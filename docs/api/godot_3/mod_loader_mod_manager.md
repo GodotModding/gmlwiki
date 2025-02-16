@@ -1,5 +1,9 @@
-# ModLoaderModManager
-This class provides methods to manage mod state.
+
+Provides methods to manage mod state.
+
+!!! example "Experimental"
+    This class may be unstable
+
 
 ## Methods Overview
 | Method                                                      | Description                   |
