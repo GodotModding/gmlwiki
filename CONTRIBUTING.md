@@ -136,7 +136,7 @@ func run():
 		"symbol_color": ["--md-code-hl-operator-color", "--md-code-hl-punctuation-color"],
 		"keyword_color": ["--md-code-hl-keyword-color", "--md-code-hl-special-color"],
 		"control_flow_keyword_color": [],
-		"base_type_color": [".kt"],
+		"base_type_color": [".nb.nb-Type"],
 		"engine_type_color": [],
 		"user_type_color": [],
 		"comment_color": ["--md-code-hl-comment-color"],
@@ -169,13 +169,14 @@ func run():
 
 	var color_classes := ""
 	print("{")
+	print("\t--godot-theme-base-color: #%s;\n" % settings.get("interface/theme/base_color").to_html(true))
 	for color_name in colors:
 		var color: Color = settings.get(prefix + color_name)
 		for css_thing: String in colors[color_name]:
 			if css_thing.begins_with("--"):
 				print("\t%s: #%s;" % [css_thing, color.to_html(true)])
 			elif css_thing.begins_with("."):
-				var css_var := "--md-code-hl-custom-class-%s" % css_thing.trim_prefix(".")
+				var css_var := "--md-code-hl-custom-class%s" % css_thing.replace(".", "_")
 				print("\t%s: #%s;" % [css_var, color.to_html(true)])
 				color_classes += "\n.highlight %s {\n\tcolor: var(%s);\n}\n" % [css_thing, css_var]
 	print("}")
