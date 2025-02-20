@@ -269,7 +269,11 @@ Returns true if the mod with the given `#!gd mod_id` was successfully loaded.
 ***
 ### • [`#!gd bool`](https://docs.godotengine.org/en/stable/classes/class_bool.html) <code class="highlight">is_mod_active(mod_id: [String](https://docs.godotengine.org/en/stable/classes/class_string.html))</code> static {#method-is_mod_active data-toc-label='is_mod_active'}
 #### Description:
-Returns true if the mod with the given mod_id was successfully loaded and is currently active.   
-Parameters: - `#!gd mod_id` ([`#!gd String`](https://docs.godotengine.org/en/stable/classes/class_string.html)): The ID of the mod.   
-Returns: - [`#!gd bool`](https://docs.godotengine.org/en/stable/classes/class_bool.html): true if the mod is loaded and active, false otherwise.
+#### Parameters:
+  
+- `#!gd mod_id` ([`#!gd String`](https://docs.godotengine.org/en/stable/classes/class_string.html)): The ID of the mod.
+
+**Returns:**
+
+- [`#!gd bool`](https://docs.godotengine.org/en/stable/classes/class_bool.html): true if the mod is loaded and active, false otherwise.
 ***

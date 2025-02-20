@@ -28,19 +28,21 @@ nav:
     - Adding and Replacing Game Resources: guides/modding/overwriting_game_resources.md
     - Config JSON: guides/modding/config_json.md
     - Global Classes & Child Nodes: guides/modding/global_classes_and_child_nodes.md
-    - Creating a Mod Config Schema: guides/modding/creating_mod_config_schema.md
+    - Settings For Your Mod: guides/modding/creating_mod_config_schema.md
     - Common File Paths: guides/modding/file_paths.md
     - Mod Structure: guides/modding/mod_structure.md
     - Mod Files: guides/modding/mod_files.md
+    - Using Other Mods: guides/modding/using_other_mods.md
     - Exporting Mods: guides/modding/exporting_mods.md
     - Testing and Debugging Mods: guides/modding/testing_debugging.md
   - For Integrators:
     - GML Command Line Arguments: guides/integration/cli_args.md
     - Mod Loader Options: guides/integration/mod_loader_options.md
     - Godot Project Setup: guides/integration/godot_project_setup.md
-    - Mod Loader Self Setup: guides/integration/mod_loader_self_setup.md
     - Mod Distribution: guides/integration/mod_distribution.md
     - User Profiles: guides/integration/user_profiles.md
+  - For Mod Users:
+    - Mod Loader Self Setup: guides/integration/mod_loader_self_setup.md
   - Other:
     - Upcoming Features: misc/upcoming_features.md
     - Breaking Changes: misc/breaking_changes.md
@@ -63,12 +65,14 @@ theme:
     # Palette toggle for dark mode
     - scheme: slate
       primary: blue
+      accent: light blue
       toggle:
         icon: material/brightness-2
         name: Switch to light mode
     # Palette toggle for light mode
-    - scheme: default
+    - scheme: light
       primary: blue
+      accent: light blue
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
