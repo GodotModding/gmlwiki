@@ -40,6 +40,7 @@ nav:
     - Godot Project Setup: guides/integration/godot_project_setup.md
     - Mod Loader Self Setup: guides/integration/mod_loader_self_setup.md
     - Mod Distribution: guides/integration/mod_distribution.md
+    - User Profiles: guides/integration/user_profiles.md
   - Other:
     - Upcoming Features: misc/upcoming_features.md
     - Breaking Changes: misc/breaking_changes.md
