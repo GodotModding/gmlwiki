@@ -1,3 +1,8 @@
+---
+description: Learn how to easily overwrite game resources in your mod.
+---
+
+
 # Adding and Replacing Game Resources
 
 With the Godot alone it's possible to replace/overwrite existing game resources, and add resources in specific places in

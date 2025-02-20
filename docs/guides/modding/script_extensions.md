@@ -1,10 +1,11 @@
 ---
+description: Script extensions are the preferred way to change, extend and replace behavior of an existing vanilla script.
 status: new
 ---
 
 # Script Extensions
 
-Script extensions are the preferred way to change, extend and replace behaviour of an existing vanilla script.
+Script extensions are the preferred way to change, extend and replace behavior of an existing vanilla script.
 
 It works by registering an entire file of new script functions as a child script of a vanilla script. Not all methods 
 from the original script need to be in the extension script.

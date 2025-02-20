@@ -1,3 +1,7 @@
+---
+description: All Supported Command Line Arguments
+---
+
 # CLI Args
 ## Supported Command Line Arguments
 | Arg                                                      | Info                                                                     |

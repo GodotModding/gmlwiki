@@ -1,3 +1,7 @@
+---
+description: This page cover features that are currently only on the development branch.
+---
+
 # Upcoming Features
 This page cover features that are currently only on the [development](https://github.com/GodotModding/godot-mod-loader/tree/development) branch.
 

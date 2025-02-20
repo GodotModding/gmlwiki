@@ -1,4 +1,6 @@
 ---
+title: Exporting Mods
+description: Learn how to export your mod.
 status: new
 ---
 
