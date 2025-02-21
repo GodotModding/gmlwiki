@@ -40,6 +40,7 @@ nav:
     - Mod Loader Options: guides/integration/mod_loader_options.md
     - Godot Project Setup: guides/integration/godot_project_setup.md
     - Mod Distribution: guides/integration/mod_distribution.md
+    - User Profiles: guides/integration/user_profiles.md
   - For Mod Users:
     - Mod Loader Self Setup: guides/integration/mod_loader_self_setup.md
   - Other:
