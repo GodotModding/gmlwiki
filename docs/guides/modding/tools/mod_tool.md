@@ -87,6 +87,7 @@ and audio (`.wav`, `.ogg`, ...).
 ### Script Actions
 
 Scripts are the main thing we want to mod and there are two ways to mod them:
+
 1. [Extensions](../script_extensions.md) - prefer these when possible
 2. [Hooks](../script_hooks.md) - use them when a script has a `class_name` at the top
 
