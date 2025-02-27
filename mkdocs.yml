@@ -33,7 +33,7 @@ nav:
     - Mod Structure: guides/modding/mod_structure.md
     - Mod Files: guides/modding/mod_files.md
     - Using Other Mods: guides/modding/using_other_mods.md
-    - Exporting Mods: guides/modding/exporting_mods.md
+    - Distributing Mods: guides/modding/distributing_mods.md
     - Testing and Debugging Mods: guides/modding/testing_debugging.md
   - For Integrators:
     - GML Command Line Arguments: guides/integration/cli_args.md

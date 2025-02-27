@@ -36,7 +36,7 @@ Mod ZIPs should have the structure shown below. It matches the structure of the 
 Godot editor. Yes, the zip itself contains the `/mods-unpacked` folder - this has to be this way because of how Godot 
 loads resource packs into the project root directly. 
 
-Mod users will add their ZIPs to a folder named mods in the root.
+Mod users will add their ZIPs to a folder named `/mods` in the root of the project, which is `res://` or next to the game executable.
 
 ZIP names must follow the convention of `{Namespace}-{ModName}-{version}.zip` e.g. `GodotModding-CoolMod-1.2.3.zip`.
 

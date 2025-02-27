@@ -53,49 +53,98 @@ It also includes multiple ways of setting dependencies, which you can learn more
 
 ## mod_main.gd
 
+The `mod_main.gd` script is the entrypoint for your mod - that means it calls all the fancy [ModLoaderMod](../../api/mod_loader_mod.md)
+functions to add script [extensions](script_extensions.md), [hooks](script_hooks.md), mod 
+[translations](../../api/mod_loader_mod.md#method-add_translation), and even [act as a global class](global_classes_and_child_nodes.md)
+if need be.
+
 See [ModLoaderApi](../../api/mod_loader_api.md) for more info on script extensions, translations and more.
 
-```gdscript
-extends Node
+The only thing *required* for the mod main to work is that it defines an `#!gd _init()` function for the mod loader 
+to call and that it `#!gd extends Node` at the top. Technically you can even extend any type that inherits 
+from `#!gd Node`, but it's rarely necessary.
 
+The script below contains some boilerplate code to get you started. 
+It is very similar to what you will get when [creating a new mod with the Mod Tool](tools/mod_tool.md#main-panel).
+One thing it does here is define some path to your mod folder and extensions folder, just to avoid repeating the
+full path every time.
 
-const AUTHORNAME_MODNAME_DIR := "AuthorName-ModName"
-const AUTHORNAME_MODNAME_LOG_NAME := "AuthorName-ModName:Main"
+=== "Godot 4"
 
-var mod_dir_path := ""
-var extensions_dir_path := ""
-var translations_dir_path := ""
+    ```gdscript
+    extends Node
+    
+    
+    const GODOTMODDING_EXAMPLEMOD_DIR := "GodotModding-ExampleMod"
+    const GODOTMODDING_EXAMPLEMOD_LOG_NAME := "GodotModding-ExampleMod:Main"
+    
+    var mod_dir_path := ""
+    var extensions_dir_path := ""
+    var translations_dir_path := ""
+    
+    func _init() -> void:
+        mod_dir_path = ModLoaderMod.get_unpacked_dir().path_join(GODOTMODDING_EXAMPLEMOD_DIR)
+        # Add extensions
+        install_script_extensions()
+        # Add translations
+        add_translations()
+    
+    
+    func install_script_extensions() -> void:
+        extensions_dir_path = mod_dir_path.path_join("extensions")
+        # ModLoaderMod.install_script_extension(extensions_dir_path.path_join(...))
 
-# Before v6.1.0
-# func _init(modLoader = ModLoader) -> void:
-func _init() -> void:
-	mod_dir_path = ModLoaderMod.get_unpacked_dir().plus_file(AUTHORNAME_MODNAME_DIR)
-	# Add extensions
-	install_script_extensions()
-	# Add translations
-	add_translations()
+    
+    func add_translations() -> void:
+        translations_dir_path = mod_dir_path.path_join("translations")
+        # ModLoaderMod.add_translation(translations_dir_path.path_join(...))
+    
+    
+    func _ready() -> void:
+        ModLoaderLog.info("Ready!", GODOTMODDING_EXAMPLEMOD_LOG_NAME)
+    ```
 
+=== "Godot 3"
 
-func install_script_extensions() -> void:
-	extensions_dir_path = mod_dir_path.plus_file("extensions")
-	# extensions_dir_path = mod_dir_path.path_join("extensions") # Godot 4
-
+    ```gdscript
+    extends Node
+    
+    
+    const GODOTMODDING_EXAMPLEMOD_DIR := "GodotModding-ExampleMod"
+    const GODOTMODDING_EXAMPLEMOD_LOG_NAME := "GodotModding-ExampleMod:Main"
+    
+    var mod_dir_path := ""
+    var extensions_dir_path := ""
+    var translations_dir_path := ""
+    
+    # Before v6.1.0
+    # func _init(modLoader = ModLoader) -> void:
+    func _init() -> void:
+        mod_dir_path = ModLoaderMod.get_unpacked_dir().plus_file(GODOTMODDING_EXAMPLEMOD_DIR)
+        # Add extensions
+        install_script_extensions()
+        # Add translations
+        add_translations()
+    
+    
+    func install_script_extensions() -> void:
+        extensions_dir_path = mod_dir_path.plus_file("extensions")
         # ModLoaderMod.install_script_extension(extensions_dir_path.plus_file(...))
 
-
-
-func add_translations() -> void:
-	translations_dir_path = mod_dir_path.plus_file("translations")
+    
+    func add_translations() -> void:
+        translations_dir_path = mod_dir_path.plus_file("translations")
         # ModLoaderMod.add_translation(translations_dir_path.plus_file(...))
-
-
-func _ready() -> void:
-	ModLoaderLog.info("Ready!", AUTHORNAME_MODNAME_LOG_NAME)
-```
+    
+    
+    func _ready() -> void:
+        ModLoaderLog.info("Ready!", GODOTMODDING_EXAMPLEMOD_LOG_NAME)
+    ```
 
 ???+ note 
-    The const variable you use to log (`AUTHORNAME_MODNAME_LOG_NAME` in the example above) should **always** be unique 
-    to your own mod, in every file you use it. Otherwise, if another mod uses that same variable, you'll get an error.
+    The const variable you use to log (`GODOTMODDING_EXAMPLEMOD_LOG_NAME` in the example above) should **always** be unique 
+    to your own mod, in every file you use it. Otherwise, if another mod uses the same variable name 
+    (if they want to mod your mod for example), it will cause an error.
 
 
 ## Tips & Best Practices
