@@ -3,9 +3,14 @@
 [//]: # (TODO)
 !!! example "Documentation in progress"
 
+!!! bug "Common Issue"
+    Steam needs to be running and your session needs to be online while you use this tool.
+    
+    You also need the [GodotSteam](godot_steam.md) version of Godot.
+
 ## Usage
 
-if you already have a workshop item make sure to set the id (can be found in the url)
+If you already have a workshop item make sure to set the id (can be found in the url)
 
 setting paths from the interface
 
@@ -28,10 +33,6 @@ this is usually caused by the icon being wrong in some way. the upload usually w
 possible workaround using steamCMD
 https://steamcommunity.com/sharedfiles/filedetails/?id=2936720761
 
-once uploaded the item will be private by default, you can change this in the right sidebar under "visibility"
-
-you can add additional images and description from the steam interface under "edit title and description" and "add images"
-note that the title will be overwritten when you upload a new version
 
 [//]: # (steam tags?)
 

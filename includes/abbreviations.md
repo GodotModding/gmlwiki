@@ -17,6 +17,7 @@
 *[argument]: A variable passed into a function
 *[arguments]: Variables passed into a function
 *[OS]: Operating System
+*[boilerplate]: Boilerplate text, or simply boilerplate, is any written text that can be reused in new contexts or applications without significant changes to the original. <br>- Wikipedia
 
 
 [//]: # (Names)
