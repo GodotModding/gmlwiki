@@ -18,7 +18,7 @@ which you can easily edit within the editor. Editor and ZIP require slightly dif
 
 ## Editor
 When developing mods for the Godot Mod Loader, everything is done within the `res://mods-unpacked` folder. You will place
-your own mod folder here when working on it. Mod folder names must follow the convention of `{AuthorName}-{ModName}`, which 
+your own mod folder here when working on it. Mod folder names must follow the convention of `{Namespace}-{ModName}`, which 
 is also your mod's ID. Using this schema avoids collision with other mod ids, and also allows them to be compatible with 
 Thunderstore. A mod folder always contains these important files:
 ```
@@ -40,9 +40,9 @@ Mod ZIPs should have the structure shown below. It matches the structure of the 
 Godot editor. Yes, the zip itself contains the `/mods-unpacked` folder - this has to be this way because of how Godot 
 loads resource packs into the project root directly. 
 
-Mod users will add their ZIPs to a folder named mods in the root.
+Mod users will add their ZIPs to a folder named `/mods` in the root of the project, which is `res://` or next to the game executable.
 
-ZIP names must follow the convention of `namespace-modname-version.zip` e.g. `GodotModding-CoolMod-1.2.3.zip`.
+ZIP names must follow the convention of `{Namespace}-{ModName}-{version}.zip` e.g. `GodotModding-CoolMod-1.2.3.zip`.
 
 === "Godot 4"
 

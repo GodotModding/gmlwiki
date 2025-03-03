@@ -20,7 +20,8 @@ You can find the full version overview on [their GitHub releases page](https://g
 
 Decompiling with GDRE is simple: 
 
-1. Find the [game files](../file_paths.md#game-files). You specifically need the `<GAME NAME>.pck` file - if it doesn't exist, proceed with the `.exe`. 
+1. Find the [game files](../file_paths.md#game-files). You specifically need the `<GAME NAME>.pck` file 
+    - if the `.pck` is not in this folder, proceed with the `.exe` or `.app` - they contain the pck. 
 2. Open the game file in GDRE, there are multiple ways to do this
     - The simple: drag and drop the file into the GDRE window
     - The traditional: in the application, select `RE Tools` in the top menu bar -> `Recover Project...` -> then navigate to, and select the game file

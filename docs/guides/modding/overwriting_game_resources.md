@@ -53,25 +53,52 @@ func _init():
 ```
 
 ##### Using `load`
-Load only works if the overwrite goes into script scope (as opposed to staying in funtion scope) at some point, 
+Load only works if the overwrite goes into script scope (as opposed to staying in function scope) at some point, 
 otherwise Godot won't be able to find the file. No idea why. There are two ways to do this: a global variable 
 declaration or a global Array to which the overwrites are appended. The global variable only works for a single 
 overwrite, so this example uses the Array.
-```gdscript
-extends Node
 
-var icons: Array # this declaration NEEDS to have script scope
-const ICONS := [
-    "GodotModded.png",
-    "UpgradeIcon.png"
-]
+=== "Godot 4"
 
-func _init():
-    # var icons: Array # this would not work
-    for image in ICONS:
-        var icon_overwrite := load("res://mods-unpacked/Author-ModName/overwrites/assets/icons".plus_file(image))
-        icon_overwrite.take_over_path("res://assets/icons".plus_file(image))
-        icons.append(icon_overwrite)  # this essentially pulls the overwrite into global scope
+    ```gdscript
+    extends Node
+    
+    var icons: Array # this declaration NEEDS to have script scope
+    const ICONS := [
+        "GodotModded.png",
+        "UpgradeIcon.png"
+    ]
+    var mod_icons_folder := "res://mods-unpacked/Author-ModName/overwrites/assets/icons"
+    var vanilla_icons_folder := "res://assets/icons"
+    
+    func _init():
+        # var icons: Array # this would not work
+        for image in ICONS:
+            var icon_overwrite := load(mod_icons_folder.path_join(image))
+            icon_overwrite.take_over_path(vanilla_icons_folder.path_join(image))
+            icons.append(icon_overwrite)  # this essentially pulls the overwrite into global scope
+    ```
+
+=== "Godot 3"
+
+    ```gdscript
+    extends Node
+    
+    var icons: Array # this declaration NEEDS to have script scope
+    const ICONS := [
+        "GodotModded.png",
+        "UpgradeIcon.png"
+    ]
+    var mod_icons_folder := "res://mods-unpacked/Author-ModName/overwrites/assets/icons"
+    var vanilla_icons_folder := "res://assets/icons"
+    
+    func _init():
+        # var icons: Array # this would not work
+        for image in ICONS:
+            var icon_overwrite := load(mod_icons_folder.plus_file(image))
+            icon_overwrite.take_over_path(vanilla_icons_folder.plus_file(image))
+            icons.append(icon_overwrite)  # this essentially pulls the overwrite into global scope
+    ```
 ```
 Instead of using an array of Strings here, you could also use the [Directory](https://docs.godotengine.org/en/3.5/classes/class_directory.html) class to go over each file in a 
 folder and create and overwrite with it.
