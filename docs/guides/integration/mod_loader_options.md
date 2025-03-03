@@ -1,3 +1,7 @@
+---
+description: For easy configuration of the Mod Loader, you can use the ModLoaderOptions resource. 
+---
+
 # Mod Loader Options
 
 For easy configuration of the Mod Loader, you can use the ModLoaderOptions resource. 

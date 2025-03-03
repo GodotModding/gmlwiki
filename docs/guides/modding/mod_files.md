@@ -1,3 +1,7 @@
+---
+description: Overview of all required mod files.
+---
+
 # Mod Files
 
 Every mod you create must have the following 2 files:

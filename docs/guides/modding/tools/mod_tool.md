@@ -1,3 +1,7 @@
+---
+description: The Mod Tool or Dev Tool is a plugin we made for the Godot Editor to make various modding tasks easier.
+---
+
 # The Mod Loader Mod Development Tool
 
 The Mod Tool or Dev Tool is a plugin we made for the Godot Editor to make various modding tasks easier.

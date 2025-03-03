@@ -1,3 +1,7 @@
+---
+description: A brief overview of where to find a few important files and folders across your computer. 
+---
+
 # Important Files and Folders
 
 A brief overview of where to find a few important files and folders across your computer. 

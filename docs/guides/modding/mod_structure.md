@@ -1,3 +1,7 @@
+---
+description: Mod file structure is a small but important part of modding.
+---
+
 # Mod Structure
 
 Mod file structure is a small but important part of modding. If your files are in the wrong place, they won't be found 

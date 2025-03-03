@@ -1,3 +1,7 @@
+---
+description: If the game you want to mod does not natively use this ModLoader, you will have to complete a few steps to set it up.
+---
+
 # Mod Loader Self Setup
 If the game you want to mod does not natively use this ModLoader, you will have to complete a few steps to set it up:
 

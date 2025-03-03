@@ -1,4 +1,8 @@
-<!-- _coverpage.md -->
+---
+title: Godot Mod Loader
+description: A generalized Mod Loader for GDScript-based Godot games.
+---
+
 
 <img alt="Godot Modding Logo" src="_media/logo.png" width="256"></img>
 

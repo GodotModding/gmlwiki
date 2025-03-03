@@ -1,3 +1,7 @@
+---
+description: Guide on how to get a working moddabled game version running in Godot.
+---
+
 # Decompiling Games
 
 !!! danger "Please be respectful to game developers." 

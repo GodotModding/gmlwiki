@@ -1,3 +1,7 @@
+---
+description: The Godot ModLoader supports config files in the JSON format.
+---
+
 # Config JSON
 The Godot ModLoader supports config files in the JSON format.
 

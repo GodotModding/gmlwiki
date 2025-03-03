@@ -1,3 +1,8 @@
+---
+description: This page covers advanced techniques for mod making.
+---
+
+
 # Global Classes & Child Nodes
 This page covers advanced techniques for mod making.
 

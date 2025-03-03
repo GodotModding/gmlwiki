@@ -1,3 +1,7 @@
+---
+description: Learn how to setup Godot Mod Loader for your game.
+---
+
 # Godot Project Setup
 If you don't have your project set up yet, see [Decompiling Games](../modding/tools/decompile_games.md) and [GodotSteam](../modding/tools/godot_steam.md).
 
