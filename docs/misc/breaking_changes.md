@@ -1,3 +1,7 @@
+---
+description: Overview of all breaking changes in any mod loader version.
+---
+
 # Breaking Changes
 This page lists any breaking changes that occur with ModLoader releases.
 

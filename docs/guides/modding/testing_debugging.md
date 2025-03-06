@@ -1,3 +1,7 @@
+---
+description: Learn about testing and reading log files.
+---
+
 # Testing and Debugging Your Mods
 
 ## Quick Steam Workshop Test

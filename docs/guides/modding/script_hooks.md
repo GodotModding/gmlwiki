@@ -1,4 +1,5 @@
 ---
+description: Script Hooks are a new way to mod scripts.
 status: new
 ---
 

@@ -1,3 +1,7 @@
+---
+description: User profiles allow users to create presets that define which mods are active and how they are configured.
+---
+
 # Mod User Profiles
 
 ## Overview

@@ -1,3 +1,7 @@
+---
+description: There are many ways to use and interact with other mods.
+---
+
 # Using Other Mods
 
 There are many ways to use and interact with other mods - and most of them require the other mod to be present.
