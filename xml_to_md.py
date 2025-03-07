@@ -114,14 +114,22 @@ def xml_to_markdown(xml_string):
 	inherits = root.get('inherits')
 
 	md = ""
-	if class_name == "ModLoaderMod":  # make it stand out a bit more in the list
-		md += "---\nstatus: new\n---\n\n"
+
+		# Process brief description for meta data
+	brief_desc = root.find('brief_description')
+	if brief_desc is not None and brief_desc.text.strip() != "":
+		
+		brief_desc_text = brief_desc.text.split("[br]")[0]
+
+		if class_name == "ModLoaderMod":  # make it stand out a bit more in the list
+			md += f"---\nstatus: new\ndescription: {bbcode_to_markdown(brief_desc_text)}\n---\n\n"
+		else:
+			md += f"---\ndescription: {bbcode_to_markdown(brief_desc_text)}\n---\n\n"
 
 	md += f"# {class_name}\n"
 	md += f"**Inherits**: {inherits}\n\n"
 
 	# Process brief description
-	brief_desc = root.find('brief_description')
 	if brief_desc is not None:
 		md += f"\n{bbcode_to_markdown(brief_desc.text)}\n"
 

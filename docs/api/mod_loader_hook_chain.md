@@ -1,3 +1,7 @@
+---
+description: Small class to keep the state of hook execution chains and move between mod hook calls.
+---
+
 # ModLoaderHookChain
 **Inherits**: RefCounted
 

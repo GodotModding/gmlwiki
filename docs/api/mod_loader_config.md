@@ -1,3 +1,7 @@
+---
+description: Class for managing per-mod configurations.
+---
+
 # ModLoaderConfig
 **Inherits**: Object
 

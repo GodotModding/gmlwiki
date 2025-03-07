@@ -1,3 +1,7 @@
+---
+description: This Class provides methods for logging, retrieving logged data, and internal methods for working with log files.
+---
+
 # ModLoaderLog
 **Inherits**: Object
 
