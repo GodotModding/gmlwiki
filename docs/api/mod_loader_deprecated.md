@@ -1,3 +1,7 @@
+---
+description: API methods for deprecating funcs. Can be used by mods with public APIs.
+---
+
 # ModLoaderDeprecated
 **Inherits**: Object
 

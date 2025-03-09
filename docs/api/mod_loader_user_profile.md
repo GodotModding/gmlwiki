@@ -1,3 +1,7 @@
+---
+description: This Class provides methods for working with user profiles.
+---
+
 # ModLoaderUserProfile
 **Inherits**: Object
 
