@@ -1,3 +1,7 @@
+---
+description: This Sub-Class represents a log entry in ModLoader.
+---
+
 # ModLoaderLog.ModLoaderLogEntry
 **Inherits**: Resource
 

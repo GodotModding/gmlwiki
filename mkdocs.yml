@@ -83,6 +83,9 @@ theme:
     - content.code.copy
     - content.tooltips
 
+plugins:
+  - social
+  - search
 
 extra:
   social:

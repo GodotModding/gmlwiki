@@ -1,3 +1,7 @@
+---
+description: How to upload your mod to the Steam Workshop
+---
+
 # Steam Workshop uploader
 
 [//]: # (TODO)

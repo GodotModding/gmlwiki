@@ -1,3 +1,7 @@
+---
+description: Creating a Mod Config Schema with JSON-Schemas
+---
+
 # Mod Configs
 ## Creating a Mod Config Schema with JSON-Schemas
 ### Setting Up Your Manifest File

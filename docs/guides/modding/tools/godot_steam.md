@@ -1,3 +1,7 @@
+---
+description: Most games released on Steam use GodotSteam learn why you need it for modding.
+---
+
 # GodotSteam
 The standard version of Godot doesn't have native support for the Steam SDK. This means that, if the game you're editing
 has Steam support, it probably won't run. To solve this, use a modified version of the Godot editor called [GodotSteam](https://github.com/Gramps/GodotSteam).

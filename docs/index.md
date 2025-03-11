@@ -1,3 +1,8 @@
+---
+title: Godot Mod Loader
+description: A generalized Mod Loader for GDScript-based Godot games.
+---
+
 # Godot Mod Loader
 ***
 <div align="center">
