@@ -42,19 +42,33 @@ Workshop item page: `https://steamcommunity.com/sharedfiles/filedetails/?id=2440
 This refers to Godot's default user data folder, also known as `user://` in the editor.
 
 === "Windows" 
-    press ++win+r++, search 
+    Press ++win+r++, search 
     ```
     %appdata%/godot/app_userdata/<GAME NAME>
     ```
-    or manually navigate to
+    Or manually navigate to
     ```
     C:\Users\<YOUR USERNAME>\AppData\Roaming\Godot\app_userdata\<GAME NAME>
     ```
+    !!! tip
+        AppData is a hidden folder, you can toggle hidden file visibility in the file explorer under 
+        `view > show > hidden items`
+
 === "Linux" 
-    navigate to
+    Navigate to
     ```
     ~/.local/share/godot/app_userdata/<GAME NAME>
     ```
+    If this folder is empty for a steam game, also try
+    ```
+    ~/.steam/steam/steamapps/compatdata/<STEAM APP ID>
+    ```
+    The app id is the number found in the url when visiting the game's steam page.
+
+    !!! tip
+        Files and folder prefixed with a `.` are hidden by default, in many distributions you can press ++ctrl+h++
+        to toggle hidden file visibility. In the shell you can list all with them `ls -a`.
+
 === "macOS" 
     open Finder, press ++cmd+shift+g++, search
     ```
@@ -65,7 +79,7 @@ This refers to Godot's default user data folder, also known as `user://` in the 
     /Users/<YOUR USERNAME>/Library/Application Support/Godot/app_userdata/<GAME NAME>
     ```
     !!! tip
-        `Library` is a hidden folder, press ++cmd+shift+period++ to toggle hidden folder visibility in Finder
+        `Library` is a hidden folder, press ++cmd+shift+period++ to toggle hidden file visibility in Finder
 
 !!! note
     Make sure to actually replace `<GAME NAME>` with the name of the game you are looking for. 
