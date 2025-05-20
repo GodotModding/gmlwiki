@@ -11,15 +11,20 @@ If you want to go more in-depth and preview your changes better, here's a quick 
 
 1. Install [Python](https://docs.python.org/3/using/index.html) on your system.
 2. Fork and clone this repository: [GitHub Tutorial](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo)
-3. Install requirements: 
+3. **(Optional, but recommended)** Create and activate a virtual environment:
+   ```shell
+   python -m .
+   source bin/activate  # On Windows use: .\Scripts\activate
+   ```
+5. Install requirements:
    ```shell
     pip install -r requirements.txt
     ```
-4. Start MkDocs: 
+6. Start MkDocs: 
     ```shell
     mkdocs serve
     ```
-5. Open the local docs in your browser: http://127.0.0.1:8000/
+7. Open the local docs in your browser: http://127.0.0.1:8000/
 
 To keep things organized please continue reading!
 
