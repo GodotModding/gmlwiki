@@ -13,7 +13,7 @@ If you want to go more in-depth and preview your changes better, here's a quick 
 2. Fork and clone this repository: [GitHub Tutorial](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo)
 3. **(Optional, but recommended)** Create and activate a virtual environment:
    ```shell
-   python -m .
+   python -m venv .
    source bin/activate  # On Windows use: .\Scripts\activate
    ```
 5. Install requirements:
