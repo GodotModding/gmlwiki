@@ -4,6 +4,8 @@ reference:
 https://squidfunk.github.io/mkdocs-material/reference/code-blocks/#custom-syntax-theme-docsstylesheetsextracss
 other available color variables
 https://github.com/squidfunk/mkdocs-material/blob/master/src/templates/assets/stylesheets/main/_colors.scss
+
+Also see CONTRIBUTING.md
 */
 :root > * {
 	--godot-theme-base-color: #363d4aff;
@@ -12,7 +14,11 @@ https://github.com/squidfunk/mkdocs-material/blob/master/src/templates/assets/st
 	--md-code-hl-punctuation-color: #abc9ffff;
 	--md-code-hl-keyword-color: #ff7085ff;
 	--md-code-hl-special-color: #ff7085ff;
+	--md-code-hl-custom-class_bp: #ff7085ff;
+	--md-code-hl-custom-class_k_k-ControlFlow: #ff8cccff;
 	--md-code-hl-custom-class_nb_nb-Type: #42ffc2ff;
+	--md-code-hl-custom-class_nb: #8fffdbff;
+	--md-code-hl-custom-class_nc: #c7ffedff;
 	--md-code-hl-comment-color: #cdcfd280;
 	--md-code-hl-string-color: #ffeda1ff;
 	--md-code-bg-color: #1d2229ff;
@@ -24,6 +30,9 @@ https://github.com/squidfunk/mkdocs-material/blob/master/src/templates/assets/st
 	--md-code-hl-function-color: #57b3ffff;
 	--md-code-hl-variable-color: #bce0ffff;
 	--md-code-hl-constant-color: #bce0ffff;
+	--md-code-hl-custom-class_nb_nb-Function: #a3a3f5ff;
+	--md-code-hl-custom-class_sx: #63c259ff;
+	--md-code-hl-custom-class_nd: #ffb373ff;
 }
 
 [data-md-color-scheme="light"] {
@@ -33,7 +42,11 @@ https://github.com/squidfunk/mkdocs-material/blob/master/src/templates/assets/st
 	--md-code-hl-punctuation-color: #00009cff;
 	--md-code-hl-keyword-color: #e62282ff;
 	--md-code-hl-special-color: #e62282ff;
+	--md-code-hl-custom-class_bp: #e62282ff;
+	--md-code-hl-custom-class_k_k-ControlFlow: #bd1fccff;
 	--md-code-hl-custom-class_nb_nb-Type: #009933ff;
+	--md-code-hl-custom-class_nb: #1c8c66ff;
+	--md-code-hl-custom-class_nc: #2e7366ff;
 	--md-code-hl-comment-color: #14141480;
 	--md-code-hl-string-color: #996b00ff;
 	--md-code-bg-color: #ffffffff;
@@ -45,11 +58,44 @@ https://github.com/squidfunk/mkdocs-material/blob/master/src/templates/assets/st
 	--md-code-hl-function-color: #0039e6ff;
 	--md-code-hl-variable-color: #0066adff;
 	--md-code-hl-constant-color: #0066adff;
+	--md-code-hl-custom-class_vi: #0066adff;
+	--md-code-hl-custom-class_nb_nb-Function: #5c2eb8ff;
+	--md-code-hl-custom-class_sx: #008000ff;
+	--md-code-hl-custom-class_nd: #cc5e00ff;
+}
+
+.highlight .bp {
+	color: var(--md-code-hl-custom-class_bp);
+}
+
+.highlight .k.k-ControlFlow {
+	color: var(--md-code-hl-custom-class_k_k-ControlFlow);
 }
 
 .highlight .nb.nb-Type {
 	color: var(--md-code-hl-custom-class_nb_nb-Type);
 }
+
+.highlight .nb {
+	color: var(--md-code-hl-custom-class_nb);
+}
+
+.highlight .nc {
+	color: var(--md-code-hl-custom-class_nc);
+}
+
+.highlight .nb.nb-Function {
+	color: var(--md-code-hl-custom-class_nb_nb-Function);
+}
+
+.highlight .sx {
+	color: var(--md-code-hl-custom-class_sx);
+}
+
+.highlight .nd {
+	color: var(--md-code-hl-custom-class_nd);
+}
+
 
 .highlighttable {
     border: 5px solid var(--godot-theme-base-color);
