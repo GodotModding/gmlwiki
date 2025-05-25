@@ -21,7 +21,7 @@ This class provides functionality for working with per-mod Configurations.
 
 ## Methods
 ### create_config
-```gdscript
+```gdscript2
 func create_config(mod_id: String, config_name: String, config_data: Dictionary) -> ModConfig
 ```
 Creates a new configuration for a mod.
@@ -36,7 +36,7 @@ Returns:
 
 
 ### update_config
-```gdscript
+```gdscript2
 func update_config(config: ModConfig) -> ModConfig
 ```
 Updates an existing ModConfig object with new data and save the config file.
@@ -49,7 +49,7 @@ Returns:
 
 
 ### delete_config
-```gdscript
+```gdscript2
 func delete_config(config: ModConfig) -> bool
 ```
 Deletes a ModConfig object and performs cleanup operations.
@@ -62,7 +62,7 @@ Returns:
 
 
 ### set_current_config
-```gdscript
+```gdscript2
 func set_current_config(config: ModConfig) -> void
 ```
 Sets the current configuration of a mod to the specified configuration.
@@ -72,7 +72,7 @@ Parameters:
 
 
 ### get_config_schema
-```gdscript
+```gdscript2
 func get_config_schema(mod_id: String) -> Dictionary
 ```
 Returns the schema for the specified mod id. If no configuration file exists for the mod, an empty dictionary is returned.
@@ -85,7 +85,7 @@ Returns:
 
 
 ### get_schema_for_prop
-```gdscript
+```gdscript2
 func get_schema_for_prop(config: ModConfig, prop: String) -> Dictionary
 ```
 Retrieves the schema for a specific property key.
@@ -99,7 +99,7 @@ Returns:
 
 
 ### get_mods_with_config
-```gdscript
+```gdscript2
 func get_mods_with_config() -> Array
 ```
 Retrieves an Array of mods that have configuration files.
@@ -109,7 +109,7 @@ Returns:
 
 
 ### get_configs
-```gdscript
+```gdscript2
 func get_configs(mod_id: String) -> Dictionary
 ```
 Retrieves the configurations dictionary for a given mod ID.
@@ -122,7 +122,7 @@ Returns:
 
 
 ### get_config
-```gdscript
+```gdscript2
 func get_config(mod_id: String, config_name: String) -> ModConfig
 ```
 Retrieves the configuration for a specific mod and configuration name. Returns the configuration as a ModConfig object or null if not found.
@@ -136,7 +136,7 @@ Returns:
 
 
 ### get_default_config
-```gdscript
+```gdscript2
 func get_default_config(mod_id: String) -> ModConfig
 ```
 Retrieves the default configuration for a specified mod ID.
@@ -149,7 +149,7 @@ Returns:
 
 
 ### get_current_config
-```gdscript
+```gdscript2
 func get_current_config(mod_id: String) -> ModConfig
 ```
 Retrieves the currently active configuration for a specific mod
@@ -162,7 +162,7 @@ Returns:
 
 
 ### get_current_config_name
-```gdscript
+```gdscript2
 func get_current_config_name(mod_id: String) -> String
 ```
 Retrieves the name of the current configuration for a specific mod Returns an empty string if no configuration exists for the mod or the user profile has not been loaded
@@ -176,12 +176,12 @@ Returns:
 
 ## Constants Descriptions
 ##### DEFAULT_CONFIG_NAME
-```gdscript
+```gdscript2
 const DEFAULT_CONFIG_NAME: String = "default"
 ```
 
 
 ##### LOG_NAME
-```gdscript
+```gdscript2
 const LOG_NAME: String = "ModLoader:Config"
 ```

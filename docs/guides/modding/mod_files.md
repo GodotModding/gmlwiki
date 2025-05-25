@@ -64,9 +64,9 @@ if need be.
 
 See [ModLoaderApi](../../api/mod_loader_api.md) for more info on script extensions, translations and more.
 
-The only thing *required* for the mod main to work is that it defines an `#!gd _init()` function for the mod loader 
-to call and that it `#!gd extends Node` at the top. Technically you can even extend any type that inherits 
-from `#!gd Node`, but it's rarely necessary.
+The only thing *required* for the mod main to work is that it defines an `#!gd2 _init()` function for the mod loader 
+to call and that it `#!gd2 extends Node` at the top. Technically you can even extend any type that inherits 
+from `#!gd2 Node`, but it's rarely necessary.
 
 The script below contains some boilerplate code to get you started. 
 It is very similar to what you will get when [creating a new mod with the Mod Tool](tools/mod_tool.md#main-panel).
@@ -75,7 +75,7 @@ full path every time.
 
 === "Godot 4"
 
-    ```gdscript
+    ```gdscript2
     extends Node
     
     
@@ -110,7 +110,7 @@ full path every time.
 
 === "Godot 3"
 
-    ```gdscript
+    ```gdscript2
     extends Node
     
     

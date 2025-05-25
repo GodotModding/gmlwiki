@@ -17,7 +17,7 @@ Note that we won't be making much use of custom named classes, we'll mostly be u
 logic and then let the mod loader replace the vanilla script with our custom one. 
 
 !!! abstract "See also" 
-    [API Reference: `#!gd ModLoaderMod.install_script_extension()`](../../api/mod_loader_mod.md#method-install_script_extension)
+    [API Reference: `#!gd2 ModLoaderMod.install_script_extension()`](../../api/mod_loader_mod.md#method-install_script_extension)
 
 ## Features
 
@@ -42,7 +42,7 @@ vanilla file structure: `res://mods-unpacked/Author-ModName/extensions/singleton
 
 === "Godot 4"
 
-    ```gdscript
+    ```gdscript2
     # Our base script is the original game script.
     extends "res://singletons/progress_data.gd"
     
@@ -59,7 +59,7 @@ vanilla file structure: `res://mods-unpacked/Author-ModName/extensions/singleton
 
 === "Godot 3"
 
-    ```gdscript
+    ```gdscript2
     # Our base script is the original game script.
     extends "res://singletons/progress_data.gd"
     
@@ -74,14 +74,14 @@ vanilla file structure: `res://mods-unpacked/Author-ModName/extensions/singleton
         #return .load_game_file(modded_path)
     ```
 
-The above example showed how to call the base method by using `#!gd super()` or the `.` prefix in Godot 3. 
+The above example showed how to call the base method by using `#!gd2 super()` or the `.` prefix in Godot 3. 
 
 It changes the input values for the base function before calling it. Similarly, it is also possible to manipulate the 
 output value by calling the base method first, changing something and then returning that new value, as shown below:
 
 === "Godot 4"
 
-    ```gdscript
+    ```gdscript2
     func get_playtime_days() -> int:
         var days = super()
         return days + 2
@@ -89,7 +89,7 @@ output value by calling the base method first, changing something and then retur
 
 === "Godot 3"
 
-    ```gdscript
+    ```gdscript2
     func get_playtime_days() -> int:
         var days = .get_playtime_days()
         return days + 2
@@ -99,11 +99,11 @@ Since we are extending the vanilla base class, not calling the base method would
 But, because all methods from each mod in the load order extend each other in a chain, 
 doing this would break the chain and usually cause conflicts between mods.
 
-To install it, call [`#!gd ModLoaderMod.install_script_extension()`](../../api/mod_loader_mod.md#method-install_script_extension) 
-from your mod's `mod_main.gd`, in `#!gd _init()` or in any function that gets called 
-by `#!gd _init()`, like the `#!gd install_script_extensions()` functions we usually use by convention.
+To install it, call [`#!gd2 ModLoaderMod.install_script_extension()`](../../api/mod_loader_mod.md#method-install_script_extension) 
+from your mod's `mod_main.gd`, in `#!gd2 _init()` or in any function that gets called 
+by `#!gd2 _init()`, like the `#!gd2 install_script_extensions()` functions we usually use by convention.
 
-```gdscript
+```gdscript2
 extends Node
 
 func _init():
@@ -118,8 +118,8 @@ func install_script_extensions() -> void:
 
 Script Extensions **will not be applied to scripts that are 
 [`preload()`ed](https://docs.godotengine.org/en/stable/classes/class_%40gdscript.html#class-gdscript-method-preload "preload() is a GDScript feature")** 
-in any way. This affects both scripts which are preloaded directly - `#!gd preload("res://player.gd")` - and scripts which are
-indirectly preloaded by being used in preloaded scenes - `#!gd preload("res://player.tscn")`.   
+in any way. This affects both scripts which are preloaded directly - `#!gd2 preload("res://player.gd")` - and scripts which are
+indirectly preloaded by being used in preloaded scenes - `#!gd2 preload("res://player.tscn")`.   
 This is a Godot limitation we have yet to find a complete workaround for.  
 For scenes there can be a way to circumvent this limitation by extending the scene that instantiates it. For example,
 the pause menu in dome keeper was preloaded and instantiated from another scene. The other scene was extended, which 

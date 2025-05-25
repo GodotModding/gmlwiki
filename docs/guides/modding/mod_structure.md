@@ -135,7 +135,7 @@ Search:
 ```
 
 Replace:
-```gdscript
+```gdscript2
 [ext_resource path="res://mods-unpacked/AuthorName-ModName/$1/modname_$2.png
 ```
 

@@ -10,7 +10,7 @@ This class provides methods for deprecating functions. Can be used by mods with 
 
 ## Methods
 ### deprecated_changed
-```gdscript
+```gdscript2
 func deprecated_changed(old_method: String, new_method: String, since_version: String, show_removal_note: bool = true) -> void
 ```
 Marks a method that has changed its name or class.
@@ -23,7 +23,7 @@ Parameters:
 
 
 ### deprecated_removed
-```gdscript
+```gdscript2
 func deprecated_removed(old_method: String, since_version: String, show_removal_note: bool = true) -> void
 ```
 Marks a method that has been entirely removed, with no replacement. Note: This should rarely be needed but is included for completeness.
@@ -35,7 +35,7 @@ Parameters:
 
 
 ### deprecated_message
-```gdscript
+```gdscript2
 func deprecated_message(msg: String, since_version: String = "") -> void
 ```
 Marks a method with a freeform deprecation message.
@@ -47,6 +47,6 @@ Parameters:
 
 ## Constants Descriptions
 ##### LOG_NAME
-```gdscript
+```gdscript2
 const LOG_NAME: String = "ModLoader:Deprecated"
 ```

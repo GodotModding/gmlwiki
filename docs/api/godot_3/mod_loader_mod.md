@@ -18,7 +18,7 @@ This class provides helper functions to build mods. **These are the main methods
 
 ## Methods
 ### install_script_extension
-```gdscript
+```gdscript2
 func install_script_extension(child_script_path: String) -> void
 ```
 Install a script extension that extends a vanilla script. The child_script_path should point to your mod's extender script.
@@ -38,7 +38,7 @@ Parameters:
 
 
 ### register_global_classes_from_array
-```gdscript
+```gdscript2
 func register_global_classes_from_array(new_global_classes: Array) -> void
 ```
 Register an array of classes to the global scope since Godot only does that in the editor.
@@ -54,7 +54,7 @@ Parameters:
 
 
 ### add_translation
-```gdscript
+```gdscript2
 func add_translation(resource_path: String) -> void
 ```
 Add a translation file.
@@ -66,7 +66,7 @@ Parameters:
 
 
 ### get_mod_data
-```gdscript
+```gdscript2
 func get_mod_data(mod_id: String) -> ModData
 ```
 Gets the ModData from the provided namespace
@@ -79,7 +79,7 @@ Returns:
 
 
 ### get_mod_data_all
-```gdscript
+```gdscript2
 func get_mod_data_all() -> Dictionary
 ```
 Gets the ModData of all loaded Mods as Dictionary.
@@ -89,7 +89,7 @@ Returns:
 
 
 ### is_mod_loaded
-```gdscript
+```gdscript2
 func is_mod_loaded(mod_id: String) -> bool
 ```
 Returns true if the mod with the given mod_id was successfully loaded.
@@ -102,7 +102,7 @@ Returns:
 
 
 ### append_node_in_scene
-```gdscript
+```gdscript2
 func append_node_in_scene(modified_scene: Node, node_name: String = "", node_parent = null, instance_path: String = "", is_visible: bool = true) -> void
 ```
 Appends a new node to a modified scene.
@@ -116,7 +116,7 @@ Parameters:
 
 
 ### save_scene
-```gdscript
+```gdscript2
 func save_scene(modified_scene: Node, scene_path: String) -> void
 ```
 Saves a modified scene to a file.
@@ -127,7 +127,7 @@ Parameters:
 
 
 ### get_unpacked_dir
-```gdscript
+```gdscript2
 func get_unpacked_dir() -> String
 ```
 Returns the path to the directory where unpacked mods are stored.
@@ -138,6 +138,6 @@ Returns:
 
 ## Constants Descriptions
 ##### LOG_NAME
-```gdscript
+```gdscript2
 const LOG_NAME: String = "ModLoader:Mod"
 ```

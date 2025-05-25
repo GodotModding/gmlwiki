@@ -80,7 +80,7 @@ The `"properties"` section is where you define what's allowed in your mod's conf
 
 
 ##### Boolean Values
-```gdscript
+```gdscript2
 "aim_assist": {
     "type": "boolean",
     "title": "Aim Assist",

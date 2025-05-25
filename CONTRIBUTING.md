@@ -69,31 +69,34 @@ add the specific word to [abbreviations.md](includes/abbreviations.md)
 together allow us to have highlighted code examples for Godot 3 and 4 with an easy toggle. 
 The tab names need to be consistent across all pages to enable tab state synchronisation.
 
+Note: we use `gdscript2` and `gd2` instead of `gdscript` and `gd` because we've replaced the default gdscript lexer
+with our own - and adding a new alias to lex is cleaner than hacking the pygments plugin system to replace the old lexer.
+
 You can simply copy this snippet for that purpose.
 ```markdown
 === "Godot 4"
 
-    ```gdscript
+    ```gdscript2
     [...]
     ```
 
 === "Godot 3"
 
-    ```gdscript
+    ```gdscript2
     [...]
     ```
 ```
 
 Code blocks can also highlight single or a range of lines by adding this   
-`gdscript hl_lines="1 2-5"`
+`gdscript2 hl_lines="1 2-5"`
 
-For codeblocks to use proper highlighting, always add the language at the top, usually `gdscript`, as seen above.
+For codeblocks to use proper highlighting, always add the language at the top, usually `gdscript2`, as seen above.
 
 Inline code [can also be highlighted](https://squidfunk.github.io/mkdocs-material/reference/code-blocks/#highlighting-inline-code-blocks)
-by adding `#!` followed by the language - `#!gd print("hello world")`
+by adding `#!` followed by the language - `#!gd2 print("hello world")`
 
-While both `gdscript` and `gd` work, the former is preferred for code blocks to be explicit while the latter
-is preferred for inline highlights to remain brief.
+While both `gdscript2` and `gd2` work, the former is preferred for code blocks to be explicit while the latter
+is preferred for inline highlights to remain brief. 
 
 ## API Docs generation
 

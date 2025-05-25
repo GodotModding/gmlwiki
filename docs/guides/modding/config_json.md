@@ -99,7 +99,7 @@ For mod developers, the `data` property is the most relevant. Depending on how t
 With all this in mind, you can add something like the following code to your `mod_main.gd` `ready()` function:
 
 **mod_main.gd**
-```gdscript
+```gdscript2
 _ready(): 
 	# Get the current config
 	var config = ModLoaderConfig.get_current_config("your_mod_id")
@@ -124,7 +124,7 @@ func _on_current_config_changed(config: ModConfig) -> void:
 ```
 
 **different_scene.gd**
-```gdscript
+```gdscript2
 func apply_config(config: ModConfig) -> void:
 	label_select_profile.text = config.data.select_profile_text
 

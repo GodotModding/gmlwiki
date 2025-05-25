@@ -44,7 +44,7 @@ The following steps are required to create an overwrite:
 
 ## Example
 ##### Using `preload`
-```gdscript
+```gdscript2
 extends Node
 
 func _init():
@@ -60,7 +60,7 @@ overwrite, so this example uses the Array.
 
 === "Godot 4"
 
-    ```gdscript
+    ```gdscript2
     extends Node
     
     var icons: Array # this declaration NEEDS to have script scope
@@ -81,7 +81,7 @@ overwrite, so this example uses the Array.
 
 === "Godot 3"
 
-    ```gdscript
+    ```gdscript2
     extends Node
     
     var icons: Array # this declaration NEEDS to have script scope

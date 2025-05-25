@@ -87,14 +87,14 @@ If that is not an option for you, you can still benefit from version validation 
 
 Set the `customize_script_path` option to where you store your script and run your validation here - the full 
 `ModLoaderOptionsProfile` will be passed to this script instance. Though keep in mind that since validation 
-is run during `#!gd _init()`, some values may not be accessible, so we recommend storing your game version in a 
+is run during `#!gd2 _init()`, some values may not be accessible, so we recommend storing your game version in a 
 global class or similar.
 
 Example:
 
 === "Godot 4"
 
-    ```gdscript
+    ```gdscript2
     extends RefCounted
     
     # This is an example script for the ModLoaderOptionsProfile `customize_script_path`.

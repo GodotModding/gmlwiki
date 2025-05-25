@@ -31,7 +31,7 @@ This class provides methods for logging, retrieving logged data, and internal me
 
 ## Methods
 ### fatal
-```gdscript
+```gdscript2
 func fatal(message: String, mod_name: String, only_once: bool = false) -> void
 ```
 Logs the error in red and a stack trace. Prefixed FATAL-ERROR.
@@ -45,7 +45,7 @@ Parameters:
 
 
 ### error
-```gdscript
+```gdscript2
 func error(message: String, mod_name: String, only_once: bool = false) -> void
 ```
 Logs the message and pushes an error. Prefixed ERROR.
@@ -59,7 +59,7 @@ Parameters:
 
 
 ### warning
-```gdscript
+```gdscript2
 func warning(message: String, mod_name: String, only_once: bool = false) -> void
 ```
 Logs the message and pushes a warning. Prefixed WARNING.
@@ -73,7 +73,7 @@ Parameters:
 
 
 ### info
-```gdscript
+```gdscript2
 func info(message: String, mod_name: String, only_once: bool = false) -> void
 ```
 Logs the message. Prefixed INFO.
@@ -87,7 +87,7 @@ Parameters:
 
 
 ### success 
-```gdscript
+```gdscript2
 func success(message: String, mod_name: String, only_once: bool = false) -> void
 ```
 Logs the message. Prefixed SUCCESS.
@@ -101,7 +101,7 @@ Parameters:
 
 
 ### debug
-```gdscript
+```gdscript2
 func debug(message: String, mod_name: String, only_once: bool = false) -> void
 ```
 Logs the message. Prefixed DEBUG.
@@ -115,7 +115,7 @@ Parameters:
 
 
 ### debug_json_print
-```gdscript
+```gdscript2
 func debug_json_print(message: String, json_printable, mod_name: String, only_once: bool = false) -> void
 ```
 Logs the message formatted with [method JSON.print]. Prefixed DEBUG.
@@ -130,7 +130,7 @@ Parameters:
 
 
 ### get_all_as_resource
-```gdscript
+```gdscript2
 func get_all_as_resource() -> Array
 ```
 Returns an array of log entries as a resource.
@@ -140,7 +140,7 @@ Returns:
 
 
 ### get_all_as_string
-```gdscript
+```gdscript2
 func get_all_as_string() -> Array
 ```
 Returns an array of log entries as a string.
@@ -150,7 +150,7 @@ Returns:
 
 
 ### get_by_mod_as_resource
-```gdscript
+```gdscript2
 func get_by_mod_as_resource(mod_name: String) -> Array
 ```
 Returns an array of log entries as a resource for a specific mod_name.
@@ -163,7 +163,7 @@ Returns:
 
 
 ### get_by_mod_as_string
-```gdscript
+```gdscript2
 func get_by_mod_as_string(mod_name: String) -> Array
 ```
 Returns an array of log entries as a string for a specific mod_name.
@@ -176,7 +176,7 @@ Returns:
 
 
 ### get_by_type_as_resource
-```gdscript
+```gdscript2
 func get_by_type_as_resource(type: String) -> Array
 ```
 Returns an array of log entries as a resource for a specific type.
@@ -189,7 +189,7 @@ Returns:
 
 
 ### get_by_type_as_string
-```gdscript
+```gdscript2
 func get_by_type_as_string(type: String) -> Array
 ```
 Returns an array of log entries as a string for a specific type.
@@ -202,7 +202,7 @@ Returns:
 
 
 ### get_all
-```gdscript
+```gdscript2
 func get_all() -> Array
 ```
 Returns an array of all log entries.
@@ -212,7 +212,7 @@ Returns:
 
 
 ### get_by_mod
-```gdscript
+```gdscript2
 func get_by_mod(mod_name: String) -> Array
 ```
 Returns an array of log entries for a specific mod_name.
@@ -225,7 +225,7 @@ Returns:
 
 
 ### get_by_type
-```gdscript
+```gdscript2
 func get_by_type(type: String) -> Array
 ```
 Returns an array of log entries for a specific type.
@@ -238,7 +238,7 @@ Returns:
 
 
 ### get_all_entries_as_string
-```gdscript
+```gdscript2
 func get_all_entries_as_string(log_entries: Array) -> Array
 ```
 Returns an array of log entries represented as strings.
@@ -254,42 +254,42 @@ Returns:
 ### ModLoaderLogEntry
 #### Properties
 ##### mod_name
-```gdscript
+```gdscript2
 var mod_name: String
 ```
 Name of the mod or ModLoader class this entry refers to.
 
 
 ##### message
-```gdscript
+```gdscript2
 var message: String
 ```
 The message of the log entry.
 
 
 ##### type
-```gdscript
+```gdscript2
 var type: String
 ```
 The log type, which indicates the verbosity level of this entry.
 
 
 ##### time
-```gdscript
+```gdscript2
 var time: String
 ```
 The readable format of the time when this log entry was created. Used for printing in the log file and output.
 
 
 ##### time_stamp
-```gdscript
+```gdscript2
 var time_stamp: int
 ```
 The timestamp when this log entry was created. Used for comparing and sorting log entries by time.
 
 
 ##### stack
-```gdscript
+```gdscript2
 var stack: Array
 ```
 An array of ModLoaderLogEntry objects. If the message has been logged before, it is added to the stack.
@@ -297,7 +297,7 @@ An array of ModLoaderLogEntry objects. If the message has been logged before, it
 
 #### Methods
 ##### _init
-```gdscript
+```gdscript2
 func _init(_mod_name: String, _message: String, _type: String, _time: String) -> void
 ```
 Initialize a ModLoaderLogEntry object with provided values.
@@ -310,7 +310,7 @@ Parameters:
 
 
 ##### get_entry
-```gdscript
+```gdscript2
 func get_entry() -> String
 ```
 Get the log entry as a formatted string.
@@ -320,7 +320,7 @@ Returns:
 
 
 ##### get_prefix
-```gdscript
+```gdscript2
 func get_prefix() -> String
 ```
 Get the prefix string for the log entry, including the log type and mod name.
@@ -330,7 +330,7 @@ Returns:
 
 
 ##### get_md5
-```gdscript
+```gdscript2
 func get_md5() -> String
 ```
 Generate an MD5 hash of the log entry (prefix + message).
@@ -339,7 +339,7 @@ Returns:
 - String
 
 ##### get_all_entries
-```gdscript
+```gdscript2
 func get_all_entries() -> Array
 ```
 Get all log entries, including the current entry and entries in the stack.
@@ -351,7 +351,7 @@ Returns:
 ### ModLoaderLogCompare
 #### Methods
 ##### time
-```gdscript
+```gdscript2
 func time(a: ModLoaderLogEntry, b: ModLoaderLogEntry) -> bool
 ```
 Custom sorter that orders logs by time
@@ -359,19 +359,19 @@ Custom sorter that orders logs by time
 
 ## Enumerations
 ##### VERBOSITY_LEVEL
-```gdscript
+```gdscript2
 const VERBOSITY_LEVEL: Dictionary = {"DEBUG":3,"ERROR":0,"INFO":2,"WARNING":1}
 ```
 
 
 ## Constants Descriptions
 ##### LOG_NAME
-```gdscript
+```gdscript2
 const LOG_NAME: String = "ModLoader:Log"
 ```
 
 ##### MOD_LOG_PATH
-```gdscript
+```gdscript2
 const MOD_LOG_PATH: String = "user://logs/modloader.log"
 ```
 Path to the latest log file.

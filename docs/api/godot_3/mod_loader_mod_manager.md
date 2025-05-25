@@ -15,7 +15,7 @@ Provides methods to manage mod state.
 
 ## Methods
 ### uninstall_script_extension
-```gdscript
+```gdscript2
 func uninstall_script_extension(extension_script_path: String) -> void:
 ```
 Uninstall a script extension.
@@ -25,7 +25,7 @@ Parameters:
 
 
 ### reload_mods
-```gdscript
+```gdscript2
 func reload_mods() -> void
 ```
 Reload all mods.
@@ -34,7 +34,7 @@ Reload all mods.
 
 
 ### disable_mods
-```gdscript
+```gdscript2
 func disable_mods() -> void
 ```
 Disable all mods.

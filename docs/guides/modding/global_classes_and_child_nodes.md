@@ -28,7 +28,7 @@ This lets you make custom classes available to other mods.
 
 ## Example
 Example for adding a child node in `mod_main.gd`. This particular example comes from Brotato's [ContentLoader](https://github.com/BrotatoMods/Brotato-ContentLoader) mod:
-```gdscript
+```gdscript2
 # Add to your mod's `_init` in mod_main.gd
 func _add_child_class():
 	var ContentLoader = load("res://mods-unpacked/Darkly77-ContentLoader/content_loader.gd").new()
@@ -37,7 +37,7 @@ func _add_child_class():
 ```
 
 To use this in a different mod:
-```gdscript
+```gdscript2
 # Get the class
 var ContentLoader = get_node("/root/ModLoader/Darkly77-ContentLoader/ContentLoader")
 

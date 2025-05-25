@@ -16,7 +16,7 @@ This class provides methods for working with user profiles.
 
 ## Methods
 ### enable_mod
-```gdscript
+```gdscript2
 func enable_mod(mod_id: String, user_profile: ModUserProfile) -> bool
 ```
 Enables a mod - it will be loaded on the next game start
@@ -27,7 +27,7 @@ Parameters:
 
 
 ### disable_mod
-```gdscript
+```gdscript2
 func disable_mod(mod_id: String, user_profile: ModUserProfile) -> bool
 ```
 Disables a mod - it will not be loaded on the next game start
@@ -38,7 +38,7 @@ Parameters:
 
 
 ### set_mod_current_config
-```gdscript
+```gdscript2
 func set_mod_current_config(mod_id: String, mod_config: ModConfig, user_profile: ModUserProfile) -> bool
 ```
 Sets the current config for a mod in a user profile's mod_list.
@@ -50,7 +50,7 @@ Parameters:
 
 
 ### create_profile
-```gdscript
+```gdscript2
 func create_profile(profile_name: String) -> bool
 ```
 Creates a new user profile with the given name, using the currently loaded mods as the mod list.
@@ -60,7 +60,7 @@ Parameters:
 
 
 ### set_profile
-```gdscript
+```gdscript2
 func set_profile(user_profile: ModUserProfile) -> bool
 ```
 Sets the current user profile to the given user profile.
@@ -70,7 +70,7 @@ Parameters:
 
 
 ### delete_profile
-```gdscript
+```gdscript2
 func delete_profile(user_profile: ModUserProfile) -> bool
 ```
 Deletes the given user profile.
@@ -80,14 +80,14 @@ Parameters:
 
 
 ### get_current
-```gdscript
+```gdscript2
 func get_current() -> ModUserProfile
 ```
 Returns the current user profile.
 
 
 ### get_profile
-```gdscript
+```gdscript2
 func get_profile(profile_name: String) -> ModUserProfile
 ```
 Returns the user profile with the given name, or null if not found.
@@ -97,7 +97,7 @@ Parameters:
 
 
 ### get_all_as_array
-```gdscript
+```gdscript2
 func get_all_as_array() -> Array
 ```
 Returns an array containing all user profiles stored in ModLoaderStore.

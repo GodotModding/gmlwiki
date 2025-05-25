@@ -30,7 +30,7 @@ not present or not loaded.
 
 This is useful when you want to change the behaviour of another mod to fit better with your own, or to increase 
 compatibility. To ensure that you can access the other mod, you should check 
-[`#!gd ModLoaderMod.is_mod_active()`](../../api/mod_loader_mod.md#method-is_mod_active) before you access 
+[`#!gd2 ModLoaderMod.is_mod_active()`](../../api/mod_loader_mod.md#method-is_mod_active) before you access 
 anything specific to that mod.
 
 ### Load Before

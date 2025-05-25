@@ -14,10 +14,10 @@ def bbcode_to_markdown(text):
 	# Convert strikethrough [s] to ~~strikethrough~~
 	text = re.sub(r'\[s](.*?)\[/s]', r'~~\1~~', text)
 	# Convert code [code] to `code`, with inline highlight
-	text = re.sub(r'\[code](.*?)\[/code]', r'`#!gd \1`', text)
+	text = re.sub(r'\[code](.*?)\[/code]', r'`#!gd2 \1`', text)
 	# Convert codeblock [codeblock] to triple backticks for code block
 	# TODO support for lang= if we ever use it
-	text = re.sub(r'\[codeblock](.*?)\[/codeblock]', r'```gdscript \1```', text, flags=re.DOTALL)
+	text = re.sub(r'\[codeblock](.*?)\[/codeblock]', r'```gdscript2 \1```', text, flags=re.DOTALL)
 	# left and right brackets
 	text = re.sub(r'\[lb]', r'[', text)
 	text = re.sub(r'\[rb]', r']', text)
@@ -54,23 +54,23 @@ def bbcode_to_markdown(text):
 	# Godot built in classes
 	text = re.sub(
 		r'\[(\w+?)]',
-		lambda match: f'[`#!gd {match.group(1)}`]({class_doc_link(match.group(1))})',
+		lambda match: f'[`#!gd2 {match.group(1)}`]({class_doc_link(match.group(1))})',
 		text
 	)
 	# References to methods in the same file into links
 	text = re.sub(
 		r'\[method (\w+?)]',
-		lambda match: f'[`#!gd {match.group(1)}()`]({class_doc_link(item_name=match.group(1))})',
+		lambda match: f'[`#!gd2 {match.group(1)}()`]({class_doc_link(item_name=match.group(1))})',
 		text
 	)
 	# Methods in other files
 	text = re.sub(
 		r'\[method (\w+?)\.(\w+?)]',
-		lambda match: f'[`#!gd {match.group(1)}.{match.group(2)}()`]({class_doc_link(match.group(1), match.group(2))})',
+		lambda match: f'[`#!gd2 {match.group(1)}.{match.group(2)}()`]({class_doc_link(match.group(1), match.group(2))})',
 		text
 	)
 	# Parameters are just like inline code
-	text = re.sub(r'\[param (\w+?)]', r'`#!gd \1`', text)
+	text = re.sub(r'\[param (\w+?)]', r'`#!gd2 \1`', text)
 	return text
 
 
@@ -167,13 +167,13 @@ def xml_to_markdown(xml_string):
 
 		# Return type
 		returns = method.find('return')
-		return_text = f"[`#!gd Variant`]({class_doc_link('Variant')})"
+		return_text = f"[`#!gd2 Variant`]({class_doc_link('Variant')})"
 		if returns is not None:
 			return_type = returns.get('type')
 			if return_type == 'void':
 				return_text = "void"
 			else:
-				return_text = f"[`#!gd {return_type}`]({class_doc_link(return_type)})"
+				return_text = f"[`#!gd2 {return_type}`]({class_doc_link(return_type)})"
 
 		# static
 		qualifiers = method.get('qualifiers', '')
@@ -218,9 +218,9 @@ def get_variable_markdown(xml_root, group_name, item_type):
 		if name.startswith('_'):
 			continue
 		value = item.get('value')
-		md += f"#### • `#!gd {name}`"
+		md += f"#### • `#!gd2 {name}`"
 		if value is not None:
-			md += f": `#!gd {value}`"
+			md += f": `#!gd2 {value}`"
 		md += f" {{{class_doc_link(None, name, item_type)} data-toc-label='{name}'}} \n"
 	md += '\n<hr style="border-width: thick">\n\n'
 	return md

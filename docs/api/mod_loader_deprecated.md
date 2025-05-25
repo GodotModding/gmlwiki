@@ -10,7 +10,7 @@ API methods for deprecating funcs. Can be used by mods with public APIs.
 <hr style="border-width: thick">
 
 ## Constants
-#### • `#!gd LOG_NAME`: `#!gd "ModLoader:Deprecated"` {#constant-LOG_NAME data-toc-label='LOG_NAME'} 
+#### • `#!gd2 LOG_NAME`: `#!gd2 "ModLoader:Deprecated"` {#constant-LOG_NAME data-toc-label='LOG_NAME'} 
 
 <hr style="border-width: thick">
 
@@ -21,10 +21,10 @@ Marks a method that has changed its name or class.
 
 #### Parameters:
   
-- `#!gd old_method` ([`#!gd String`](https://docs.godotengine.org/en/stable/classes/class_string.html)): The name of the deprecated method.  
-- `#!gd new_method` ([`#!gd String`](https://docs.godotengine.org/en/stable/classes/class_string.html)): The name of the new method to use.  
-- `#!gd since_version` ([`#!gd String`](https://docs.godotengine.org/en/stable/classes/class_string.html)): The version number from which the method has been deprecated.  
-- `#!gd show_removal_note` ([`#!gd bool`](https://docs.godotengine.org/en/stable/classes/class_bool.html)): (optional) If true, includes a note about future removal of the old method. Default is true.
+- `#!gd2 old_method` ([`#!gd2 String`](https://docs.godotengine.org/en/stable/classes/class_string.html)): The name of the deprecated method.  
+- `#!gd2 new_method` ([`#!gd2 String`](https://docs.godotengine.org/en/stable/classes/class_string.html)): The name of the new method to use.  
+- `#!gd2 since_version` ([`#!gd2 String`](https://docs.godotengine.org/en/stable/classes/class_string.html)): The version number from which the method has been deprecated.  
+- `#!gd2 show_removal_note` ([`#!gd2 bool`](https://docs.godotengine.org/en/stable/classes/class_bool.html)): (optional) If true, includes a note about future removal of the old method. Default is true.
 
 **Returns:**
   
@@ -37,9 +37,9 @@ Marks a method that has been entirely removed, with no replacement.
 
 #### Parameters:
   
-- `#!gd old_method` ([`#!gd String`](https://docs.godotengine.org/en/stable/classes/class_string.html)): The name of the removed method.  
-- `#!gd since_version` ([`#!gd String`](https://docs.godotengine.org/en/stable/classes/class_string.html)): The version number from which the method has been deprecated.  
-- `#!gd show_removal_note` ([`#!gd bool`](https://docs.godotengine.org/en/stable/classes/class_bool.html)): (optional) If true, includes a note about future removal of the old method. Default is true.
+- `#!gd2 old_method` ([`#!gd2 String`](https://docs.godotengine.org/en/stable/classes/class_string.html)): The name of the removed method.  
+- `#!gd2 since_version` ([`#!gd2 String`](https://docs.godotengine.org/en/stable/classes/class_string.html)): The version number from which the method has been deprecated.  
+- `#!gd2 show_removal_note` ([`#!gd2 bool`](https://docs.godotengine.org/en/stable/classes/class_bool.html)): (optional) If true, includes a note about future removal of the old method. Default is true.
 
 **Returns:**
   
@@ -58,8 +58,8 @@ Marks a method with a freeform deprecation message.
 
 #### Parameters:
   
-- `#!gd msg` ([`#!gd String`](https://docs.godotengine.org/en/stable/classes/class_string.html)): The deprecation message.  
-- `#!gd since_version` ([`#!gd String`](https://docs.godotengine.org/en/stable/classes/class_string.html)): (optional) The version number from which the deprecation applies.
+- `#!gd2 msg` ([`#!gd2 String`](https://docs.godotengine.org/en/stable/classes/class_string.html)): The deprecation message.  
+- `#!gd2 since_version` ([`#!gd2 String`](https://docs.godotengine.org/en/stable/classes/class_string.html)): (optional) The version number from which the deprecation applies.
 
 **Returns:**
   
