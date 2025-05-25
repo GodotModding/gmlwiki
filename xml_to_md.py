@@ -3,7 +3,7 @@ import xml.etree.ElementTree as ElementTree
 import re
 
 
-def bbcode_to_markdown(text):
+def bbcode_to_markdown(text) -> str:
 	text = text.strip()
 	# Convert italic [i] to *italic*
 	text = re.sub(r'\[i](.*?)\[/i]', r'*\1*', text)
@@ -54,7 +54,7 @@ def bbcode_to_markdown(text):
 	# Godot built in classes
 	text = re.sub(
 		r'\[(\w+?)]',
-		lambda match: f'[`#!gd2 {match.group(1)}`]({class_doc_link(match.group(1))})',
+		lambda match: formatted_class_doc_link(match.group(1)),
 		text
 	)
 	# References to methods in the same file into links
@@ -74,7 +74,7 @@ def bbcode_to_markdown(text):
 	return text
 
 
-def md_format_admonition(match):
+def md_format_admonition(match) -> str:
 	admonition_type = match.group('type') or "note"
 	title = match.group('title') or ""
 	admonition_type = f'\n\n!!! {admonition_type} {title}\n'  # admonition syntax
@@ -86,7 +86,7 @@ def md_format_admonition(match):
 	return admonition_type + indented_content + '\n'
 
 
-def class_doc_link(class_name: str = None, item_name: str = None, item_type: str = "method"):
+def class_doc_link(class_name: str = None, item_name: str = None, item_type: str = "method") -> str:
 	if item_type == "member":
 		item_type = "property"  # godot docs named it differently between url and xml for some reason
 
@@ -104,6 +104,10 @@ def class_doc_link(class_name: str = None, item_name: str = None, item_type: str
 	return docs_link
 
 
+def formatted_class_doc_link(class_name: str = None) -> str:
+	return f"[`#!gd2 {class_name}`]({class_doc_link(class_name)})"
+
+
 # Function to convert XML to Markdown
 def xml_to_markdown(xml_string):
 	# Parse the XML
@@ -115,7 +119,7 @@ def xml_to_markdown(xml_string):
 
 	md = ""
 
-		# Process brief description for meta data
+	# Process brief description for meta data
 	brief_desc = root.find('brief_description')
 	if brief_desc is not None and brief_desc.text.strip() != "":
 		
@@ -167,13 +171,13 @@ def xml_to_markdown(xml_string):
 
 		# Return type
 		returns = method.find('return')
-		return_text = f"[`#!gd2 Variant`]({class_doc_link('Variant')})"
+		return_text = formatted_class_doc_link('Variant')
 		if returns is not None:
 			return_type = returns.get('type')
 			if return_type == 'void':
-				return_text = "void"
+				return_text = "`#!gd2 void`"
 			else:
-				return_text = f"[`#!gd2 {return_type}`]({class_doc_link(return_type)})"
+				return_text = formatted_class_doc_link(return_type)
 
 		# static
 		qualifiers = method.get('qualifiers', '')
@@ -182,19 +186,20 @@ def xml_to_markdown(xml_string):
 
 		# Parameters
 		params = method.findall('param')
+		param_separator = "`#!gd2 , ` "
 		params_text = ""
 		if params:
 			for param in params:
 				param_name = param.get('name')
 				param_type = param.get('type')
-				params_text += f"{param_name}: [{param_type}]({class_doc_link(param_type)}), "
-			params_text = params_text.removesuffix(", ")
+				params_text += f"`#!gd2 {param_name}:`&nbsp;&nbsp;{formatted_class_doc_link(param_type)}{param_separator}"
+			params_text = params_text.removesuffix(param_separator)
 
 		md += (
-			# using a html code block here to be able to use links within
-			f'### • {return_text} <code class="highlight">{method_name}({params_text})</code> {qualifiers}'
-			# attribute list extension at the end ti prefix the anchor with method- and clean the table of contents
-			f'{{#method-{method_name} data-toc-label=\'{method_name}\'}}\n'
+			f'### • {return_text}&nbsp;&nbsp;`#!gd2 {method_name}(` {params_text}`#!gd2 ) {qualifiers}`'
+			# attribute list extension at the end 
+			# to prefix the anchor with "method-", clean the table of contents, and remove awkward spacing
+			f' {{#method-{method_name} data-toc-label=\'{method_name}\' .no-code-padding}}\n'
 		)
 
 		description = method.find('description')

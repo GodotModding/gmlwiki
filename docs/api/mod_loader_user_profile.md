@@ -16,7 +16,7 @@ This Class provides methods for working with user profiles.
 <hr style="border-width: thick">
 
 ## Method Descriptions
-### • [`#!gd2 bool`](https://docs.godotengine.org/en/stable/classes/class_bool.html) <code class="highlight">enable_mod(mod_id: [String](https://docs.godotengine.org/en/stable/classes/class_string.html), user_profile: [ModUserProfile](https://docs.godotengine.org/en/stable/classes/class_moduserprofile.html))</code> static {#method-enable_mod data-toc-label='enable_mod'}
+### • [`#!gd2 bool`](https://docs.godotengine.org/en/stable/classes/class_bool.html)&nbsp;&nbsp;`#!gd2 enable_mod(` `#!gd2 mod_id:`&nbsp;&nbsp;[`#!gd2 String`](https://docs.godotengine.org/en/stable/classes/class_string.html)`#!gd2 , ` `#!gd2 user_profile:`&nbsp;&nbsp;[`#!gd2 ModUserProfile`](https://docs.godotengine.org/en/stable/classes/class_moduserprofile.html)`#!gd2 ) static ` {#method-enable_mod data-toc-label='enable_mod' .no-code-padding}
 #### Description:
 Enables a mod - it will be loaded on the next game start
 
@@ -29,7 +29,7 @@ Enables a mod - it will be loaded on the next game start
   
 - [`#!gd2 bool`](https://docs.godotengine.org/en/stable/classes/class_bool.html): True on success.
 ***
-### • [`#!gd2 bool`](https://docs.godotengine.org/en/stable/classes/class_bool.html) <code class="highlight">force_enable_mod(mod_id: [String](https://docs.godotengine.org/en/stable/classes/class_string.html), user_profile: [ModUserProfile](https://docs.godotengine.org/en/stable/classes/class_moduserprofile.html))</code> static {#method-force_enable_mod data-toc-label='force_enable_mod'}
+### • [`#!gd2 bool`](https://docs.godotengine.org/en/stable/classes/class_bool.html)&nbsp;&nbsp;`#!gd2 force_enable_mod(` `#!gd2 mod_id:`&nbsp;&nbsp;[`#!gd2 String`](https://docs.godotengine.org/en/stable/classes/class_string.html)`#!gd2 , ` `#!gd2 user_profile:`&nbsp;&nbsp;[`#!gd2 ModUserProfile`](https://docs.godotengine.org/en/stable/classes/class_moduserprofile.html)`#!gd2 ) static ` {#method-force_enable_mod data-toc-label='force_enable_mod' .no-code-padding}
 #### Description:
 Forces a mod to enable, ensuring it loads at the next game start, regardless of load warnings.
 
@@ -42,7 +42,7 @@ Forces a mod to enable, ensuring it loads at the next game start, regardless of 
   
 - [`#!gd2 bool`](https://docs.godotengine.org/en/stable/classes/class_bool.html): True on success.
 ***
-### • [`#!gd2 bool`](https://docs.godotengine.org/en/stable/classes/class_bool.html) <code class="highlight">disable_mod(mod_id: [String](https://docs.godotengine.org/en/stable/classes/class_string.html), user_profile: [ModUserProfile](https://docs.godotengine.org/en/stable/classes/class_moduserprofile.html))</code> static {#method-disable_mod data-toc-label='disable_mod'}
+### • [`#!gd2 bool`](https://docs.godotengine.org/en/stable/classes/class_bool.html)&nbsp;&nbsp;`#!gd2 disable_mod(` `#!gd2 mod_id:`&nbsp;&nbsp;[`#!gd2 String`](https://docs.godotengine.org/en/stable/classes/class_string.html)`#!gd2 , ` `#!gd2 user_profile:`&nbsp;&nbsp;[`#!gd2 ModUserProfile`](https://docs.godotengine.org/en/stable/classes/class_moduserprofile.html)`#!gd2 ) static ` {#method-disable_mod data-toc-label='disable_mod' .no-code-padding}
 #### Description:
 Disables a mod - it will not be loaded on the next game start
 
@@ -55,7 +55,7 @@ Disables a mod - it will not be loaded on the next game start
   
 - [`#!gd2 bool`](https://docs.godotengine.org/en/stable/classes/class_bool.html): True on success.
 ***
-### • [`#!gd2 bool`](https://docs.godotengine.org/en/stable/classes/class_bool.html) <code class="highlight">set_mod_current_config(mod_id: [String](https://docs.godotengine.org/en/stable/classes/class_string.html), mod_config: [ModConfig](https://docs.godotengine.org/en/stable/classes/class_modconfig.html), user_profile: [ModUserProfile](https://docs.godotengine.org/en/stable/classes/class_moduserprofile.html))</code> static {#method-set_mod_current_config data-toc-label='set_mod_current_config'}
+### • [`#!gd2 bool`](https://docs.godotengine.org/en/stable/classes/class_bool.html)&nbsp;&nbsp;`#!gd2 set_mod_current_config(` `#!gd2 mod_id:`&nbsp;&nbsp;[`#!gd2 String`](https://docs.godotengine.org/en/stable/classes/class_string.html)`#!gd2 , ` `#!gd2 mod_config:`&nbsp;&nbsp;[`#!gd2 ModConfig`](https://docs.godotengine.org/en/stable/classes/class_modconfig.html)`#!gd2 , ` `#!gd2 user_profile:`&nbsp;&nbsp;[`#!gd2 ModUserProfile`](https://docs.godotengine.org/en/stable/classes/class_moduserprofile.html)`#!gd2 ) static ` {#method-set_mod_current_config data-toc-label='set_mod_current_config' .no-code-padding}
 #### Description:
 Sets the current config for a mod in a user profile's mod_list.
 
@@ -69,7 +69,7 @@ Sets the current config for a mod in a user profile's mod_list.
   
 - [`#!gd2 bool`](https://docs.godotengine.org/en/stable/classes/class_bool.html): True on success.
 ***
-### • [`#!gd2 bool`](https://docs.godotengine.org/en/stable/classes/class_bool.html) <code class="highlight">create_profile(profile_name: [String](https://docs.godotengine.org/en/stable/classes/class_string.html))</code> static {#method-create_profile data-toc-label='create_profile'}
+### • [`#!gd2 bool`](https://docs.godotengine.org/en/stable/classes/class_bool.html)&nbsp;&nbsp;`#!gd2 create_profile(` `#!gd2 profile_name:`&nbsp;&nbsp;[`#!gd2 String`](https://docs.godotengine.org/en/stable/classes/class_string.html)`#!gd2 ) static ` {#method-create_profile data-toc-label='create_profile' .no-code-padding}
 #### Description:
 Creates a new user profile with the given name, using the currently loaded mods as the mod list.
 
@@ -81,7 +81,7 @@ Creates a new user profile with the given name, using the currently loaded mods 
   
 - [`#!gd2 bool`](https://docs.godotengine.org/en/stable/classes/class_bool.html): True on success.
 ***
-### • [`#!gd2 bool`](https://docs.godotengine.org/en/stable/classes/class_bool.html) <code class="highlight">set_profile(user_profile: [ModUserProfile](https://docs.godotengine.org/en/stable/classes/class_moduserprofile.html))</code> static {#method-set_profile data-toc-label='set_profile'}
+### • [`#!gd2 bool`](https://docs.godotengine.org/en/stable/classes/class_bool.html)&nbsp;&nbsp;`#!gd2 set_profile(` `#!gd2 user_profile:`&nbsp;&nbsp;[`#!gd2 ModUserProfile`](https://docs.godotengine.org/en/stable/classes/class_moduserprofile.html)`#!gd2 ) static ` {#method-set_profile data-toc-label='set_profile' .no-code-padding}
 #### Description:
 Sets the current user profile to the given user profile.
 
@@ -93,7 +93,7 @@ Sets the current user profile to the given user profile.
   
 - [`#!gd2 bool`](https://docs.godotengine.org/en/stable/classes/class_bool.html): True on success.
 ***
-### • [`#!gd2 bool`](https://docs.godotengine.org/en/stable/classes/class_bool.html) <code class="highlight">delete_profile(user_profile: [ModUserProfile](https://docs.godotengine.org/en/stable/classes/class_moduserprofile.html))</code> static {#method-delete_profile data-toc-label='delete_profile'}
+### • [`#!gd2 bool`](https://docs.godotengine.org/en/stable/classes/class_bool.html)&nbsp;&nbsp;`#!gd2 delete_profile(` `#!gd2 user_profile:`&nbsp;&nbsp;[`#!gd2 ModUserProfile`](https://docs.godotengine.org/en/stable/classes/class_moduserprofile.html)`#!gd2 ) static ` {#method-delete_profile data-toc-label='delete_profile' .no-code-padding}
 #### Description:
 Deletes the given user profile.
 
@@ -105,7 +105,7 @@ Deletes the given user profile.
   
 - [`#!gd2 bool`](https://docs.godotengine.org/en/stable/classes/class_bool.html): True on success.
 ***
-### • [`#!gd2 ModUserProfile`](https://docs.godotengine.org/en/stable/classes/class_moduserprofile.html) <code class="highlight">get_current()</code> static {#method-get_current data-toc-label='get_current'}
+### • [`#!gd2 ModUserProfile`](https://docs.godotengine.org/en/stable/classes/class_moduserprofile.html)&nbsp;&nbsp;`#!gd2 get_current(` `#!gd2 ) static ` {#method-get_current data-toc-label='get_current' .no-code-padding}
 #### Description:
 Returns the current user profile.
 
@@ -113,7 +113,7 @@ Returns the current user profile.
   
 - [`#!gd2 ModUserProfile`](https://docs.godotengine.org/en/stable/classes/class_moduserprofile.html): The current profile or `#!gd2 null` if not set.
 ***
-### • [`#!gd2 ModUserProfile`](https://docs.godotengine.org/en/stable/classes/class_moduserprofile.html) <code class="highlight">get_profile(profile_name: [String](https://docs.godotengine.org/en/stable/classes/class_string.html))</code> static {#method-get_profile data-toc-label='get_profile'}
+### • [`#!gd2 ModUserProfile`](https://docs.godotengine.org/en/stable/classes/class_moduserprofile.html)&nbsp;&nbsp;`#!gd2 get_profile(` `#!gd2 profile_name:`&nbsp;&nbsp;[`#!gd2 String`](https://docs.godotengine.org/en/stable/classes/class_string.html)`#!gd2 ) static ` {#method-get_profile data-toc-label='get_profile' .no-code-padding}
 #### Description:
 Returns the user profile with the given name.
 
@@ -125,7 +125,7 @@ Returns the user profile with the given name.
   
 - [`#!gd2 ModUserProfile`](https://docs.godotengine.org/en/stable/classes/class_moduserprofile.html): The profile or `#!gd2 null` if not found
 ***
-### • [`#!gd2 Array`](https://docs.godotengine.org/en/stable/classes/class_array.html) <code class="highlight">get_all_as_array()</code> static {#method-get_all_as_array data-toc-label='get_all_as_array'}
+### • [`#!gd2 Array`](https://docs.godotengine.org/en/stable/classes/class_array.html)&nbsp;&nbsp;`#!gd2 get_all_as_array(` `#!gd2 ) static ` {#method-get_all_as_array data-toc-label='get_all_as_array' .no-code-padding}
 #### Description:
 Returns an array containing all user profiles stored in ModLoaderStore.
 
@@ -133,7 +133,7 @@ Returns an array containing all user profiles stored in ModLoaderStore.
   
 - [`#!gd2 Array`](https://docs.godotengine.org/en/stable/classes/class_array.html): A list of [`#!gd2 ModUserProfile`](https://docs.godotengine.org/en/stable/classes/class_moduserprofile.html) Objects
 ***
-### • [`#!gd2 bool`](https://docs.godotengine.org/en/stable/classes/class_bool.html) <code class="highlight">is_initialized()</code> static {#method-is_initialized data-toc-label='is_initialized'}
+### • [`#!gd2 bool`](https://docs.godotengine.org/en/stable/classes/class_bool.html)&nbsp;&nbsp;`#!gd2 is_initialized(` `#!gd2 ) static ` {#method-is_initialized data-toc-label='is_initialized' .no-code-padding}
 #### Description:
 Returns true if the Mod User Profiles are initialized.   
 **Returns:**

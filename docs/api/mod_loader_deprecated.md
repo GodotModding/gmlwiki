@@ -15,7 +15,7 @@ API methods for deprecating funcs. Can be used by mods with public APIs.
 <hr style="border-width: thick">
 
 ## Method Descriptions
-### • void <code class="highlight">deprecated_changed(old_method: [String](https://docs.godotengine.org/en/stable/classes/class_string.html), new_method: [String](https://docs.godotengine.org/en/stable/classes/class_string.html), since_version: [String](https://docs.godotengine.org/en/stable/classes/class_string.html), show_removal_note: [bool](https://docs.godotengine.org/en/stable/classes/class_bool.html))</code> static {#method-deprecated_changed data-toc-label='deprecated_changed'}
+### • `#!gd2 void`&nbsp;&nbsp;`#!gd2 deprecated_changed(` `#!gd2 old_method:`&nbsp;&nbsp;[`#!gd2 String`](https://docs.godotengine.org/en/stable/classes/class_string.html)`#!gd2 , ` `#!gd2 new_method:`&nbsp;&nbsp;[`#!gd2 String`](https://docs.godotengine.org/en/stable/classes/class_string.html)`#!gd2 , ` `#!gd2 since_version:`&nbsp;&nbsp;[`#!gd2 String`](https://docs.godotengine.org/en/stable/classes/class_string.html)`#!gd2 , ` `#!gd2 show_removal_note:`&nbsp;&nbsp;[`#!gd2 bool`](https://docs.godotengine.org/en/stable/classes/class_bool.html)`#!gd2 ) static ` {#method-deprecated_changed data-toc-label='deprecated_changed' .no-code-padding}
 #### Description:
 Marks a method that has changed its name or class.
 
@@ -31,7 +31,7 @@ Marks a method that has changed its name or class.
 - No return value  
 
 ***
-### • void <code class="highlight">deprecated_removed(old_method: [String](https://docs.godotengine.org/en/stable/classes/class_string.html), since_version: [String](https://docs.godotengine.org/en/stable/classes/class_string.html), show_removal_note: [bool](https://docs.godotengine.org/en/stable/classes/class_bool.html))</code> static {#method-deprecated_removed data-toc-label='deprecated_removed'}
+### • `#!gd2 void`&nbsp;&nbsp;`#!gd2 deprecated_removed(` `#!gd2 old_method:`&nbsp;&nbsp;[`#!gd2 String`](https://docs.godotengine.org/en/stable/classes/class_string.html)`#!gd2 , ` `#!gd2 since_version:`&nbsp;&nbsp;[`#!gd2 String`](https://docs.godotengine.org/en/stable/classes/class_string.html)`#!gd2 , ` `#!gd2 show_removal_note:`&nbsp;&nbsp;[`#!gd2 bool`](https://docs.godotengine.org/en/stable/classes/class_bool.html)`#!gd2 ) static ` {#method-deprecated_removed data-toc-label='deprecated_removed' .no-code-padding}
 #### Description:
 Marks a method that has been entirely removed, with no replacement.
 
@@ -52,7 +52,7 @@ Marks a method that has been entirely removed, with no replacement.
   
 
 ***
-### • void <code class="highlight">deprecated_message(msg: [String](https://docs.godotengine.org/en/stable/classes/class_string.html), since_version: [String](https://docs.godotengine.org/en/stable/classes/class_string.html))</code> static {#method-deprecated_message data-toc-label='deprecated_message'}
+### • `#!gd2 void`&nbsp;&nbsp;`#!gd2 deprecated_message(` `#!gd2 msg:`&nbsp;&nbsp;[`#!gd2 String`](https://docs.godotengine.org/en/stable/classes/class_string.html)`#!gd2 , ` `#!gd2 since_version:`&nbsp;&nbsp;[`#!gd2 String`](https://docs.godotengine.org/en/stable/classes/class_string.html)`#!gd2 ) static ` {#method-deprecated_message data-toc-label='deprecated_message' .no-code-padding}
 #### Description:
 Marks a method with a freeform deprecation message.
 

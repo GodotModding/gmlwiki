@@ -16,7 +16,7 @@ This Class provides helper functions to build mods.
 <hr style="border-width: thick">
 
 ## Method Descriptions
-### • void <code class="highlight">install_script_extension(child_script_path: [String](https://docs.godotengine.org/en/stable/classes/class_string.html))</code> static {#method-install_script_extension data-toc-label='install_script_extension'}
+### • `#!gd2 void`&nbsp;&nbsp;`#!gd2 install_script_extension(` `#!gd2 child_script_path:`&nbsp;&nbsp;[`#!gd2 String`](https://docs.godotengine.org/en/stable/classes/class_string.html)`#!gd2 ) static ` {#method-install_script_extension data-toc-label='install_script_extension' .no-code-padding}
 #### Description:
 Installs a script extension that extends a vanilla script.
 
@@ -44,7 +44,7 @@ Example: `#!gd2 extends "res://singletons/utils.gd"`.
 
 
 ***
-### • void <code class="highlight">install_script_hooks(vanilla_script_path: [String](https://docs.godotengine.org/en/stable/classes/class_string.html), hook_script_path: [String](https://docs.godotengine.org/en/stable/classes/class_string.html))</code> static {#method-install_script_hooks data-toc-label='install_script_hooks'}
+### • `#!gd2 void`&nbsp;&nbsp;`#!gd2 install_script_hooks(` `#!gd2 vanilla_script_path:`&nbsp;&nbsp;[`#!gd2 String`](https://docs.godotengine.org/en/stable/classes/class_string.html)`#!gd2 , ` `#!gd2 hook_script_path:`&nbsp;&nbsp;[`#!gd2 String`](https://docs.godotengine.org/en/stable/classes/class_string.html)`#!gd2 ) static ` {#method-install_script_hooks data-toc-label='install_script_hooks' .no-code-padding}
 #### Description:
 Adds all methods from a file as hooks. 
 
@@ -70,7 +70,7 @@ ModLoaderMod.install_script_hooks(
 )
 ```
 ***
-### • void <code class="highlight">add_hook(mod_callable: [Callable](https://docs.godotengine.org/en/stable/classes/class_callable.html), script_path: [String](https://docs.godotengine.org/en/stable/classes/class_string.html), method_name: [String](https://docs.godotengine.org/en/stable/classes/class_string.html))</code> static {#method-add_hook data-toc-label='add_hook'}
+### • `#!gd2 void`&nbsp;&nbsp;`#!gd2 add_hook(` `#!gd2 mod_callable:`&nbsp;&nbsp;[`#!gd2 Callable`](https://docs.godotengine.org/en/stable/classes/class_callable.html)`#!gd2 , ` `#!gd2 script_path:`&nbsp;&nbsp;[`#!gd2 String`](https://docs.godotengine.org/en/stable/classes/class_string.html)`#!gd2 , ` `#!gd2 method_name:`&nbsp;&nbsp;[`#!gd2 String`](https://docs.godotengine.org/en/stable/classes/class_string.html)`#!gd2 ) static ` {#method-add_hook data-toc-label='add_hook' .no-code-padding}
 #### Description:
 Adds a hook, a custom mod function, to a vanilla method.
 
@@ -149,7 +149,7 @@ func add_season(chain: ModLoaderHookChain, day: int, month: int, year: int) -> S
     return output
 ```
 ***
-### • void <code class="highlight">register_global_classes_from_array(new_global_classes: [Array](https://docs.godotengine.org/en/stable/classes/class_array.html))</code> static {#method-register_global_classes_from_array data-toc-label='register_global_classes_from_array'}
+### • `#!gd2 void`&nbsp;&nbsp;`#!gd2 register_global_classes_from_array(` `#!gd2 new_global_classes:`&nbsp;&nbsp;[`#!gd2 Array`](https://docs.godotengine.org/en/stable/classes/class_array.html)`#!gd2 ) static ` {#method-register_global_classes_from_array data-toc-label='register_global_classes_from_array' .no-code-padding}
 #### Description:
 Registers an array of classes to the global scope since Godot only does that in the editor.
 
@@ -171,7 +171,7 @@ Format: `#!gd2 { "base": "ParentClass", "class": "ClassName", "language": "GDScr
   
 
 ***
-### • void <code class="highlight">add_translation(resource_path: [String](https://docs.godotengine.org/en/stable/classes/class_string.html))</code> static {#method-add_translation data-toc-label='add_translation'}
+### • `#!gd2 void`&nbsp;&nbsp;`#!gd2 add_translation(` `#!gd2 resource_path:`&nbsp;&nbsp;[`#!gd2 String`](https://docs.godotengine.org/en/stable/classes/class_string.html)`#!gd2 ) static ` {#method-add_translation data-toc-label='add_translation' .no-code-padding}
 #### Description:
 Adds a translation file.
 
@@ -189,7 +189,7 @@ Adds a translation file.
   
 
 ***
-### • void <code class="highlight">refresh_scene(scene_path: [String](https://docs.godotengine.org/en/stable/classes/class_string.html))</code> static {#method-refresh_scene data-toc-label='refresh_scene'}
+### • `#!gd2 void`&nbsp;&nbsp;`#!gd2 refresh_scene(` `#!gd2 scene_path:`&nbsp;&nbsp;[`#!gd2 String`](https://docs.godotengine.org/en/stable/classes/class_string.html)`#!gd2 ) static ` {#method-refresh_scene data-toc-label='refresh_scene' .no-code-padding}
 #### Description:
 Marks the given scene for to be refreshed. It will be refreshed at the correct point in time later.
 
@@ -209,7 +209,7 @@ Marks the given scene for to be refreshed. It will be refreshed at the correct p
 This function is useful if a script extension is not automatically applied. This situation can occur when a script is attached to a preloaded scene. If you encounter issues where your script extension is not working as expected, try to identify the scene to which it is attached and use this method to refresh it. This will reload already loaded scenes and apply the script extension.   
 
 ***
-### • void <code class="highlight">extend_scene(scene_vanilla_path: [String](https://docs.godotengine.org/en/stable/classes/class_string.html), edit_callable: [Callable](https://docs.godotengine.org/en/stable/classes/class_callable.html))</code> static {#method-extend_scene data-toc-label='extend_scene'}
+### • `#!gd2 void`&nbsp;&nbsp;`#!gd2 extend_scene(` `#!gd2 scene_vanilla_path:`&nbsp;&nbsp;[`#!gd2 String`](https://docs.godotengine.org/en/stable/classes/class_string.html)`#!gd2 , ` `#!gd2 edit_callable:`&nbsp;&nbsp;[`#!gd2 Callable`](https://docs.godotengine.org/en/stable/classes/class_callable.html)`#!gd2 ) static ` {#method-extend_scene data-toc-label='extend_scene' .no-code-padding}
 #### Description:
 Extends a specific scene by providing a callable function to modify it.   
 #### Parameters:
@@ -224,7 +224,7 @@ Extends a specific scene by providing a callable function to modify it.
 The callable receives an instance of the "vanilla_scene" as the first parameter.  
 
 ***
-### • [`#!gd2 ModData`](https://docs.godotengine.org/en/stable/classes/class_moddata.html) <code class="highlight">get_mod_data(mod_id: [String](https://docs.godotengine.org/en/stable/classes/class_string.html))</code> static {#method-get_mod_data data-toc-label='get_mod_data'}
+### • [`#!gd2 ModData`](https://docs.godotengine.org/en/stable/classes/class_moddata.html)&nbsp;&nbsp;`#!gd2 get_mod_data(` `#!gd2 mod_id:`&nbsp;&nbsp;[`#!gd2 String`](https://docs.godotengine.org/en/stable/classes/class_string.html)`#!gd2 ) static ` {#method-get_mod_data data-toc-label='get_mod_data' .no-code-padding}
 #### Description:
 Gets the [`#!gd2 ModData`](https://docs.godotengine.org/en/stable/classes/class_moddata.html) from the provided namespace.
 
@@ -237,7 +237,7 @@ Gets the [`#!gd2 ModData`](https://docs.godotengine.org/en/stable/classes/class_
 - [`#!gd2 ModData`](https://docs.godotengine.org/en/stable/classes/class_moddata.html): The [`#!gd2 ModData`](https://docs.godotengine.org/en/stable/classes/class_moddata.html) associated with the provided `#!gd2 mod_id`, or null if the `#!gd2 mod_id` is invalid.  
 
 ***
-### • [`#!gd2 Dictionary`](https://docs.godotengine.org/en/stable/classes/class_dictionary.html) <code class="highlight">get_mod_data_all()</code> static {#method-get_mod_data_all data-toc-label='get_mod_data_all'}
+### • [`#!gd2 Dictionary`](https://docs.godotengine.org/en/stable/classes/class_dictionary.html)&nbsp;&nbsp;`#!gd2 get_mod_data_all(` `#!gd2 ) static ` {#method-get_mod_data_all data-toc-label='get_mod_data_all' .no-code-padding}
 #### Description:
 Gets the [`#!gd2 ModData`](https://docs.godotengine.org/en/stable/classes/class_moddata.html) of all loaded Mods as [`#!gd2 Dictionary`](https://docs.godotengine.org/en/stable/classes/class_dictionary.html).
 
@@ -246,7 +246,7 @@ Gets the [`#!gd2 ModData`](https://docs.godotengine.org/en/stable/classes/class_
 - [`#!gd2 Dictionary`](https://docs.godotengine.org/en/stable/classes/class_dictionary.html): A dictionary containing the [`#!gd2 ModData`](https://docs.godotengine.org/en/stable/classes/class_moddata.html) of all loaded mods.  
 
 ***
-### • [`#!gd2 String`](https://docs.godotengine.org/en/stable/classes/class_string.html) <code class="highlight">get_unpacked_dir()</code> static {#method-get_unpacked_dir data-toc-label='get_unpacked_dir'}
+### • [`#!gd2 String`](https://docs.godotengine.org/en/stable/classes/class_string.html)&nbsp;&nbsp;`#!gd2 get_unpacked_dir(` `#!gd2 ) static ` {#method-get_unpacked_dir data-toc-label='get_unpacked_dir' .no-code-padding}
 #### Description:
 Returns the path to the directory where unpacked mods are stored.
 
@@ -255,7 +255,7 @@ Returns the path to the directory where unpacked mods are stored.
 - [`#!gd2 String`](https://docs.godotengine.org/en/stable/classes/class_string.html): The path to the unpacked mods directory.  
 
 ***
-### • [`#!gd2 bool`](https://docs.godotengine.org/en/stable/classes/class_bool.html) <code class="highlight">is_mod_loaded(mod_id: [String](https://docs.godotengine.org/en/stable/classes/class_string.html))</code> static {#method-is_mod_loaded data-toc-label='is_mod_loaded'}
+### • [`#!gd2 bool`](https://docs.godotengine.org/en/stable/classes/class_bool.html)&nbsp;&nbsp;`#!gd2 is_mod_loaded(` `#!gd2 mod_id:`&nbsp;&nbsp;[`#!gd2 String`](https://docs.godotengine.org/en/stable/classes/class_string.html)`#!gd2 ) static ` {#method-is_mod_loaded data-toc-label='is_mod_loaded' .no-code-padding}
 #### Description:
 Returns true if the mod with the given `#!gd2 mod_id` was successfully loaded.
 
@@ -268,7 +268,7 @@ Returns true if the mod with the given `#!gd2 mod_id` was successfully loaded.
 - [`#!gd2 bool`](https://docs.godotengine.org/en/stable/classes/class_bool.html): true if the mod is loaded, false otherwise.  
 
 ***
-### • [`#!gd2 bool`](https://docs.godotengine.org/en/stable/classes/class_bool.html) <code class="highlight">is_mod_active(mod_id: [String](https://docs.godotengine.org/en/stable/classes/class_string.html))</code> static {#method-is_mod_active data-toc-label='is_mod_active'}
+### • [`#!gd2 bool`](https://docs.godotengine.org/en/stable/classes/class_bool.html)&nbsp;&nbsp;`#!gd2 is_mod_active(` `#!gd2 mod_id:`&nbsp;&nbsp;[`#!gd2 String`](https://docs.godotengine.org/en/stable/classes/class_string.html)`#!gd2 ) static ` {#method-is_mod_active data-toc-label='is_mod_active' .no-code-padding}
 #### Description:
 Returns true if the mod with the given mod_id was successfully loaded and is currently active.   
 Parameters: - `#!gd2 mod_id` ([`#!gd2 String`](https://docs.godotengine.org/en/stable/classes/class_string.html)): The ID of the mod.   

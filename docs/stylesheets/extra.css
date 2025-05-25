@@ -14,3 +14,7 @@ a > code, a:hover {
     margin-left: auto;
     margin-right: auto;
 }
+
+.no-code-padding code.highlight {
+    padding: 0;
+}
