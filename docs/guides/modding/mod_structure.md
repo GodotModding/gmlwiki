@@ -7,7 +7,7 @@ description: Mod file structure is a small but important part of modding.
 Mod file structure is a small but important part of modding. If your files are in the wrong place, they won't be found 
 by the mod loader and can't work correctly.
 
-There are two main types of folders where mods are loaded from - oen loads packed and the other unpacked mods. Packed in
+There are two main types of folders where mods are loaded from - one loads packed and the other unpacked mods. Packed in
 case of this mod loader just means "it is a ZIP", since that's how our mods are distributed. Unpacked is the raw mod code
 which you can easily edit within the editor. Editor and ZIP require slightly different structures you can see below.
 
