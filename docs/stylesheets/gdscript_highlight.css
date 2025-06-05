@@ -20,6 +20,7 @@ Also see CONTRIBUTING.md
 	--md-code-hl-custom-class_nb: #8fffdbff;
 	--md-code-hl-custom-class_nc: #c7ffedff;
 	--md-code-hl-comment-color: #cdcfd280;
+	--md-code-hl-custom-class_c_c-Doc: #99b3cccc;
 	--md-code-hl-string-color: #ffeda1ff;
 	--md-code-bg-color: #1d2229ff;
 	--md-code-hl-generic-color: #cdcfd2ff;
@@ -30,9 +31,13 @@ Also see CONTRIBUTING.md
 	--md-code-hl-function-color: #57b3ffff;
 	--md-code-hl-variable-color: #bce0ffff;
 	--md-code-hl-constant-color: #bce0ffff;
+	--md-code-hl-custom-class_vi: #bce0ffff;
+	--md-code-hl-custom-class_c_c-Region: #ad75c433;
 	--md-code-hl-custom-class_nb_nb-Function: #a3a3f5ff;
+	--md-code-hl-custom-class_s_s-NodePath: #b8c47dff;
 	--md-code-hl-custom-class_sx: #63c259ff;
 	--md-code-hl-custom-class_nd: #ffb373ff;
+	--md-code-hl-custom-class_s_s-StringName: #ffc2a6ff;
 }
 
 [data-md-color-scheme="light"] {
@@ -48,6 +53,7 @@ Also see CONTRIBUTING.md
 	--md-code-hl-custom-class_nb: #1c8c66ff;
 	--md-code-hl-custom-class_nc: #2e7366ff;
 	--md-code-hl-comment-color: #14141480;
+	--md-code-hl-custom-class_c_c-Doc: #262666b3;
 	--md-code-hl-string-color: #996b00ff;
 	--md-code-bg-color: #ffffffff;
 	--md-code-hl-generic-color: #393939ff;
@@ -59,9 +65,12 @@ Also see CONTRIBUTING.md
 	--md-code-hl-variable-color: #0066adff;
 	--md-code-hl-constant-color: #0066adff;
 	--md-code-hl-custom-class_vi: #0066adff;
+	--md-code-hl-custom-class_c_c-Region: #ad75c433;
 	--md-code-hl-custom-class_nb_nb-Function: #5c2eb8ff;
+	--md-code-hl-custom-class_s_s-NodePath: #2e8c00ff;
 	--md-code-hl-custom-class_sx: #008000ff;
 	--md-code-hl-custom-class_nd: #cc5e00ff;
+	--md-code-hl-custom-class_s_s-StringName: #cc8f73ff;
 }
 
 .highlight .bp {
@@ -84,8 +93,24 @@ Also see CONTRIBUTING.md
 	color: var(--md-code-hl-custom-class_nc);
 }
 
+.highlight .c .c-Doc {
+	color: var(--md-code-hl-custom-class_c_c-Doc);
+}
+
+.highlight .vi {
+	color: var(--md-code-hl-custom-class_vi);
+}
+
+.highlight .c.c-Region {
+	color: var(--md-code-hl-custom-class_c_c-Region);
+}
+
 .highlight .nb.nb-Function {
 	color: var(--md-code-hl-custom-class_nb_nb-Function);
+}
+
+.highlight .s.s-NodePath {
+	color: var(--md-code-hl-custom-class_s_s-NodePath);
 }
 
 .highlight .sx {
@@ -95,6 +120,11 @@ Also see CONTRIBUTING.md
 .highlight .nd {
 	color: var(--md-code-hl-custom-class_nd);
 }
+
+.highlight .s.s-StringName {
+	color: var(--md-code-hl-custom-class_s_s-StringName);
+}
+
 
 
 .highlighttable {

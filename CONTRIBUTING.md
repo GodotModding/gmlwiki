@@ -156,7 +156,7 @@ func run():
 		"engine_type_color": [".nb"],
 		"user_type_color": [".nc"],
 		"comment_color": ["--md-code-hl-comment-color"],
-		"doc_comment_color": [""],
+		"doc_comment_color": [".c.c-Doc"],
 		"string_color": ["--md-code-hl-string-color"],
 		"background_color": ["--md-code-bg-color"],
 		"completion_background_color": [""],
@@ -178,14 +178,15 @@ func run():
 		"mark_color": [""],
 		"breakpoint_color": [""],
 		"code_folding_color": [""],
+		"folded_code_region_color": [".c.c-Region"],
 		"search_result_color": [""],
 
 		"gdscript/function_definition_color": [""],
 		"gdscript/global_function_color": [".nb.nb-Function"],
-		"gdscript/node_path_color": [""],
+		"gdscript/node_path_color": [".s.s-NodePath"],
 		"gdscript/node_reference_color": [".sx"],
 		"gdscript/annotation_color": [".nd"],
-		"gdscript/string_name_color": [""],
+		"gdscript/string_name_color": [".s.s-StringName"],
 	}
 
 
