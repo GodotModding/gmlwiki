@@ -93,7 +93,7 @@ Also see CONTRIBUTING.md
 	color: var(--md-code-hl-custom-class_nc);
 }
 
-.highlight .c .c-Doc {
+.highlight .c.c-Doc {
 	color: var(--md-code-hl-custom-class_c_c-Doc);
 }
 
