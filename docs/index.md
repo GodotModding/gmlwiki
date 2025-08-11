@@ -23,15 +23,15 @@ Importantly, it provides methods to change existing scripts, scenes, and resourc
 
 === "Godot 4"
 
-    Mod Loader: [GitHub](https://github.com/GodotModding/godot-mod-loader/tree/4.x)
+    Mod Loader: [GitHub](https://github.com/GodotModding/godot-mod-loader/tree/4.x-dev)
 
-    Mod Dev Tool: [GitHub](https://github.com/GodotModding/godot-mod-tool/tree/4.x)
+    Mod Dev Tool: [GitHub](https://github.com/GodotModding/godot-mod-tool/tree/4.x-dev)
 
 === "Godot 3"
 
-    Mod Loader: [Asset Lib](https://godotengine.org/asset-library/asset/1938), [GitHub](https://github.com/GodotModding/godot-mod-loader)
+    Mod Loader: [Asset Lib](https://godotengine.org/asset-library/asset/1938), [GitHub](https://github.com/GodotModding/godot-mod-loader/tree/3.x-dev)
 
-    Mod Dev Tool: [Asset Lib](https://godotengine.org/asset-library/asset/1982), [GitHub](https://github.com/GodotModding/godot-mod-tool)
+    Mod Dev Tool: [Asset Lib](https://godotengine.org/asset-library/asset/1982), [GitHub](https://github.com/GodotModding/godot-mod-tool/tree/3.x-dev)
 
 All stable **Mod Loader** versions: [GitHub Releases](https://github.com/GodotModding/godot-mod-loader/releases)  
 All stable **Mod Dev Tool** versions: [GitHub Releases](https://github.com/GodotModding/godot-mod-tool/releases)
